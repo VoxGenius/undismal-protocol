@@ -1,0 +1,5 @@
+Model,In_Sample_R2,Description
+baseline_arx,0.5946970674490455,Baseline OLS/ARX (Ball & French 2021)
+larx_market,0.5542393504978713,LARX a) - Latent Market Expectations
+larx_output,0.46863039816154184,LARX b) - Latent Economic Output
+larx_both,0.5794878101565826,LARX c) - Both Latent Variables

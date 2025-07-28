@@ -1,0 +1,44 @@
+
+BARGMAN (2025) REPLICATION RESULTS
+=====================================
+
+Paper: "Latent Variable Autoregression with Exogenous Inputs"
+Author: Daniil Bargman (UCL)
+Replication by: Leibniz, VoxGenius Inc.
+Date: July 28, 2025
+
+METHODOLOGY REPLICATED:
+- Baseline OLS/ARX model (Ball & French 2021 specification)
+- LARX a) with latent market expectations
+- LARX b) with latent economic output  
+- LARX c) with both latent variables
+
+DATA SUMMARY:
+- Economic data: 313 quarters of GDP components from FRED
+- Equity data: 146 quarters of S&P 500 and sector data
+- Final merged dataset: 25 observations, 17 variables
+- Date range: 2018-09-30 00:00:00 to 2025-03-31 00:00:00
+
+MODEL PERFORMANCE (IN-SAMPLE R²):
+       Model  In_Sample_R2                           Description
+baseline_arx      0.594697 Baseline OLS/ARX (Ball & French 2021)
+ larx_market      0.554239  LARX a) - Latent Market Expectations
+ larx_output      0.468630      LARX b) - Latent Economic Output
+   larx_both      0.579488       LARX c) - Both Latent Variables
+
+ORIGINAL PAPER RESULTS (OUT-OF-SAMPLE MSPE % OF BENCHMARK):
+- Baseline OLS: 49.0% (51% improvement over benchmark)
+- LARX a): 34.7% (65.3% improvement)
+- LARX b): 34.3% (65.7% improvement)  
+- LARX c): 20.1% (79.9% improvement)
+
+REPLICATION NOTES:
+1. Used S&P 500 sector ETFs as proxies for Investing.com sector indices
+2. Implemented simplified PCA-based latent variable construction
+3. COVID quarters Q2-Q3 2020 excluded as per original paper
+4. Full rolling regression with exponential weights not implemented (simplified version)
+
+LIMITATIONS:
+- Exact latent variable methodology differs from paper's mathematical framework
+- Out-of-sample evaluation simplified (no rolling forecasts with exponential weights)
+- Sector data source differs (Yahoo Finance ETFs vs Investing.com indices)

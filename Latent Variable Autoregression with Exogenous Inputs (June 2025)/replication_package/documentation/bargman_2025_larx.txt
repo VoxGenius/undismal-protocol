@@ -1,0 +1,3221 @@
+Latent Variable Autoregression with Exogenous Inputs
+Daniil Bargman∗1
+1
+
+Institute of Finance and Technology, University College London
+June 26, 2025
+
+arXiv:2506.04488v2 [econ.EM] 25 Jun 2025
+
+Abstract
+This paper introduces a new least squares regression methodology called (C)LARX: a (constrained) latent variable autoregressive model with exogenous inputs. Two additional contributions
+are made as a side effect: First, a new matrix operator is introduced for matrices and vectors with
+blocks along one dimension; Second, a new latent variable regression (LVR) framework is proposed
+for economics and finance. The empirical section examines how well the stock market predicts real
+economic activity in the United States. (C)LARX models outperform the baseline OLS specification in out-of-sample forecasts and offer novel analytical insights about the underlying functional
+relationship.
+
+1
+
+Introduction
+
+Latent variables are unobserved processes which can be approximated from the observed data using
+statistical methods. Two popular latent variable models in modern econometrics are instrumental
+variable regression (e.g., Stock and Trebbi (2003)) and hidden Markov models (Baum and Petrie
+(1966)). In the former, the causal relationship between the explanatory and the dependent is obscured
+by an unobserved common factor. In the latter, the variables and/or their relationships are influenced
+by unobserved changes in regime such as the stage of the busniess cycle or a bull/bear market.
+A somewhat different latent variable modelling paradigm has developed over the past few decades
+outside of economics and finance. Latent variable regression (LVR) models based on Canonical Correlation Analysis (CCA) (Hotelling (1936)) and Partial Least Squares (PLS) (Wold (1982, 1975)) take
+the concept of Principal Component Analysis (PCA) (Pearson (1901); Hotelling (1933)) into an inferential setting. Empirical measurements are viewed as partial or imperfect representations of the
+processes under observation. Linear combinations are constructed from those measurements in an
+attempt to better approximate the unobserved “true” processes and the relationships between them.
+Over the past 90 years, the direction of CCA- and PLS-style LVR research (from now on simply
+LVR research) has been largely tangential to finance and economics, with the few identifiable counterexamples limited to advanced arbitrage pricing theory (e.g., see Bai and Ng (2006); Ahn et al. (2012))
+and joint production functions (Vinod (1976, 1968)). Meanwhile, a large body of LVR literature has
+developed in industrial chemistry (e.g. Burnham et al. (1996, 1999)), machine learning (e.g., Wang
+et al. (2020); Dai et al. (2020); Van Vaerenbergh et al. (2018); Chi et al. (2013)), medicine and other
+quantitative fields (e.g., see Uurtio et al. (2017)). Traditionl use cases of LVR models now include
+dimensionality reduction, identification of the directions of correlation in multivariate data streams
+(e.g., Burnham et al. (1996); Dong and Qin (2018); Qin (2021)), and multi-label classification of images,
+videos, audio, and hand-written text (e.g., Wang et al. (2020); Dai et al. (2020); Van Vaerenbergh
+et al. (2018); Chi et al. (2013)).
+This paper sets out to take LVR research in a direction more compatible with finance and economics
+applications. A new LVR methodology called (C)LARX – (constrained) latent variable autoregression
+∗
+
+daniil.bargman.22@ucl.ac.uk
+
+1
+
+with exogenous inputs – is developed based on the same mathematical concepts that underpin LVR
+research in other disciplines. The (C)LARX methodology is designed as a superset of the ubiquitous
+ARX model in which any or all variables are allowed to be latent, i.e., to be represented by linear
+combinations over the observed data. All regression models in the (C)LARX family present with fixed
+point solutions interpretable through the lens of least squares regression and portfolio optimisation.
+As this paper proceeds to show, (C)LARX and similar LVR models can address at least two practical
+use cases in economics and finance not fully covered by other regression techniques. First of all, these
+models allow the researcher to improve the accuracy of statistical measurement for the input variables
+based on the relationship between them. Second, the researcher can construct linear combinations
+of variables optimised for a specific functional dependency, e.g., with one linear combination being
+a leading indicator for the other. Both use cases have far-reaching implications for macroeconomics,
+investment management and beyond.
+The rest of the paper is organised as follows. Section 2 defines a new matrix operator which is
+subsequently used to derive the fixed point solution for the (C)LARX family of models. Section 3
+examines the underlying principles of LVR modelling in other disciplines and lays the foundation for
+an LVR framework in economics and finance. Section 5 derives the (C)LARX methodology. A brief
+overview of a few special cases of (C)LARX follows in Section 6. Section 7 presents a stylised empirical
+application of the (C)LARX model by examining the predictive power of the US stock market with
+respect to US economic activity. Section 8 concludes and discusses possible avenues for future research.
+
+2
+
+Blockwise Direct Sum Operator
+
+The derivation of the (C)LARX fixed point in Section 5 involves blockwise operations between matrices
+and vectors with blocks along one dimension, including a blockwise Kronecker product ⊙ as defined
+in Khatri and Rao (1968). This paper also introduces a new matrix operation called a blockwise
+direct sum, denoted by the superscript A⊕ for an arbitrary matrix or vector A. This section briefly
+introduces the blockwise direct sum operator (alternatively, a blockwise diagnoalisation operator) and
+its relevant properties.
+Let ⟨Ai |1 ≤ i ≤ k⟩ be a sequence of k real matrices with arbitrary dimensions. If all Ai have the same
+number of columns, they can be concatenated vertically into a matrix with row blocks. If all Ai have
+the same number of rows, they can be concatenated horizontally into a matrix with column blocks.
+Formally:
+⟨Ai ⟩ ≡ ⟨Ai |1 ≤ i ≤ k⟩
+
+a sequence of matrices of arbitrary dimensions
+
+[⟨Ai ⟩]v = Av = A
+
+a vertical matrix concatenation of ⟨Ai ⟩
+
+[⟨Ai ⟩]h = Ah
+⟨M⟩
+
+a horizontal matrix concatenation of ⟨Ai ⟩
+the sequence of blocks comprising block matrix M
+
+The blockwise direct sum operator A⊕ is then defined as:
+
+A1 , 0, · · ·
+ 0, A2 , · · ·
+
+A⊕ = ⟨A⟩⊕ = ⟨Ai ⟩⊕ = A1 ⊕ A2 ⊕ A3 ⊕ · · · ⊕ Ak =  .
+..
+..
+ ..
+.
+.
+0,
+0, · · ·
+
+
+0
+0
+
+.. 
+. 
+Ak
+
+Compatibility of dimensions is not a constraint for a direct sum between matrices, so a blockwise
+direct sum is defined for any sequence of matrices ⟨Ai ⟩. The result is always a matrix whose number
+of rows (columns) is the sumtotal number of rows (columns) across all comprising Ai .
+2
+
+The matrix A⊕ can itself be mapped to either a sequence of k row blocks or a sequence of k column
+blocks without slicing through the original matrices in the sequence. For most use cases the block
+structure of A⊕ will not be relevant. For the remaining scenarios let us apply the same shorthand
+notation as above:
+A1 , 0, · · ·
+ 0, A2 , · · ·
+
+A⊕ ≡ A⊕
+.
+..
+v =
+..
+ ..
+.
+.
+0,
+0, · · ·
+
+
+0
+0
+..
+.
+
+
+
+
+,
+
+
+Ak
+
+
+
+A1 0 · · ·
+ 0 A2 · · ·
+
+A⊕
+..
+..
+h =  ..
+ .
+.
+.
+0
+0 ···
+
+0
+0
+..
+.
+
+
+
+
+
+
+
+Ak
+
+One of the main use cases for the blockwise direct sum operator lies in defining blockwise inner products
+and blockwise quadratic forms between matrices and vectors. For example, let B be a matrix with
+′
+the same number of rows and the same block structure as A. The product (A⊕ ) B then yields:
+A′1 0 · · ·
+ 0 A′ · · ·
+
+2
+
+⊕ ′
+A
+B= .
+..
+..
+.
+ .
+.
+.
+0
+0 ···
+
+
+  ′
+
+B1
+A1 B1
+0
+
+  ′
+
+0
+  B2   A2 B2 
+
+..   ..  = 
+..
+
+.  .  
+.
+
+
+
+A′k
+
+Bk
+
+A′k Bk
+
+As showcased in subsequent chapters, this operation is useful for solving Lagrangian optimisation
+problems with respect to a vector of coefficients in the presence of peacemeal constraints, e.g., when
+various slices of the coefficient vector must each have unit length or zero-sum elements.
+Several properties of the blockwise direct sum operator are relevant for this paper. First of all, we
+note that the transpose of A⊕ is the same as the blockwise direct sum of A′ :
+Proposition 2.1. The function composition of the blockwise direct sum operator and the transpose
+′
+operator is commutative. In other words, (A⊕ ) = (A′ )⊕ .
+Proof.
+ ′
+A1 0 · · ·
+
+′  0 A′2 · · ·
+A⊕ =  .
+..
+..
+ ..
+.
+.
+0
+0 ···
+
+
+0
+0
+
+
+′ ⊕
+′
+′
+′
+′
+..  = A1 ⊕ A2 ⊕ A3 ⊕ · · · ⊕ Ak = A
+. 
+
+A′k
+
+Second, the blockwise direct sum of a vector can be written as a blockwise Kronecker product:
+Proposition 2.2. Let a comprise k blocks given by the sequence of vectors ⟨ai |1 ≤ i ≤ k⟩. The matrix
+a⊕ can be expressed as a blockwise Kronecker product between a and an identity matrix Ik with vector
+blocks along the same dimension as a.
+Proof. For a column vector we have:
+
+
+ 
+a1 ⊗ 1, 0, · · ·
+a1 0 · · · 0
+ 0 a2 · · · 0   a2 ⊗ 0, 1, · · ·
+
+ 
+a⊕ =  .
+.. . .
+..  = 
+..
+ ..
+.
+.
+. 
+.
+
+0 0 · · · ak
+ak ⊗ 0, 0, · · ·
+
+  
+ 
+0
+a1
+1, 0, · · ·
+
+
+
+
+0   a2   0, 1, · · ·
+ =  ..  ⊙  .. .. . .
+  .   . .
+.
+
+ak
+0, 0, · · ·
+1
+
+
+0
+0 
+
+..  = a ⊙ Ik
+. 
+1
+
+The proof for a row vector follows by symmetry.
+Third, for two column vectors a and b with the same length and row block structure, the operation
+′
+(a⊕ ) b is symmetric:
+3
+
+Proposition 2.3. For column vectors a and b with identically sized row blocks a1 , a2 , a3 , . . . , ak and
+′
+′
+b1 , b2 , b3 , . . . , bk , respectively, (a⊕ ) b = (b⊕ ) a.
+Proof.
+ ′
+a1 0 · · ·
+′
+
+′
+ 0 a2 · · ·
+a⊕ b =  .
+.. . .
+ ..
+.
+.
+0 0 ···
+
+
+  ′
+  ′
+
+b1
+a 1 b1
+b1 a 1
+0
+
+  ′
+  ′
+
+0
+
+  b2   a2 b2   b2 a2 
+⊕ ′
+=
+=
+a
+
+
+
+
+
+
+..
+..
+..
+..  = b
+.  .   .   . 
+
+a′k
+
+bk
+
+a′k bk
+
+b′k ak
+
+Lastly, the blockwise direct sum operator is commutative with respect to a certain class of operations
+over matrix sequences. Specifically, for a sequence of matrices ⟨Ai |1 ≤ i ≤ k⟩ and an operation f
+over matrix sequences of length k, it can be shown that f (⟨A⟩)⊕ = [f (⟨A⊕ ⟩)] if f satisfies certain
+conditions. This, in turn, can be used to prove that for two vectors a and b with k row blocks each,
+the blockwise Kronecker product a ⊙ b can be factorised in the same way as the traditional Kronecker
+product, namely:
+a ⊙ b = (a ⊙ Ib ) b = (Ia ⊙ b) a
+where Ia and Ib are identity matrices with the same row block structure as a and b, respectively. The
+corresponding derivations are deferred to Appendices A and B.
+
+3
+
+A Latent Variable Regression Framework for Economics and Finance
+
+Latent variable regression (LVR) models use statistical data to achieve two simultaneous objectives:
+to estimate a functional relationship, and to approximate one or more latent variables (LVs). For
+the second objective it is assumed that each LV can be approximated as a weighted sum over some
+sequence of observed data series. Formally:
+Definition 3.1. A latent variable ỹ is an unobserved process which can be approximated
+as a linear
+
+combination (weighted sum) over a vector of observed random variables Y = y1 , y2 , y3 , . . . , yn
+with two or more weights different from zero.
+Definition 3.2. A latent
+variable model is a statistical
+technique aimed at estimating a latent variable
+
+′
+weight vector w = w1 , w2 , w3 , . . . , wn such that ỹ = Y w, where w can’t be a multiple of a
+standard basis vector.
+Definition 3.3. A latent variable regression (LVR) model is a regression model in which at least one
+variable is latent.
+A traditional univariate regression model with dependent variable y, explanatory variable x and a
+vector of regression parameters γ can be defined as:
+y = Fγ (x) + ϵ
+
+(1)
+
+Here, ϵ is a mean-zero error term and Fγ : R −→ R is generally assumed to be at least once differentiable with respect to γ. For illustrative purposes, let us further assume that (1) represents an
+equation for estimating the price elasticity of demand. This means that y might represent changes
+in the sale volume of a product, x the changes in its price, and Fγ would likely be some type of
+monotonically decreasing function.
+A popular way to solve (1) is by finding a vector γ̂ which minimizes the variance of ϵ for a given
+dataset of prices and sales volumes – a methodology known as least squares regression. In a slight
+4
+
+abuse of notation, let F (a) represent a row-wise operation over the elements in a when a is a sample
+′
+vector or matrix. In other words, given a sample vector of observations a = a1 , a2 , a3 , . . . , as where
+
+′
+s denotes the sample size, let F (a) represent F (a1 ), F (a2 ), F (a3 ), . . . , F (as ) . Then, if we denote
+the sample observation vectors for y and x by y and x, respectively, we can write our least squares
+optimisation problem as:
+γ̂ = argmin∥y − Fγ (x)∥22
+
+(2)
+
+γ
+
+Having solved for γ̂, we can look at how well Fγ̂ (x) predicts y, preferably using a different sample of
+observations than the one to train the model. If the predictions are poor, we conclude that Fγ̂ is a
+poor approximation of the true price elasticity of demand.
+With this “traditional” approach, no distinction is made between the quality of the model and the
+quality of the input data. However, in reality the sample vectors y and x may simply be inaccurate
+approximations of the product’s true sale quantity and price: the same product may be offered at
+different prices in different locations, and the turnover data may come from different companies with
+different reporting rules. If the quality of the sample vectors y and x is in question, both y and x can
+be more accurately thought of as latent variables. We can represent this by rewriting equation (1) as
+an LVR model of the form:
+ỹ = Fγ (x̃) + ϵ
+
+(3)
+
+According
+to Definition 3.2, if more than one source of information
+is available about
+
+
+ the product’s
+price ( x1 , x2 , x3 , . . . , xm = X) and its sales quantity ( y1 , y2 , y3 , . . . , yn = Y ), equation
+(3) can be approximated as:
+Y w = Fγ (Xω) + ϵ
+
+(4)
+
+If the solution to the traditional regression model (1) is given by the vector γ̂ which satisfies (2), then
+the solution to to the LVR model (4) would be given by the vectors γ̂, ŵ, ω̂ which satisfy:
+γ̂, ŵ, ω̂ = argmin∥Yw − Fγ (Xω)∥22
+γ,w,ω
+
+
+Y = y1 , y 2 , y3 , . . . , yn
+
+
+X = x 1 , x2 , x3 , . . . , xm
+
+(5)
+
+where yi and xj are column vectors with sample measurements for the respective yi and xj .
+There is, of course, a big conceptual difference between equations (1) and (3). In traditional regression
+models, y and x are observed a priori and their values are fixed when the relationship is being estimated.
+In LVR models, on the other hand, the very nature of ỹ and x̃ is determined by the functional
+relationship between them. The choice of F directly affects the computed values of w and ω, so our
+estimates for both the sale quantity and the price will change depending on whether we choose to
+model the elasticity of demand as linear, quadratic or some other function. From a purely mathematical
+viewpoint, however, (5) is simply a generalization of (2):
+Proposition 3.1. Given a non-empty vector of observed variables
+
+
+A = a1 , a2 , . . . , al
+1×l
+
+and a vector of linear combination weights
+
+′
+b = b1 , b2 , . . . , bl ,
+variable ã = Ab can only be latent if l > 1.
+5
+
+Proof. Because A is non-empty and l is the number of columns in A, l must be a positive integer. The
+only case not covered by l > 1 is l = 1. If l = 1, both A and b can only have one (non-zero) element,
+which means that ã is no longer a latent variable according to Definition 3.1.
+Corollary 3.1.1. A latent variable regression of ỹ on one or more x̃j reduces to a traditional regression
+model when the underlying observed variable vectors Y and Xj each consist of a single variable.
+Proof. If Y and Xj each have one element, it follows from Proposition 3.1 that none of ỹ, x̃j are latent.
+Hence, a regression of ỹ on x̃j is not a latent variable regression according to Definition 3.3.
+Because LVR models are a superset of traditional regression models, a common methodological framework can be defined for both. Assume we have an observed random variable space made up of:
+◦ n ≥ 1 proxy measurements for the dependent variable, represented by a 1 × n row vector Y
+◦ M ≥ 1 proxy measurements for K ≤ M explanatory variables, represented by 1×mj row vectors
+P
+Xj with j = 1, 2, . . . , K and K
+j=1 mj = M
+Over that space, define (latent or non-latent) variables ỹ = Y w and x̃j = Xj ωj , j = 1, 2, . . . , K
+n×1
+
+governed by some functional relationship Fγ
+
+: RK −→ R, where
+
+mj ×1
+
+γ represents an unknown vector of
+p×1
+
+regression parameters, such that:
+ỹ = Fγ (x̃1 , x̃2 , x̃3 , . . . , x̃K ) + ϵ
+ỹ ≡ Y w
+
+(6)
+
+x̃j ≡ Xj ωj for j = 1, 2, 3, . . . , K
+The vectors w, ωj and γ are all initially unknown and need to be estimated empirically. This paper
+will continue to focus on the least squares approach which translates into the following objective
+function:
+∥ỹ − Fγ (x̃1 , x̃2 , x̃3 , . . . , x̃K ) ∥22
+
+(7)
+
+With problems of this kind it is often necessary to impose constraints on w, ω and/or γ, e.g., to avoid
+trivial solutions such as w = 0. For example, PLS-style LVR models (Wold (1975, 1982)) impose a
+unit length constraint on w and ω, while CCA-style LVR models (Hotelling (1936)) impose a unit
+variance constraint on Yw and Xω. We can generalize this to an arbitrary set of constraint functions
+{gi : RM +n+p −→ R, i ∈ N}, where p is the length of γ.
+The goal, then, is to estimate the vectors γ̂, ŵ and ω̂j which minimize hthe variance of ϵ subject to
+i
+{gi : i ∈ N}, using a sample of s empirical observations given by the matrix Y , X1 , X2 , . . . , XK :
+s×n
+
+min ∥Yw − Fγ (X1 ω1 , X2 ω2 , X3 ω3 , . . . , XK ωK ) ∥22 ,
+
+γ,w,{ωj }
+
+s.t. gi (γ, w, {ωj }) ≥ 0,
+
+s×m1
+
+s×m2
+
+s×mK
+
+j = 1, 2, . . . , K
+(8)
+
+i∈N
+
+Note that this optimisation problem reduces to a traditional least-squares regression problem if n =
+mj = 1 for all j.
+
+6
+
+4
+
+The Intercept Term and Univariate LVR Models
+
+Regression problems often include an intercept term and can be expressed as:
+ỹ = c + Fγ (x̃1 , x̃2 , x̃3 , . . . , x̃K ) + ϵ
+
+(9)
+
+where c is a scalar. The solution for c in a least squares setting is well documented in prior literature,
+but it is replicated below for completeness.
+Defining a shorthand ỹˆ ≡ Fγ (x̃1 , x̃2 , x̃3 , . . . , x̃K ), as well as the sample counterparts for ỹ and ỹˆ as ỹ
+ˆ respectively, we can rewrite the optimisation problem from (8) as:
+and ỹ,
+
+
+
+
+ˆ ∥22 = min ỹ′ ỹ + 1′s 1s c + ỹ
+ˆ ′ ỹ
+ˆ − 2c1′s ỹ − 2ỹ′ ỹ
+ˆ + 2c1′s ỹ
+ˆ
+min ∥ỹ − 1s c + ỹ
+
+(10)
+
+ˆ and 1s is a column vector of ones of (sample) length s.
+Here, s denotes the sample size of ỹ and ỹ,
+Note that this problem is convex with respect to c, so an unconstrained solution can be found by
+setting the partial derivative to zero:
+
+
+∂
+ˆ ∥22 = 21s c − 2ỹ + 2ỹ
+ˆ
+∥ỹ − 1s c + ỹ
+∂c
+ˆ
+1s c = ỹ − ỹ
+
+(11)
+
+pre-multiplying both sides by 1′s /s yields:
+c=
+
+ˆ
+1′s ỹ 1′s ỹ
+ˆ
+−
+= ỹ − ỹ
+s
+s
+
+(12)
+
+ˆ denote the sample means of ỹ and ỹ,
+ˆ respectively. By plugging the unconstrained
+where ỹ and ỹ
+solution for c back into (10) we arrive at a simplified version of (10):
+
+
+
+ 
+ˆ ∥22 = min Σỹ − 2Σ ˆ + Σ ˆ
+ˆ − 1s ỹ
+min ∥ ỹ − 1s ỹ − ỹ
+ỹ ỹ
+ỹ
+
+(13)
+
+Here, ΣA denotes the sample covariance matrix over random variable vector A, and ΣAB denotes
+the sample covariance matrix from A to random variable vector B with elements of A as rows and
+elements of B as columns. In this case, however, Σỹ , Σỹỹˆ and Σỹˆ all resolve to scalar values because
+both ỹ and ỹˆ are univariate1 .
+Furthermore, in the somewhat trivial case of Fγ (x̃1 , x̃2 , x̃3 , . . . , x̃K ) = 0, this optimisation problem
+reduces to:
+min Σỹ ≡ min w′ ΣY w
+w
+
+(14)
+
+In other words, in their simplest “univariate” form LVR models minimise the unconditional variance
+of a linear combination of variables subject to one or more constraints. This means that problems
+like PCA and mean-variance portfolio optimisation can be thought of as univariate LVR problems.
+Conversely, multivariate LVR models can be viewed as advanced portfolio optimisation techniques
+aimed at minimising the conditional variance of an investment strategy with respect to a pre-defined
+functional relationship (e.g., tracker funds).
+1
+
+This simplification is also meaningful if a constraint is imposed on the range of possible solutions for c. The only
+ˆ something other than the sample mean would need to be subtracted from ỹ and/or ỹ
+ˆ in
+difference is that if c ̸= ỹ − ỹ,
+equation (13), which means that Σ will represent a biased sample variance-covariance estimate for at least one of the
+variable vectors involved.
+
+7
+
+5
+
+CLARX: A Constrained Latent Variable ARX Model
+
+One of the most popular regression models in economics and finance is the autoregressive model with
+exogenous inputs (ARX), which expresses the dependent as a linear function of its own past values
+and the (present and) past values of one or more explanatory variables. Special cases of the ARX
+model include the autoregressive model (AR) with no exogenous inputs, the lead-lag regression model
+with no autoregressive element, and multiple linear regression (no lag structure).
+This section introduces the LVR counterpart of the ARX model called (C)LARX – a (constrained)
+latent variable ARX model. As with ARX, the CLARX model comes with a number of interesting
+special cases, some of which are briefly examined in Section 6.
+First, let us define the CLARX model in functional form. Let v be a “version iterator” representing
+different versions2 of latent variable j, i.e., a variable identified by LV weight vector ωj . We can
+denote the total number of versions for variable j as Vj ≥ 1. Let K denote the total number of unique
+exogenous variables x̃j excluding versions, i.e., the total number of unique LV weight vectors ωj . We
+can refer to the “autoregressive” versions of the dependent variable as ãv ≡ Av w, with the number of
+autoregressive versions denoted by the capital Va ≥ 0. A generic formula for the (C)LARX model can
+then be written as:
+
+ỹ = c +
+
+Va
+X
+
+ϕv ãv +
+
+v=1
+
+ỹ ≡ Y w,
+
+V1
+X
+
+β1,v x̃1,v +
+
+v=1
+
+V2
+X
+
+β2,v x̃2,v + . . . +
+
+v=1
+
+ãv ≡ Av w,
+
+VK
+X
+
+βK,v x̃K,v + ϵ
+
+v=1
+
+(15)
+
+x̃j,v ≡ Xj,v ωj for j = 1, . . . , K
+
+As before, any input variable in this model can be non-latent, as long as the corresponding weight
+vector only has one non-zero element. The entire problem reduces to the traditional ARX model when
+all input variables are non-latent.
+Models of this kind are more conveniently solved in matrix form. The matrix representation for
+15 can be derived with the help of the Kronecker product, traditionally denoted by “⊗”, and the
+aforementioned blockwise Kronecker product denoted by “⊙”. The autoregressive terms can be written
+as:
+Va
+X
+v=1
+
+ϕv ãv = A (ϕ ⊗ w)
+
+
+
+where A = A1 , A2 , · · · AVa is a horizontal concatenation of the autoregressive proxy vectors for
+
+′
+the dependent, and ϕ = ϕ1 , ϕ2 , · · · ϕVa is a column vector containing the respective autoregressive coefficients. Similarly, for each individual explanatory variable x̃j we have:
+Vj
+X
+v=1
+
+βj,v x̃j,v = Xj (βj ⊗ ωj )
+
+
+
+
+with Xj = Xj,1 , Xj,2 , · · · Xj,Vj and βj = βj,1 , βj,2 , · · ·
+then be concatenated as follows:
+Vj
+K X
+X
+j=1 v=1
+
+βj,v x̃j,v =
+
+K
+X
+j=1
+
+′
+βj,Vj . All explanatory terms can
+
+Xj (βj ⊗ ωj ) = X (β ⊙ ω)
+
+2
+
+Note that in (C)LARX models, versions may not be synonymous with time series lags. For example, ỹ ≡ Y w may
+represent the return on an investment index and x̃i ≡ Xi w some other property of the same index such as market
+capitalization as in the “size” factor of Fama and French (1993).
+
+8
+
+
+
+Here, X = X1 X2 · · · XK is a row vector with K column blocks comprised of the individual
+
+′
+′
+Xj , β = β1′ β2′ · · · βK
+is a column vector with K row blocks for the individual βj , and ω has
+
+′
+′
+K column blocks containing the individual ωj such that ω = ω1′ ω2′ · · · ωK
+.
+The complete (C)LARX formula is then concisely defined in matrix form as:
+Y w = c + A (ϕ ⊗ w) + X (β ⊙ ω) + ϵ
+
+(16)
+
+where Y , A and X together comprise the underlying observed variable space. The least squares
+optimisation problem for the (C)LARX model can be defined in sample form as:
+min
+
+c,ϕ,β,w,ω
+
+∥Yw − 1s c − A (ϕ ⊗ w) − X (β ⊙ ω) ∥22
+
+(17)
+
+where Y, A, and X are matrices of sample observations for the random variable vectors Y , A and X,
+respectively, and s is the length of the sample.
+The full CLARX implementation can address the use case of portfolio optimisation by implementing
+Markowitz-style constraints (e.g., Markowitz (1989)) on the variance and sum of weights for each
+latent variable3 . The variance constraint on the dependent takes the form of w′ ΣY w = σy2 . The
+variance constraint on explanatory variable j takes the form of ωj′ ΣXj,cj ωj = σj2 , where cj is an
+arbitrarily chosen version (lag) of x̃j . Sum-of-weights constraints take the form of 1′n w = ly and
+1′mj ωj = lj , where ly and lj are arbitrary constants. The complete constrained optimization problem
+then becomes4 :
+min
+
+c,ϕ,β,w,ω
+
+∥Yw − 1s c − A (ϕ ⊗ w) − X (β ⊙ ω) ∥22
+
+s.t. w′ ΣY w = σy2 ,
+1′n w = ly ,
+
+ωj′ ΣXj,cj ωj = σj2 for 1 ≤ j ≤ K,
+
+(18)
+
+1′mj ωj = lj for 1 ≤ j ≤ K
+
+The solution for c is covered by section 4 and is given by:
+c = Yw − A (ϕ ⊗ w) − X (β ⊙ ω)
+
+(19)
+
+Here, Y, A and X are row vectors containing the column-wise means of Y, A and X, i.e., the row
+vectors containing the sample means of the individual variables in Y , A and X. Plugging this solution
+back into (18) and expanding, we obtain a simplified optimisation problem of the form:
+min w′ ΣY w + (ϕ ⊗ w)′ ΣA (ϕ ⊗ w) + (β ⊙ ω)′ ΣX (β ⊙ ω)
+
+ϕ,β,w,ω
+
+
+
+′
+
+′
+
+′
+
+− 2 w ΣY A (ϕ ⊗ w) + w ΣY X (β ⊙ ω) − (ϕ ⊗ w) ΣAX (β ⊙ ω)
+s.t. w′ ΣY w = σy2 ,
+1′n w = ly ,
+
+(20)
+
+
+ωj′ ΣXj,cj ωj = σj2 for 1 ≤ j ≤ K,
+
+1′mj ωj = lj for 1 ≤ j ≤ K
+
+3
+
+Section 6 examines a counterpart of this model with minimal constraints.
+To the author’s best knowledge, the closest precedent for this optimisation problem in prior literature is the EDACCA
+model defined in Xu and Zhu (2024). The EDACCA model has a number of important differences, including a different
+set of constraints and the use of a single explanatory variable.
+4
+
+9
+
+This is a convex problem with equality constraints, which means it can be solved using the method of
+Lagrange multipliers (LM). Like with the rest of the model, we can represent the LM terms in matrix
+form with the help of the following vectors:
+ 2
+′
+2 , σ2 , . . . σ2
+, σx,2
+ϑx = σx,1
+x,3
+x,K ,
+
+′
+
+λx = λx,1 , λx,2 , λx,3 , . . . λx,K
+
+′
+
+lp = lp,1 , lp,2 , lp,3 , . . . lp,K ,
+
+′
+
+λp = λp,1 , λp,2 , λp,3 , . . . λp,K
+
+ϑx is a K × 1 column vector of variance targets for the chosen versions of x̃j ; lp is a K × 1 column
+vector of sum-of-weights targets for the respective LV weight vectors ωj ; and λx and λp are the
+corresponding vectors of LM coefficients. The full constraint terms for the Lagrangian function can
+then be defined in matrix form with the help of the blockwise direct sum operator introduced in
+Section 2. The sum-of-weights constraints become:
+′
+ω ⊕ 1ω = l p
+where 1ω is a column vector of ones with the same row block structure as ω.
+For the variance constraints we require an indexer identifying which version of each x̃j has a variance
+constraint assigned to it. Let ⟨uj ⟩ be a sequence of K logical vectors, each of size Vj (i.e., the number
+of versions of x̃j ) with a value of 1 in position of cj , i.e., the version of x̃j that has a variance constraint,
+and zeros elsewhere. Column vector u ≡ [⟨uj ⟩] is a vertical concatenation of ⟨uj ⟩ which has the same
+size and row block structure as the vector β. We also need a block-diagonal matrix ΣdX containing
+the covariance matrices of the individual Xj,vj along the diagonal, but no covariances across different
+variables or versions. Once again, this can be done with the help of the blockwise direct sum operator:
+ΣdX1 ,
+0,
+···
+d , ···
+
+h
+i
+0,
+Σ
+′
+⊕
+⊕ 
+X2
+ΣdX = X − X
+X−X = .
+..
+..
+.
+ .
+.
+.
+0,
+0,
+···
+
+
+0
+0
+..
+.
+ΣdXK
+
+
+
+
+
+
+
+where
+
+0,
+···
+ΣXj,1 ,
+
+i
+h
+0,
+Σ
+,
+···
+Xj,2
+⊕ ′
+⊕ 
+ΣdXj = Xj − Xj
+Xj − Xj =  ..
+..
+..
+ .
+.
+.
+0,
+0,
+···
+
+
+
+0
+0
+..
+.
+
+
+
+
+
+
+ΣXj,Vj
+
+for 1 ≤ j ≤ K
+The variance constraints on all x̃j can then be expressed using a single quadratic form:
+
+⊕
+(u ⊙ ω)′ ΣdX (u ⊙ ω) = ϑx
+The full Lagrangian function for (20) can then be written as:
+L(ϕ, β, w, ω, λy , λl , λx , λp ) = w′ ΣY w + (ϕ ⊗ w)′ ΣA (ϕ ⊗ w) + (β ⊙ ω)′ ΣX (β ⊙ ω)
+− 2w′ ΣY A (ϕ ⊗ w) − 2w′ ΣY X (β ⊙ ω) + 2 (ϕ ⊗ w)′ ΣAX (β ⊙ ω)
+′
+
++ λy w ΣY w − σy2
++ λ′p
+
+h
+
+
+
++ λl 1′n w − ly
+
+
+
++ λ′x
+
+n
+
+i
+′
+ω ⊕ 1ω − lp
+10
+
+(u ⊙ ω)
+
+′ ⊕
+
+ΣdX (u ⊙ ω) − ϑx
+
+o
+
+(21)
+
+Note that in expanded form the terms under λx and λp resolve to:
+
+λ′x
+λ′p
+
+n
+
+h
+
+(u ⊙ ω)′
+
+⊕
+
+K
+o X
+
+
+2
+ΣdX (u ⊙ ω) − ϑx =
+λx,j ωj′ ΣXj,cj ωj − σx,j
+
+i
+′
+ω ⊕ 1ω − lp =
+
+j=1
+
+K
+X
+j=1
+
+λp,j ωj′ 1mj − lp,j
+
+
+
+where mj represents the number of observed variables used to approximate x̃j .
+The solution for (21) is obtained by setting various partial derivatives to zero.
+First, we note that the properties of the Kronecker product and the blockwise Kronecker product
+allow us to factorise (ϕ ⊗ w) and (β ⊙ ω) for compatibility with traditional matrix calculus:
+(ϕ ⊗ w) = (IVa ⊗ w) ϕ = (ϕ ⊗ In ) w
+(β ⊙ ω) = (Iβ ⊙ ω) β = (β ⊙ Iω ) ω
+
+(22a)
+(22b)
+
+Here, Ia represents an identity matrix of size a (where a is a scalar value), while Ia represents an identity
+matrix with the same size and row block structure as vector a (vectors are conventionally represented
+by bold letters). The property of the Kronecker product relevant for (22a) is well established but
+reiterated for completeness in equations (43-44). The factorisation of the blockwise Kronecker product
+used for (22b) is proved in Appendix B. Taking ΣBA to denote the transpose of ΣAB , the solution for
+β becomes:
+
+
+∂
+L = 2 (Iβ ⊙ ω)′ ΣX (Iβ ⊙ ω) β − (Iβ ⊙ ω)′ ΣXY w + (Iβ ⊙ ω)′ ΣXA (ϕ ⊗ w)
+∂β
+
+−1 
+
+β = (Iβ ⊙ ω)′ ΣX (Iβ ⊙ ω)
+(Iβ ⊙ ω)′ ΣXY w − (Iβ ⊙ ω)′ ΣXA (ϕ ⊗ w)
+
+(23)
+
+Similarly, recalling that (ϕ ⊗ w) = (IVa ⊗ w) ϕ, the solution for ϕ is:
+
+
+∂
+L = 2 (IVa ⊗ w)′ ΣA (IVa ⊗ w) ϕ − (IVa ⊗ w)′ ΣAY w + (IVa ⊗ w)′ ΣAX (β ⊙ ω)
+∂ϕ
+
+−1 
+
+ϕ = (IVa ⊗ w)′ ΣA (IVa ⊗ w)
+(IVa ⊗ w)′ ΣAY w − (IVa ⊗ w)′ ΣAX (β ⊙ ω)
+
+(24)
+
+For the dependent weight vector w, we recall that (ϕ ⊗ w) = (ϕ ⊗ In ) w. The partial derivative of L
+with respect to w is then given by:
+
+
+∂
+L = 2 (1 + λy ) ΣY + (ϕ ⊗ In )′ ΣA (ϕ ⊗ In ) − (ϕ ⊗ In )′ ΣAY − ΣY A (ϕ ⊗ In ) w
+∂w
+
+
+− 2 ΣY X (β ⊙ ω) − (ϕ ⊗ In )′ ΣAX (β ⊙ ω) + λl 1n
+
+
+Note that ∂∂w w′ ΣY A (ϕ ⊗ In ) w resolves to (ϕ ⊗ In )′ ΣAY + ΣY A (ϕ ⊗ In ) w because the quadratic
+form is not symmetric. Setting the partial derivative to zero and expressing in terms of w, we get:
+
+
+(1 + λy ) ΣY w = (ϕ ⊗ In )′ ΣAY + ΣY A (ϕ ⊗ In ) − (ϕ ⊗ In )′ ΣA (ϕ ⊗ In ) w
+
+
+λl
++ ΣY X − (ϕ ⊗ In )′ ΣAX (β ⊙ ω) − 1n
+2
+11
+
+(25)
+
+For ease of notation, define:
+
+
+v1 = (ϕ ⊗ In )′ ΣAY + ΣY A (ϕ ⊗ In ) − (ϕ ⊗ In )′ ΣA (ϕ ⊗ In ) w
+
+1×n
+
+
+
+v2 = ΣY X − (ϕ ⊗ In )′ ΣAX (β ⊙ ω)
+
+1×n
+
+Equation (25) then becomes:
+(1 + λy ) ΣY w = v1 + v2 −
+
+λl
+1n
+2
+
+(26)
+
+Setting ρy = (1 + λy ), ρl = λ2l and pre-multiplying both sides by ρ1y Σ−1
+Y we get:
+w=
+
+
+1  −1
+ΣY (v1 + v2 ) − ρl Σ−1
+Y 1n
+ρy
+
+(27)
+
+For the weight vector ω, we recall that (β ⊙ ω) = (β ⊙ Iω ) ω. Furthermore, we can refactor the
+constraint terms for compatibility with traditional matrix calculus using the properties of the blockwise
+direct sum operator. For the portfolio constraints on ωj we can apply Proposition 2.3 to obtain:
+′
+′
+ω ⊕ 1ω = 1⊕
+ω ω
+For the variance constraints on x̃j , we note three things. First of all, because u has the same length
+and row block structure as β, the term (u ⊙ ω) can be factorised in the same way as (β ⊙ ω), namely:
+(u ⊙ ω) = (u ⊙ Iω ) ω = (Iβ ⊙ ω) u
+Second, by applying Proposition 2.1 we have:
+
+⊕ 
+′
+(u ⊙ ω)′ = (u ⊙ ω)⊕
+Third, the operation (u ⊙ ω) can be
+over the sequence of blocks
+hDexpressed as
+ a left-multiplication
+Ei
+in ω, i.e., (u ⊙ ω) = (u ⊙ Iω ) ω =
+uj ⊗ ⟨Iω ⟩j ωj |1 ≤ j ≤ K
+, which means that according to
+v
+Proposition A1 we have:
+(u ⊙ ω)⊕ ≡ [(u ⊙ Iω ) ω]⊕ = (u ⊙ Iω ) ω ⊕
+Putting these transformations together, we can rewrite the blockwise quadratic form as:
+
+
+(u ⊙ ω)′
+
+⊕
+
+
+′
+
+′
+ΣdX (u ⊙ ω) = (u ⊙ ω)⊕ ΣdX (u ⊙ ω) = [(u ⊙ Iω ) ω]⊕ ΣdX (u ⊙ ω)
+
+′
+′
+= (u ⊙ Iω ) ω ⊕ ΣdX (u ⊙ ω) = ω ⊕ (u ⊙ Iω )′ Σdx (u ⊙ Iω ) ω
+
+Applying these transformations, the partial derivative of (21) with respect to ω is:
+∂
+L = 2 (β ⊙ Iω )′ [ΣX (β ⊙ Iω ) ω − ΣXY w + ΣXA (ϕ ⊗ w)] + 2M2 ω ⊕ λx + 1⊕
+ω λp
+∂ω
+where M2 = (u ⊙ Iω )′ ΣdX (u ⊙ Iω ). Furthermore, Propositions 2.2 and B1 prove that:
+12
+
+ω ⊕ λx = (ω ⊙ IK ) λx = (λx ⊙ Iω ) ω
+Re-arranging for ω, we get:
+
+
+
+−1
+1
+v 3 − 1⊕
+ω = (β ⊙ Iω )′ ΣX (β ⊙ Iω ) + M2 (λx ⊙ Iω )
+λ
+p
+2 ω
+
+(28)
+
+with v3 = (β ⊙ Iω )′ [ΣXY − ΣXA (ϕ ⊗ In )] w. The derivations for the Lagrange multipliers are a bit
+more involved and defered to Appendices C and D. Finally, the full solution for the CLARX problem
+can be expressed as the following fixed point problem:
+
+
+
+1  −1
+
+ΣY (v1 + v2 ) − ρl Σ−1
+1n
+w =
+
+Y
+
+ρy
+
+
+
+
+
+
+
+
+
+−1
+
+1 ⊕
+′
+
+
+v 3 − 1 ω λp
+ω = (β ⊙ Iω ) ΣX (β ⊙ Iω ) + M2 (λx ⊙ Iω )
+
+
+2
+
+
+
+
+
+
+−1
+
+
+
+(IVa ⊗ w)′ [ΣAY w − ΣAX (β ⊙ ω)]
+ϕ = (IVa ⊗ w)′ ΣA (IVa ⊗ w)
+
+
+
+
+
+
+−1
+
+′
+
+
+(Iβ ⊙ ω)′ [ΣXY w − ΣXA (ϕ ⊗ w)]
+ β = (Iβ ⊙ ω) ΣX (Iβ ⊙ ω)
+
+(nw − ly 1n )′ (v1 + v2 )
+
+
+
+ρy =
+
+
+nσy2 − ly 1′n ΣY w
+
+
+
+
+
+
+
+ ρ = 1 1′ (v + v ) − ρ 1′ Σ w
+
+1
+2
+y n Y
+l
+
+
+n n
+
+
+
+
+i−1
+h
+
+′
+
+
+
+⊕ ′
+⊕
+
+ω ⊕ M1 − 1⊕
+λ
+=
+M
+Θ
+−
+L
+1
+M
+ω
+
+x
+1
+2
+ω L (v3 − v4 )
+ω
+
+
+
+
+
+′ 
+
+
+1⊕
+(v3 − v4 ) − M2 ω ⊕ λx
+λp = 2M−1
+ω
+1
+
+(29a)
+(29b)
+(29c)
+(29d)
+(29e)
+(29f)
+(29g)
+(29h)
+
+with the following shorthand notations:
+1ω a column vector of ones with the same length and block structure as ω
+
+
+v1 = (ϕ ⊗ In )′ ΣAY + ΣY A (ϕ ⊗ In ) − (ϕ ⊗ In )′ ΣA (ϕ ⊗ In ) w
+
+
+v2 = ΣY X − (ϕ ⊗ In )′ ΣAX (β ⊙ ω)
+v3 = (β ⊙ Iω )′ [ΣXY − ΣXA (ϕ ⊗ In )] w
+v4 = (β ⊙ Iω )′ ΣX (β ⊙ Iω ) ω
+Θ = diag(ϑx )
+
+L = diag(lp )
+′ ⊕
+M1 = 1⊕
+ω 1ω
+M2 = (u ⊙ Iω )′ ΣdX (u ⊙ Iω )
+This problem can be solved using fixed point iteration with initial guesses required for w, ω, and
+either ϕ or β. Equations can be estimated in the same order as shown above. With initial guesses for
+w, ω and ϕ, the first iteration can start at (29d). Four matrices need to be inverted at each iteration
+step and cannot become singular. That said, equations (29c) and (29d) can be reformulated in terms
+of the Moore-Penrose inverses (Penrose (1955); Bjerhammar (1951); Moore (1920)) of the matrices
+(A − A) (IVa ⊗ w) and (X − X) (Iβ ⊙ ω), respectively, which makes them solvable by SVD.
+13
+
+6
+
+Special cases of (C)LARX
+
+The CLARX model has a number of interesting special cases which arise under various simplifying
+assumptions. This section briefly introduces four such models:
+1. LARX : A CLARX model with minimal constraints
+2. LSR: An LVR equivalent of a univariate lead-lag regression
+3. LVMR: An LVR equivalent of a multiple linear regression
+4. LAR: A latent variable autoregressive model (no exogenous inputs)
+
+6.1
+
+LARX: CLARX without the C(onstraints)
+
+(C)LARX models with a latent dependent variable require a constraint on the variance of ỹ to eliminate
+the trivial solution given by w = 0. All other constraints are optional with minor caveats. Setting
+the optional Lagrange multiplier terms from (29) to zero produces:
+
+
+1
+
+(v1 + v2 )
+w = Σ−1
+
+
+
+ρy Y
+
+
+
+
+
+
+
+−1
+
+
+ω = (β ⊙ Iω )′ ΣX (β ⊙ Iω )
+(β ⊙ Iω )′ [ΣXY − ΣXA (ϕ ⊗ In )] w
+
+
+
+
+
+
+
+−1
+ϕ = (IVa ⊗ w)′ ΣA (IVa ⊗ w)
+(IVa ⊗ w)′ [ΣAY w − ΣAX (β ⊙ ω)]
+
+
+
+
+
+
+−1
+
+′
+
+β
+=
+(I
+⊙
+ω)
+Σ
+(I
+⊙
+ω)
+(Iβ ⊙ ω)′ [ΣXY − ΣXA (ϕ ⊗ In )] w
+
+X
+β
+β
+
+
+
+
+
+
+
+w′ (v1 + v2 )
+
+
+ ρy =
+σy2
+
+(30a)
+(30b)
+(30c)
+(30d)
+(30e)
+
+with:
+
+
+v1 = (ϕ ⊗ In )′ ΣAY + ΣY A (ϕ ⊗ In ) − (ϕ ⊗ In )′ ΣA (ϕ ⊗ In ) w
+
+
+v2 = ΣY X − (ϕ ⊗ In )′ ΣAX (β ⊙ ω)
+This specification offers a better intuition about the meaning of the individual coefficient vectors. As
+constraints are removed, the solution for the respective vector reduces to an OLS formula conditional
+on the values of the other vectors. This solution does, however, come with at least two caveats: First
+of all, for any estimate of ỹ given by the LV weight vector ŵ, an equally valid estimate is given by −ŵ.
+Second for each pair of the estimated ω̂j and β̂j , an equally valid estimate is given by k ω̂j and k1 β̂j
+where k is an arbitrary non-zero constant5 . This can, however, be rectified by rescaling the relevant
+vectors after the fact and/or by modifying the fixed point algorithm to ensure that either ωj or βj is
+always normalised (e.g., by enforcing 1′Vj βj = 1 at each iteration step).
+
+6.2
+
+(C)LSR: A Parsimonious Lead-Lag Regression
+
+A key difference between (C)LARX and traditional ARX models lies in how regression coefficients are
+mapped to the observed variables. ARX models always assign a unique response coefficient to each
+variable, whereas (C)LARX models allow some coefficients to enter the equation more than once. In
+other words, (C)LARX models will often be more parsimonious than OLS models defined over the
+same observed variable space.
+5
+
+A ⊗ B = (kA) ⊗
+product.
+
+1
+B
+k
+
+
+
+for any two matrices A, B and non-zero constant k by the properties of the Kronecker
+
+14
+
+The difference is best exemplified by a class of models in which an observed dependent variable y is
+a function of V versions of a single latent explanatory variable x̃ with m proxies. In a time series
+context, the version iterator v becomes a lag iterator τ such that:
+yt = c +
+
+F
+X
+
+βτ x̃t−τ + ϵt
+
+τ =1
+
+(31)
+
+x̃t = Xt ω
+We can call this a (constrained) Latent Shock Regression model, or (C)LSR for short. The LSR
+equation can be written in matrix form as:
+y = c + X (β ⊗ ω) + ϵ
+
+(32)
+
+Here, X has dimensions 1×m, ω has dimensions m×1, and β has dimensions F ×1. The unconstrained
+solution to this problem is given by:
+
+
+−1
+′
+
+(β ⊗ Im )′ ΣXy
+ ω = (β ⊗ Im ) ΣX (β ⊗ Im )
+
+(33a)
+
+
+ β = (I ⊗ ω)′ Σ (I ⊗ ω)−1 (I ⊗ ω)′ Σ
+F
+X
+F
+F
+Xy
+
+(33b)
+
+c = y − X (β ⊗ ω)
+
+(34)
+
+This model has m observed explanatory variables with F lags each. A traditional lead-lag regression
+would require mF response coefficients to estimate the relationship, while LSR only requires F + m
+coefficients: F for the vector β and m for the vector ω. If F is equal to m, the difference becomes
+m2 vs 2m – a substantial reduction in complexity for large values of m. This parsimony is achieved
+by means of a simplifying assumption: In LSR models, all explanatory variables affect the dependent
+with a shared lag profile: the lag profile of x̃, given by β. The weights of the explanatory variables in
+x̃ are time-invariant and given by ω. The resopnse coefficient for lag τ of observed variable i is then
+given by the product of the i’th element of ω and the τ ’th element of β.
+
+6.3
+
+(C)LVMR: Reducing (C)LARX to CCA and OLS
+
+Another interesting subcategory of (C)LARX models is one in which all variables are either non-latent
+or enter the equation exactly once. We can broadly categorise these models as (Constrained) Latent
+Variable Multiple Regression (LVMR) models because of their resemblance to the class of models
+examined in Burnham et al. (1996). These models have two simplifying features compared to the full
+CLARX specification: First of all, there are no autoregressive lags and hence no vector ϕ. Second,
+because each explanatory variable j only has one lag, there is only one element in each βj , so the
+entire vector β can be “scaled away” as long as there are no scaling constraints on ω. As a result, the
+regression formula reduces to:
+Y w = c + Xω + ϵ
+
+(35)
+
+The solution to this problem is given by:
+
+1
+
+
+w = Σ−1
+
+Y ΣY X ω
+
+ρ
+y
+
+
+
+
+
+ω = Σ−1
+X ΣXY w
+
+
+
+
+
+′
+
+
+ ρy = w ΣY X ω
+
+σy2
+
+(36a)
+(36b)
+(36c)
+15
+
+c = Yw − Xω
+
+(37)
+
+LVMR models sit at the cusp between (C)LARX, CCA and traditional least squares regression. First
+of all, equation (36b) represents the least squares solution for a linear regression of ỹ on the individual
+observed variables in X. Semantically, the vector ω could just as well be called β, and whether any
+blocks of ω represent LV weight vectors for some latent variable(s) x̃j is a question of interpretation
+only. As a corollary, LVMR models reduce to standard multiple regression models when ỹ is nonlatent. Furthermore, solving (36) is equivalent to finding the dominant canonical variates for Y and
+X as observed by Dong and Qin (2018). Substituting (36b) into (36a) and setting σy2 = 1, we obtain:
+w=
+
+−1
+Σ−1
+Y ΣY X ΣX ΣXY w
+−1
+w′ Σ−1
+Y ΣY X ΣX ΣXY w
+
+(38)
+
+which is the mathematical formula for canonical correlation analysis.
+
+6.4
+
+(C)LAR: (Constrained) Latent Variable Autoregressive Models
+
+Just like the ARX model subsumes the autoregressive model (AR) as a special case, the (C)LARX
+model subsumes a latent variable autoregressive model which we can refer to as (C)LAR. This class
+of models has been covered relatively well by papers from other disciplines. For example, Dong and
+Qin (2018) considers a similar family of models under the name DiCCA (dynamic inner CCA), while
+Qin (2021) proposes a LaVAR (latent vector autoregression) algorithm for achieving a full canonical
+decomposition of the latent autoregressive structure in Y allowing for interactions. Furthermore,
+first-order LAR models bear a strong resemblance to Min/Max Autocorrelation Factors (MAF) first
+introduced in Switzer and Green (1984) and since popularised in the geosciences, although a more
+detailed comparison with these models left to future research.
+(C)LAR models can be defined by stripping away the exogenous term from equation (16), which
+results in the following formula:
+Y w = c + A (ϕ ⊗ w) + ϵ
+
+(39)
+
+The main use case of this class of models outside of economics of finance is the decomposition of
+multivariate sensor data into time-persistent signals on the one hand, and serially uncorellated white
+noise on the other. In the context of investment management, the same concept can be applied to
+derive trend following investment strategies such as price momentum. If Y contains the returns on
+assets in a fund’s investment opportunity set and Y w represents the return on an investment strategy
+characterised by capital allocation weights w, then the strategy that has the strongest price momentum
+or reversal signal (i.e., maximum absolute correlation between past returns and future returns) is given
+by:
+
+1
+
+
+w = Σ−1
+
+Y (v1 − ρl 1n )
+
+ρ
+y
+
+
+
+
+
+
+
+−1
+
+
+
+ϕ = (IVa ⊗ w)′ ΣA (IVa ⊗ w)
+(IVa ⊗ w)′ ΣAY w
+
+
+
+(nw − ly 1n )′ v1
+
+
+ρ
+=
+
+y
+
+
+nσy2 − ly 1′n ΣY w
+
+
+
+
+
+
+
+
+
+
+ ρl = 1 1′ v1 − ρy 1′ ΣY w
+n
+n
+n
+
+(40a)
+(40b)
+(40c)
+
+(40d)
+
+
+
+with v1 = (ϕ ⊗ In )′ ΣAY + ΣY A (ϕ ⊗ In ) − (ϕ ⊗ In )′ ΣA (ϕ ⊗ In ) w
+16
+
+′
+
+For a strategy with zero-sum weights, the solution for ρy further reduces to ρy = wσv2 1 .
+y
+
+Let us also briefly consider the simplest type of LAR problem, which is a first-order autoregressive
+model for a variance-covariance stationary ỹ of the form ỹt = c + ϕỹt−1 + ϵ with ỹt = Y w and
+ỹt−1 = Aw. In this case the solution for w further reduces to:
+ϕw =
+
+
+1
+−1
+Σ−1
+A ΣAY + ΣY ΣY A w
+2
+
+(41)
+
+−1
+Here, Σ−1
+A ΣAY and ΣY ΣY A are matrices of least squares regression coefficients, e.g., the first column
+−1
+of ΣA ΣAY contains the least squares coefficients from a regression of the first variable in Y on all
+−1
+variables in A. Each vector wi which solves (41) is an eigenvector of Σ−1
+A ΣAY + ΣY ΣY A . 2ϕ is
+the matching eigenvalue, wherein ϕ is the first-order autocorrelation coefficient of ỹ. In other words,
+the dominant eigenvector w1 produces the strongest autocorrelation in ỹ in absolute terms.
+
+In an investment management context, (41) is a formula for constructing momentum and reversal
+strategies based on first-order autocorrelation. Let Y and A represent asset returns for an investment
+opportunity set at times t and t − 1, respectively. Thecapital allocation weights for each strategy
+−1
+are the eigenvectors of the matrix Σ−1
+A ΣAY + ΣY ΣY A . The strategy with the strongest (weakest)
+signal is given by the first (last) eigenvector. The direction of the signal (i.e., momentum vs reversal) is
+determined by the sign of the corresponding eigenvalue (i.e., the sign of the autocorrelation coefficient).
+
+7
+
+Empirical Application: Stock markets and economic activity in
+the US
+
+As a simple example of how (C)LARX models can be used in the real world, let us examine the
+relationship between equity market performance and real economic activity in the United States. A
+good starting point for this analysis is provided by Ball and French (2021) who find that de-trended
+levels of the S&P 500 index have in-sample predictive power over the de-trended levels of real US
+GDP. The best-performing model is found to be one with lags zero to three of the S&P 500 as well
+as two autoregressive terms, reaching an adjusted R-squared of 66.61% for a quarterly data sample
+between Q1 1999 and Q4 2020.
+The theoretical foundation for this relationship is relatively simple: Stock prices reflect discounted
+expectations of future earnings, and earnings are related to economic activity. In practice, however,
+market aggregates and macroeconomic aggregates are designed to measure different things. Companies in the S&P 500 are weighted based on their market capitalisation rather than their relative
+contributions to the real economy, while US GDP is designed to measure all economic activity in
+the US – not just that of the Fortune 500 companies. It stands to reason that the true strength of
+the relationship between stock performance and real economic output would be underestimated by a
+model linking the S&P 500 to US GDP.
+With the (C)LARX methodology, equity market performance and real economic output can both be
+viewed as latent variables and optimised to conform to the chosen functional relationship. The latent
+measure of equity market performance effectively becomes a tracker index for real growth expectations
+in large-cap US stocks, while the latent measure of real economic output is optimised to reflect the
+real economic outoput of the Fortune 500 companies rather than the whole economy.
+The latent measures can be constructed from the same building blocks as their non-latent counterparts,
+in order to gain additional insights about the compositional differences between the S&P 500 and US
+GDP. For the latent equity measure, we can use ten S&P 500 GICS level 1 sector sub-indices6 ; for the
+6
+
+As of 2016, listed real estate (RE) was added as the eleventh GICS level 1 sector of the S&P 500. The RE sector
+is excluded from this study for two reasons: First of all, its data history only starts in Q4 2001 and would reduce the
+sample size from 138 quarterly observations to 90. Second, the RE sector only has a 2.25% weight in the S&P 500 as of
+April 2025 – the second lowest weight after materials at 1.99%.
+
+17
+
+real economic output measure, we can use the five GDP expenditure components. This should reveal
+whether the relationship between the S&P 500 and real US GDP is distorted by differences in sector
+composition, the relative importance of various sources of demand, or both. In principle, this study
+can be performed at higher levels of granularity, such as industries or even single stocks for the equity
+measure and/or itemised national accounts for the real output measure. However, such a detailed
+analysis is left to future research.
+
+7.1
+
+Data and Methodology
+
+The model identified in Ball and French (2021) is used as the basis for this study with three noteworthy
+changes. First of all, performance is measured out of sample using rolling regressions. Exponentially
+decaying sample weights with a half-life of 10 years are used to capture changes in the relationship
+over time.
+Second, percent changes are used instead of de-trended levels. Log-returns are calculated for the S&P
+500 and its sector constituents. Annualised log-percent changes are calculated for US GDP and its
+expenditure components. Revised estimates are used for all economic aggregates following Ball and
+French (2021)’s tentative finding that the link is stronger between equity performance and revised
+GDP numbers as opposed to point-in-time (“vintage”) releases.
+Third, the sample period covered by this paper is Q4 1989 to Q1 2025, capturing the full available
+data history for the relevant S&P 500 sectors at the time of writing, with the COVID lockdown period
+of Q2 and Q3 2020 removed as a statistical outlier. US GDP shows a contraction of 8.2% in Q2 2020
+followed by a 7.5% rebound in Q3 2020 – a -13.8 sigma event and a 12.6 sigma event, respectively,
+based on the standard deviation of quarterly US GDP growth excluding these two quarters.
+A total of four regression models are estimated:
+Baseline OLS/ARX model: Real GDP growth g vs S&P 500 returns r:
+gt = c +
+
+2
+X
+
+ϕt−τ gt−τ +
+
+τ =1
+
+3
+X
+
+βt−τ rt−τ + ϵ
+
+(42)
+
+τ =0
+
+LARX model a): Real GDP growth g vs a Latent measure of market growth expectations, r̃:
+gt = c +
+
+2
+X
+
+ϕt−τ gt−τ +
+
+τ =1
+
+3
+X
+
+βt−τ r̃t−τ + ϵ
+
+(42a)
+
+τ =0
+
+LARX model b): A latent measure of the real economic output of Fortune 500 companies, g̃, vs S&P
+500 returns r:
+2
+3
+X
+X
+g̃t = c +
+ϕt−τ g̃t−τ +
+βt−τ rt−τ + ϵ
+(42b)
+τ =1
+
+τ =0
+
+LARX model c): A latent measure of the real economic output of Fortune 500 companies, g̃, vs a
+Latent measure of market growth expectations, r̃:
+g̃t = c +
+
+2
+X
+
+ϕt−τ g̃t−τ +
+
+τ =1
+
+3
+X
+
+βt−τ r̃t−τ + ϵ
+
+(42c)
+
+τ =0
+
+No constraints are imposed on the latent variables except for the necessary variance constraint on
+g̃ in equations (42b) and (42c). The variance target for g̃ is reverse-engineered to ensure that the
+expenditure weights add up to 1 as in the official GDP number.
+A minimum of 40 degrees of freedom is set as a requirement for producing a forecast. This corredponds
+to 10 years of quarterly data on top of one data point for each estimated coefficient including Lagrange
+multipliers. An additional three data points are lost to the lag operator and one to the percent change
+18
+
+calculation. As a result, forecast coverage starts in Q3 2002 for the baseline model (longest) and in
+Q3 2006 for the model with the all latent variables (shortest).
+Historical data for US GDP and its expenditure components are retrieved from the Economic Database
+of the Federal Reserve Bank of St. Louis (“FRED”). Historical index levels for the S&P 500 and its
+GICS level 1 sector constituents are retrieved from Investing.com. A full data reference can be found
+in Table 1.
+
+7.2
+
+Out-of-Sample Forecasting Performance
+
+Figure 1 plots the rolling out-of-sample (OOS) predictions of the four regression models for the full
+available forecast coverage. Each plot overlays the actual values of the dependent, as well as a naı̈ve
+forecast for the dependent based on a rolling sample mean (used as the benchmark). The grey text
+boxes report each model’s Mean Squared Prediction Error (MSPE) as a percentage of the MSPE of
+the rolling sample mean model, which can be viewed as a type of out-of-sample R-squared metric.
+Baseline model: g vs r
+
+LARX model a): g vs r̃
+
+MSPE: 49.0% of benchmark
+
+MSPE: 34.7% of benchmark
+
+1.0%
+0.0%
+−1.0%
+
+actual
+forecast
+benchmark
+
+−2.0%
+2005
+
+2010
+
+2015
+
+actual
+forecast
+benchmark
+2020
+
+2025
+
+2005
+
+2010
+
+2015
+
+2020
+
+LARX model b): g̃ vs r
+
+LARX model c): g̃ vs r̃
+
+MSPE: 34.3% of benchmark
+
+MSPE: 20.1% of benchmark
+
+2025
+
+2.0%
+0.0%
+−2.0%
+
+actual
+forecast
+benchmark
+
+−4.0%
+2005
+
+2010
+
+2015
+
+actual
+forecast
+benchmark
+2020
+
+2025
+
+2008
+
+2010
+
+2012
+
+2014
+
+2016
+
+2018
+
+2020
+
+2022
+
+2024
+
+Figure 1: Out-of-sample forecasting performance of regression models (42)-(42c)
+The baseline model from Ball and French (2021) (top left) does well despite the design changes
+implemented by this paper. Its MSPE is 51% lower than that of the naı̈ve forecast – reasonably close
+to the reported in-sample adjusted R-squared of 66.61%. This suggests that the baseline model is well
+specified.
+The models with latent variables further improve on these results. A LARX model with a latent
+measure of market growth expectations (top right) produces an MSPE 65.3% below benchmark. A
+LARX model with a latent measure of the real economic output of the S&P 500 (bottom left) prodices
+an MSPE 65.7% below benchmark. A LARX model with latent measures for both economic output
+and market growth expectations (bottom right) performs best with an MSPE 79.9% below benchmark.
+
+7.3
+
+Insights from the Latent Variable Weight Vectors
+
+The relative accuracy of the out-of-sample forecasts suggests that the latent measures capture new
+information about the relationship between stock returns and economic growth. The two latent
+variables contribute equally to the improvement in MSPE, which drops from around 50% to 35%
+of benchmark in both cases. The model with two latent variables yields twice the improvement
+of the single-LV specifications, which suggests that the two latent measures capture complementary
+information. For a deeper understanding of what drives these results, we can look at the LV component
+19
+
+weights of the two latent measures as estimated by LARX model c), which shows the strongest outof-sample performance.
+LARX implied sector composition of r̃
+
+Actual sector composition of S&P 500
+
+100%
+75%
+50%
+25%
+0%
+−25%
+−50%
+−75%
+2010
+En.
+
+2015
+Mat.
+
+2020
+Ind.
+
+2025
+Fin.
+
+2005
+
+HC
+
+Disc.
+
+2010
+
+2015
+
+2020
+
+Stapl.
+
+Telco
+
+IT
+
+2025
+Util.
+
+Figure 2: Sector composition: Latent Measure of Market Growth Expectations vs the S&P 500
+Figure 2 plots the evolution of the sector weights in the latent measure of market growth expectations
+(left) against the actual sector weights of the S&P 500 (right). Positive weights in the LV weight
+vector are scaled to 100%. Sector weights of the S&P 500 are approximated using a rolling regression
+of S&P 500 returns on the coincident returns of the GICS level 1 sector indices.
+At least two straightforward observations can be made here. First of all, sector rotations are important
+for gauging growth expectations in the equity market. The latent measure assigns negative weights to
+various sectors throughout the study period, with between 50% and 80% of its positive sector weights
+counter-balanced by negative weights in other sectors. This is not something that a long only, capital
+weighted index like the S&P 500 is designed to capture.
+Second, the composition of the latent equity measure seems to fluctuate strongly over time. It is
+unlikely that all of these fluctuations have straightforward economic interpretations, but some of them
+may be related to changes in the relative value added to the economy by different sectors, while
+others may be explained by structural trends or events. For example, the healthcare sector (“HC”)
+has a positive weight in the latent measure until around 2010, which marks the introduction of the
+Affordable Care Act (“Obamacare”), and a negative weight thereafter.
+LARX implied expenditure composition of g̃
+
+Actual expenditure composition of US GDP
+
+150%
+
+100%
+
+50%
+
+0%
+
+−50%
+2010
+
+2015
+
+2020
+Cons.
+
+2025
+Inv.
+
+2005
+Govt.
+
+2010
+Exp.
+
+2015
+
+2020
+
+2025
+
+Imp.
+
+Figure 3: Expenditure composition: Latent Economic Activity Measure vs US GDP
+Figure 3 plots the evolution of the expenditure weights in the latent measure of the real economic
+output of S&P 500 companies (left) against the evolution of the expenditure weights in the official
+20
+
+measure of real US GDP (right).
+Somewhat expectedly, consumer spending (“Cons.”) is the most relevant component for both the
+US stock market and US GDP. The role of private investment (“Inv.”) is largely similar in the two
+measures.
+At the same time, there is a strong difference in the role of government spending (Govt.). In the
+latent measure, stronger government spending, all else being equal, tends to follow after periods of
+weaker equity market performance and vice versa, outside of the immediate aftermath of the 2008
+crisis. There are at least two alternative interpretations for this result: On the one hand, the US
+fiscal authorities might view equity market strength as a sign of a stronger economy and pare back
+discretionary spending in response; On the other hand, equity investors might view government spending as a positive in crisis periods and a negative otherwise. Either way, both interpretations support
+the Kaynesian argument for government spending as a counter-cyclical buffer, and the effect has become more pronounced after the COVID pandemic, perhaps owing to a sharp rise in the cost of US
+government debt since 2021.
+Lastly, international trade plays an important and complex role in both the real economy and the
+equity market. Reinbold and Wen (2019) offers a brief primer on the history of the US trade balance
+across the value chain at different stages of industrialisation. From an accounting perspective, imports
+(Imp.) subtract from GDP while exports (Exp.) add to it. However, in modern times US goods are
+often produced abroad, which means that they need to be imported for domestic consumption but
+don’t need to be exported to be sold elsewhere. This should create a weaker link between stock returns
+and exports on the one hand, and a positive link between stock returns and imports on the other.
+The (C)LARX model is able to capture this to some degree by assigning a positive weight to imports
+and a time-varying weight to exports, in contrast to the official GDP methodology.
+
+8
+
+Concluding Remarks
+
+This paper proposes a new latent variable regression (LVR) framework for finance and economics which
+can be viewed as an off-shoot of Canonical Correlation Analysis. A fixed point solution is derived for
+a family of linear LVR models called (C)LARX – a constrained LVR implementation of the traditional
+ARX methodology. A minor contribution is also made to the field of matrix calculus: A new blockwise
+direct sum operator is introduced and applied to solve a class of Lagrangian optimisation problems
+with piecemeal constraints on the target coefficient vector.
+In a stylised empirical application, (C)LARX models are used to examine how well the stock market predicts real economic activity in the United States. By “synthesizing” latent measures for equity
+market performance and real economic output, (C)LARX models outperform the baseline OLS specification out of sample and offer novel analytical insights about the relationship, including the importance
+of sector rotations in gauging investor growth expectations, as well as the complex interplay between
+stock market returns and concepts like government spending and international trade.
+(C)LARX models have many more potential use cases in economics and finance. Although few variables in our field are traditionally thought of as being latent, their estimation methodologies may not
+always be fit for purpose in a given research context, and their measurement accuracy can sometimes
+be called into question. Consider, for example, diffusion indices of business activity (e.g., Owens
+and Sarte (2005)), surveys of consumer sentiment (e.g., Curtin et al. (2000)), composite indicators
+of financial stress (e.g., Hollo et al. (2012)), or various rules of thumb in investment management
+such as holding a 60/40 allocation of stocks and bonds in lieu of a mean-variance efficient portfolio
+(e.g., Ambachtsheer (1987)) or “buying past winners and selling past losers” as a means of capturing
+asset price momentum (e.g., Jegadeesh and Titman (1993)). (C)LARX and other LVR models can be
+used to improve the accuracy of our approximations for these variables based on economic theories
+describing the relationships between them.
+Much room is left for future methodological research as well. One important topic not covered in this
+
+21
+
+paper is that of statistical significance (e.g., see Bagozzi et al. (1981)) and feature selection. Furthermore, (C)LARX models can be modified in much the same way as traditional ARX models, including
+moving average errors and/or conditional heteroskedasticity via maximum likelihood estimation, various forms of coefficient regularisation such as LASSO, Ridge or Elastic Net (e.g., see Vinod (1976)),
+and various covariance adjustment techniques such as Generalised Least Squares (e.g., Aitken (1936))
+and portfolio-style covariance shrinkage (e.g., Ledoit and Wolf (2020)). Non-linear LVR models can
+also be developed to address more complex relationships and concepts, such as functional dependencies
+involving volatility and valuation ratios.
+To conclude, LVR models like (C)LARX can be viewed as a rather natural extension of traditional regression analysis. At the same time, an effective application of these models requires a slight paradigm
+shift on the part of the researcher in interpreting of both theory and data. This may pose a conceptual
+challenge, but it also creates a wide range of opportunities for future empirical and methodological
+work.
+
+References
+James H. Stock and Francesco Trebbi. Retrospectives: Who invented instrumental variable regression?
+Journal of Economic Perspectives, 17(3):177–194, 2003.
+Leonard E. Baum and Ted Petrie. Statistical inference for probabilistic functions of finite state markov
+chains. The Annals of Mathematical Statistics, 37(6):1554–1563, 1966. ISSN 00034851. URL
+http://www.jstor.org/stable/2238772.
+H. Hotelling. Relations between two sets of variates. Biometrika, 28(3/4):321–377, 1936. ISSN
+00063444. URL http://www.jstor.org/stable/2333955.
+Herman Wold. Soft modelling: the basic design and some extensions. Systems under indirect observation, Part II, pages 36–37, 1982.
+Herman Wold. Soft modelling by latent variables: The non-linear iterative partial least squares (nipals)
+approach. Journal of Applied Probability, 12(S1):117–142, 1975. doi: 10.1017/S0021900200047604.
+Karl Pearson. Liii. on lines and planes of closest fit to systems of points in space. The London,
+Edinburgh, and Dublin Philosophical Magazine and Journal of Science, 2(11):559–572, 1901. doi:
+10.1080/14786440109462720. URL https://doi.org/10.1080/14786440109462720.
+H. Hotelling. Analysis of a complex of statistical variables into principal components. Journal of
+Educational Psychology, 24(6):417–441, ”September” 1933. ISSN 0022-0663. doi: 10.1037/h0071325.
+URL http://dx.doi.org/10.1037/h0071325.
+Jushan Bai and Serena Ng. Evaluating latent and observed factors in macroeconomics and finance.
+Journal of Econometrics, 131(1):507–537, 2006. ISSN 0304-4076. doi: 10.1016/j.jeconom.2005.01.
+015. URL https://www.sciencedirect.com/science/article/pii/S0304407605000205.
+Seung C Ahn, Stephan Dieckmann, and M Fabricio Perez. Exploring common factors in the term
+structure of credit spreads: the use of canonical correlations. Available at SSRN 984245, 2012.
+doi: http://dx.doi.org/10.2139/ssrn.984245. URL https://papers.ssrn.com/sol3/papers.cfm?
+abstract_id=984245.
+H. D. Vinod. Canonical ridge and econometrics of joint production. Journal of Econometrics, 4
+(2):147–166, 1976. ISSN 0304-4076. doi: 10.1016/0304-4076(76)90010-5. URL https://www.
+sciencedirect.com/science/article/pii/0304407676900105.
+H. D. Vinod. Econometrics of joint production. Econometrica, 36(2):322–336, 1968. ISSN 00129682,
+14680262. URL http://www.jstor.org/stable/1907492.
+
+22
+
+Alison J. Burnham, Roman Viveros, and John F. MacGregor.
+Frameworks for latent variable multivariate regression.
+Journal of Chemometrics, 10(1):31–45, 1996.
+doi:
+10.1002/(SICI)1099-128X(199601)10:1⟨31::AID-CEM398⟩3.0.CO;2-1.
+URL https:
+//analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%
+291099-128X%28199601%2910%3A1%3C31%3A%3AAID-CEM398%3E3.0.CO%3B2-1.
+Alison J. Burnham, Roman Viveros, and John F. MacGregor. Latent variable multivariate regression
+modeling. Chemometrics and Intelligent Laboratory Systems, 48(2):167–180, 1999. ISSN 0169-7439.
+doi: 10.1016/S0169-7439(99)00018-0. URL https://www.sciencedirect.com/science/article/
+pii/S0169743999000180.
+Li Wang, Lei-hong Zhang, Zhaojun Bai, and Ren-Cang Li. Orthogonal canonical correlation analysis
+and applications. Optimization Methods and Software, 35(4):787–807, 2020. doi: 10.1080/10556788.
+2019.1700257. URL https://doi.org/10.1080/10556788.2019.1700257.
+Liang Dai, Guodong Du, Jia Zhang, Candong Li, Rong Wei, and Shaozi Li. Joint multilabel
+classification and feature selection based on deep canonical correlation analysis. Concurrency
+and Computation: Practice and Experience, 32(22):e5864, 2020. doi: 10.1002/cpe.5864. URL
+https://onlinelibrary.wiley.com/doi/abs/10.1002/cpe.5864.
+Steven Van Vaerenbergh, Ignacio Santamaria, Victor Elvira, and Matteo Salvatori. Pattern localization in time series through signal-to-model alignment in latent space. In 2018 IEEE International
+Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 2711–2715, 2018. doi:
+10.1109/ICASSP.2018.8461890.
+Eric C. Chi, Genevera I. Allen, Hua Zhou, Omid Kohannim, Kenneth Lange, and Paul M. Thompson. Imaging genetics via sparse canonical correlation analysis. In 2013 IEEE 10th International
+Symposium on Biomedical Imaging, pages 740–743, ”April” 2013. doi: 10.1109/ISBI.2013.6556581.
+URL https://ieeexplore.ieee.org/abstract/document/6556581.
+Viivi Uurtio, João M. Monteiro, Jaz Kandola, John Shawe-Taylor, Delmiro Fernandez-Reyes, and
+Juho Rousu. A tutorial on canonical correlation methods. ACM Comput. Surv., 50(6), ”November”
+2017. ISSN 0360-0300. doi: 10.1145/3136624. URL https://doi.org/10.1145/3136624.
+Yining Dong and S. Joe Qin. Dynamic latent variable analytics for process operations and
+control. Computers & Chemical Engineering, 114:69–80, 2018. ISSN 0098-1354. doi: 10.
+1016/j.compchemeng.2017.10.029. URL https://www.sciencedirect.com/science/article/
+pii/S0098135417303848. FOCAPO/CPC 2017.
+S. Joe Qin. Latent vector autoregressive modeling for reduced dimensional dynamic feature extraction
+and prediction. In 2021 60th IEEE Conference on Decision and Control (CDC), pages 3689–3694,
+2021. doi: 10.1109/CDC45484.2021.9683255.
+C. G. Khatri and C. Radhakrishna Rao. Solutions to some functional equations and their applications
+to characterization of probability distributions. Sankhyā: The Indian Journal of Statistics, Series A (1961-2002), 30(2):167–180, 1968. ISSN 0581572X. URL http://www.jstor.org/stable/
+25049527.
+Eugene F. Fama and Kenneth R. French. Common risk factors in the returns on stocks and bonds.
+Journal of Financial Economics, 33(1):3–56, 1993. ISSN 0304-405X. doi: 10.1016/0304-405X(93)
+90023-5. URL https://www.sciencedirect.com/science/article/pii/0304405X93900235.
+Harry M. Markowitz. Mean—Variance Analysis, pages 194–198. Palgrave Macmillan UK, London,
+1989. ISBN 978-1-349-20213-3. doi: 10.1007/978-1-349-20213-3 21. URL https://doi.org/10.
+1007/978-1-349-20213-3_21.
+Bo Xu and Qinqin Zhu. An efficient dynamic auto-regressive cca for time series imputation with
+irregular sampling. IEEE Transactions on Automation Science and Engineering, 21(1):442–451,
+2024. doi: 10.1109/TASE.2022.3217451.
+23
+
+R. Penrose. A generalized inverse for matrices. Mathematical Proceedings of the Cambridge Philosophical Society, 51(3):406–413, 1955. doi: 10.1017/S0305004100030401.
+Arne Bjerhammar. Application of calculus of matrices to method of least squares : with special
+reference to geodetic calculations. Kungl. Tekniska högskolans handlingar = Transactions of the
+Royal Institute of Technology, Stockholm, Sweden. Elanders Boktryckeri Aktiebolag, 1951. URL
+https://cir.nii.ac.jp/crid/1130000798238614528.
+E. H. Moore. On the reciprocal of the general algebraic matrix. Bulletin of the American Mathematical
+Society, 26:294–295, 1920. URL https://cir.nii.ac.jp/crid/1573387450082342272.
+P Switzer and A Green. Min/max autocorrelation factors for multivariate spatial imagery. Technical
+report, Dept. of Statistics, Stanford University, 1984.
+Christopher Ball and Jack French. Exploring what stock markets tell us about gdp in theory and practice. Research in Economics, 75(4):330–344, 2021. ISSN 1090-9443. doi: https:
+//doi.org/10.1016/j.rie.2021.09.002. URL https://www.sciencedirect.com/science/article/
+pii/S1090944321000399.
+Brian Reinbold and Yi Wen. Historical u.s. trade deficits. Economic Synopses, 2019(13), 2019. doi:
+10.20955/es.2019.13.
+Raymond E. Owens and Pierre-Daniel Sarte. How well do diffusion indexes capture business cycles?
+a spectral analysis. FRB Richmond Economic Quarterly, 91(4):23–42, 2005. URL https://ssrn.
+com/abstract=2185567.
+Richard Curtin, Stanley Presser, and Eleanor Singer. The effects of response rate changes on the index
+of consumer sentiment*. Public Opinion Quarterly, 64(4):413–428, 02 2000. ISSN 0033-362X. doi:
+10.1086/318638. URL https://doi.org/10.1086/318638.
+Daniel Hollo, Manfred Kremer, and Marco Lo Duca. Ciss - a composite indicator of systemic stress
+in the financial system. ECB Working Paper, (1426), 2012. doi: 10.2139/ssrn.2018792. URL
+https://ssrn.com/abstract=2018792.
+Keith P. Ambachtsheer. Pension fund asset allocation: In defense of a 60/40 equity/debt asset mix.
+Financial Analysts Journal, 43(5):14–24, 1987. doi: 10.2469/faj.v43.n5.14. URL https://doi.
+org/10.2469/faj.v43.n5.14.
+Narasimhan Jegadeesh and Sheridan Titman. Returns to Buying Winners and Selling Losers: Implications for Stock Market Efficiency. Journal of Finance, 48(1):65–91, ”March” 1993. URL
+https://ideas.repec.org/a/bla/jfinan/v48y1993i1p65-91.html.
+Richard P. Bagozzi, Claes Fornell, and David F. Larcker. Canonical correlation analysis as a special
+case of a structural relations model. Multivariate Behavioral Research, 16(4):437–454, 1981. doi:
+10.1207/s15327906mbr1604\ 2. PMID: 26812673.
+A. C. Aitken. Iv.—on least squares and linear combination of observations. Proceedings of the Royal
+Society of Edinburgh, 55:42–48, 1936. doi: 10.1017/S0370164600014346.
+Olivier Ledoit and Michael Wolf. The power of (non-)linear shrinking: A review and guide to covariance
+matrix estimation. Journal of Financial Econometrics, 20(1):187–218, 06 2020. ISSN 1479-8409.
+doi: 10.1093/jjfinec/nbaa007. URL https://doi.org/10.1093/jjfinec/nbaa007.
+
+A
+
+Commutativity of the blockwise direct sum operator
+
+Proposition A1. Let S be a set of all matrix sequences of length k, and let the sequence ⟨A⟩ ≡
+⟨Ai |1 ≤ i ≤ k⟩ be an element in S. Let the matrix A⊕ represent the direct sum over the elements in
+⟨A⟩. For any function f : S → S, if f (⟨A⟩) can be expressed as a sequence ⟨Mi Ai ⟩ ≡ ⟨Mi Ai |1 ≤ i ≤ k⟩
+24
+
+⊕
+for some arbitrary sequence of matrices ⟨Mi |1 ≤ i ≤ k⟩, then f (⟨A⟩)⊕
+v = [f (⟨Av ⟩)]v . If f (⟨A⟩)
+can be expressed as a sequence ⟨A
+ i Mi ⟩⊕≡⟨Ai Mi |1 ≤ i ≤ k⟩ for an arbitrary sequence of matrices
+⟨Mi |1 ≤ i ≤ k⟩, then f (⟨A⟩)⊕
+=
+f Ah
+.
+h
+h
+
+Proof. For a block matrix A, take ⟨A⟩ to denote the sequence of the blocks in A. For a sequence of
+matrices ⟨A⟩, denote its i’th element by ⟨A⟩i . For the case of left-multiplication we then have:
+M1 A1 ,
+0,
+···
+
+0,
+M
+A
+,
+·
+··
+2 2
+
+⊕
+=
+=
+⟨M
+A
+⟩
+f (⟨A⟩)⊕
+
+i
+i
+.
+.
+..
+v
+v
+..
+..
+
+.
+0,
+0,
+···
+
+
+
+
+0
+0
+..
+.
+
+
+
+
+
+
+Mk Ak
+
+
+M1 ⟨A⊕
+v ⟩1
+ M2 ⟨A⊕
+
+
+
+
+v ⟩2 
+
+⊕
+⊕
+Av
+=
+M
+A
+|1
+≤
+i
+≤
+k
+=
+
+=
+i
+.
+v
+v
+i
+v
+..
+
+
+
+
+
+
+f
+
+Mk ⟨A⊕
+v ⟩k
+
+  
+M1 A1 , 0, · · · , 0
+M1 A1 ,
+0,
+···
+ M2 0, A2 , · · · , 0  
+0,
+M2 A2 , · · ·
+
+ 
+=
+=
+..
+..
+..
+..
+
+ 
+.
+.
+.
+.
+
+0,
+0,
+···
+Mk 0, 0, · · · , Ak
+
+
+0
+0
+..
+.
+
+
+
+
+⊕
+ = f (⟨A⟩)v
+
+
+Mk Ak
+
+For the case of right-multiplication we have:
+
+
+A1 M1
+0
+···
+
+0
+A
+M
+···
+2
+2
+
+⊕
+f (⟨A⟩)⊕
+..
+..
+..
+h = ⟨Ai Mi ⟩h = 
+
+.
+.
+.
+0
+0
+···
+
+
+f
+
+A⊕
+h
+
+
+h
+
+=
+
+
+
+  
+A1
+ 0
+  
+=   .  M1
+  .. 
+0
+
+A⊕
+h i Mi |1 ≤ i ≤ k
+
+
+
+0
+A2 
+ 
+ ..  M2 · · ·
+ . 
+0
+
+
+v
+
+=
+
+
+
+0
+0
+..
+.
+
+
+
+
+
+
+
+Ak Mk
+
+⊕
+⟨A⊕
+v ⟩1 M1 ⟨Av ⟩2 M2 · · ·
+
+⟨A⊕
+v ⟩k Mk
+
+ 
+
+A1 M1
+0
+···
+0
+ 
+0
+0
+A
+M
+·
+··
+2
+2
+ 
+ 
+ ..  Mk  = 
+..
+..
+.
+..
+ 
+ . 
+.
+.
+0
+0
+···
+Ak
+
+
+0
+0
+..
+.
+
+
+
+=
+
+
+
+
+=
+
+
+Ak Mk
+
+= f (⟨A⟩)⊕
+h
+
+B
+
+Blockwise Kronecker Product Factorisation for Vectors
+
+Proposition B1. Let a and b be two column vectors, each comprised of k row blocks of arbitrary
+lengths. The blockwise Kronecker product a ⊙ b can be factorised as a ⊙ b = (a ⊙ Ib ) b = (Ia ⊙ b) a,
+where Ib and Ia are identity matrices with the same number of rows and row block structure as b and
+a, respectively.
+
+
+Proof. Let the vector a have dimensions M × 1 and ⟨a⟩ ≡
+ai |1 ≤ i ≤ k be the sequence of
+mi ×1
+P
+vectors which represent the row blocks in a such that ki=1 mi = M . Similarly, let the vector b have
+25
+
+
+
+
+dimensions N × 1 and the sequence of vectors ⟨b⟩ ≡
+P
+such that ki=1 ni = N .
+
+bi |1 ≤ i ≤ k
+ni ×1
+
+represent the row blocks in b
+
+The blockwise Kronecker product a ⊙ b can then be defined as:
+
+a 1 ⊗ b1
+ a2 ⊗ b2 
+
+
+a⊙b=
+
+..
+
+
+.
+
+
+ak ⊗ bk
+Note that by the properties of the Kronecker product the following holds for any two matrices A and
+B:
+A ⊗ B = (A ⊗ In ) (Ip ⊗ B) = (Im ⊗ B) (A ⊗ Iq )
+
+m×p
+
+n×q
+
+(43)
+
+In the special case of a Kronecker product between two vectors, p and q reduce to 1 and the identity
+matrices Ip and Iq become 1 by association. As a result, for any given Kronecker product ai ⊗ bi , the
+following holds:
+ai ⊗ bi = (ai ⊗ Ip ) bi = (Im ⊗ bi ) ai
+mi ×1
+ni ×1
+
+(44)
+
+This allows us to rewrite the blockwise Kronecker product a ⊙ b in two alternative ways:
+
+(a1 ⊗ In1 ) b1
+ (a2 ⊗ In ) b2 
+2
+
+
+a⊙b=
+
+..
+
+
+.
+
+
+(45a)
+
+(ak ⊗ Ink ) bk
+
+(Im1 ⊗ b1 ) a1
+ (Im ⊗ b2 ) a2 
+2
+
+
+a⊙b=
+
+..
+
+
+.
+
+
+(45b)
+
+(Imk ⊗ bk ) ak
+Define a sequence of matrices ⟨ai ⊗ Ini |1 ≤ i ≤ k⟩, or ⟨ai ⊗ Ini ⟩ for short, and another sequence
+⟨Imi ⊗ bi |1 ≤ i ≤ k⟩ ≡ ⟨Imi ⊗ bi ⟩. We can then rewrite (45a) and (45b) using the blockwise direct
+sum operator introduced in Section 2:
+a ⊙ b = ⟨ai ⊗ Ini ⟩⊕ b
+
+(46a)
+
+a ⊙ b = ⟨Imi ⊗ bi ⟩⊕ a
+
+(46b)
+
+It then remains to show that ⟨ai ⊗ Ini ⟩⊕ and ⟨Imi ⊗ bi ⟩⊕ can be written as a⊙Ib and Ia ⊙b, respectively.
+This can be done with the help of Proposition A1.
+First of all, consider the sequences of identity matrices ⟨Imi ⟩ ≡ ⟨Imi |1 ≤ i ≤ k⟩ and ⟨Ini ⟩ ≡ ⟨Ini |1 ≤ i ≤ k⟩
+on a standalone basis. The sequences ⟨Imi ⊗ bi ⟩ and ⟨ai ⊗ Ini ⟩ can then be expressed as functions
+f : S → S and g : S → S where S represents the set of all matrix sequences of length k. such that:
+f (⟨Imi ⟩) = ⟨Imi ⟩i ⊗ ⟨b⟩i |1 ≤ i ≤ k ≡ ⟨Imi ⊗ bi |1 ≤ i ≤ k⟩ ≡ ⟨Imi ⊗ bi ⟩
+26
+
+g (⟨Ini ⟩) = ⟨a⟩i ⊗ ⟨Ini ⟩i |1 ≤ i ≤ k ≡ ⟨ai ⊗ Ini |1 ≤ i ≤ k⟩ ≡ ⟨ai ⊗ Ini ⟩
+Proposition A1 applies because we can express ⟨ai ⊗ Ini ⟩ and ⟨Imi ⊗ bi ⟩ as left-multiplications over
+the sequences of identity matrcies ⟨Imi ⟩ and ⟨Ini ⟩:
+⟨Imi ⊗ bi ⟩ = ⟨(Imi ⊗ bi ) Imi ⟩
+⟨ai ⊗ Ini ⟩ = ⟨(ai ⊗ Ini ) Ini ⟩
+It then follows that:
+
+f (⟨Imi ⟩)⊕
+v = f
+
+⟨Imi ⟩⊕
+v
+
+
+g (⟨Ini ⟩)⊕
+v = g
+
+⟨Ini ⟩⊕
+v
+
+
+v
+
+
+v
+
+Next, note that ⟨Imi ⟩⊕
+v produces an identity matrix of size M with a row block structure of a, while
+⊕
+⟨Ini ⟩v produces an identity matrix of size N with a row block structure of b. In other words, ⟨Imi ⟩⊕
+v =
+=
+I
+.
+This
+means:
+Ia and ⟨Imi ⟩⊕
+b
+v
+
+f
+
+⟨Imi ⟩⊕
+v
+
+
+
+
+g
+
+⟨Ini ⟩⊕
+v
+
+
+
+v
+
+= [f (⟨Ia ⟩)]v = [⟨⟨Ia ⟩i ⊗ bi ⟩]v
+
+v
+
+= [g (⟨Ib ⟩)]v = [⟨ai ⊗ ⟨Ib ⟩i ⟩]v
+
+Lastly, we note that the matrix representation of a pairwise Kronecker product over two sequences of
+matrices is the same as a blockwise Kronecker product if the sequences represent matrix blocks along
+the same dimension. For example, [⟨ai ⊗ ⟨Ib ⟩i ⟩]v = a ⊙ Ib because ai and ⟨Ib ⟩i are row blocks of a
+and Ib , respectively.
+Putting all the steps together we have:
+
+C
+
+a ⊙ b = ⟨ai ⊗ Ini ⟩⊕ b =
+
+
+
+a ⊙ b = ⟨Imi ⊗ bi ⟩⊕ a =
+
+
+
+ai ⊗ ⟨Ini ⟩⊕
+v i
+
+
+
+⟨Imi ⟩⊕
+v i ⊗ bi
+
+
+
+v
+
+b = [⟨ai ⊗ ⟨Ib ⟩i ⟩]v b = (a ⊙ Ib ) b
+
+(47)
+
+a = [⟨⟨Ib ⟩i ⊗ b⟩]v a = (Ia ⊙ b) a
+
+(48)
+
+v
+
+Derivation: Lagrange Multipliers for the Dependent
+
+Recalling that ρy = (1 + λy ) and ρl = λ2l , rewrite equation (26) as:
+ρy ΣY w = v1 + v2 − ρl 1n
+
+(49)
+
+To solve for ρl , pre-multiply both sides of (49) by 1′n and re-arrange:
+ρy 1′n ΣY w = 1′n (v1 + v2 ) − nρl
+nρl = 1′n (v1 + v2 ) − ρy 1′n ΣY w
+Dividing both sides by n produces:
+ρl =
+
+1 ′
+1
+1n (v1 + v2 ) − ρy 1′n ΣY w
+n
+n
+
+(50)
+27
+
+We can find an alternative solution for ρl by pre-multiplying both sides of (49) with w′ and recalling
+w′ ΣY w = σy2 and w′ 1n = ly :
+ρy σy2 = w′ (v1 + v2 ) − ρl ly
+ρl ly = w′ (v1 + v2 ) − ρy σy2
+dividing both sides by ly we get:
+σy2
+1 ′
+ρl = w (v1 + v2 ) − ρy
+ly
+ly
+
+(51)
+
+This alternative solution is not very practical because it does not allow for the case of ly = 0. However,
+we can use it in conjunction with (50) to eliminate ρl and solve for ρy :
+σy2
+1 ′
+1
+1
+1n (v1 + v2 ) − ρy 1′n ΣY w = w′ (v1 + v2 ) − ρy
+n
+n
+ly
+ly
+σy2
+1
+1
+1
+ρy − ρy 1′n ΣY w = w′ (v1 + v2 ) − 1′n (v1 + v2 )
+ly
+n
+ly
+n
+ρy
+
+nσy2 − ly 1′n ΣY w
+(nw − ly 1n )′ (v1 + v2 )
+=
+nly
+nly
+
+Rearranging for ρy we get:
+
+ρy =
+
+(nw − ly 1n )′ (v1 + v2 )
+nσy2 − ly 1′n ΣY w
+
+D
+
+Derivation: Lagrange Multipliers for the Explanatory
+
+(52)
+
+Start from the first-order condition for ω. Expressing in terms of λp , we get:
+′ d
+⊕
+1⊕
+ω λp = 2v3 − 2v4 − 2 (u ⊙ Iω ) ΣX (u ⊙ Iω ) ω λx
+
+(53)
+
+Define the following shorthand notations for convenience:
+ 2
+σx,1 , 0, · · ·
+ 0, σ 2 , · · ·
+x,2
+
+Θ = diag(ϑx ) =  .
+..
+..
+K×K
+ ..
+.
+.
+0,
+0, · · ·
+
+
+m1 , 0, · · ·
+
+′ ⊕  0, m2 , · · ·
+M1 = 1⊕
+..
+..
+ω 1ω =  ..
+ .
+.
+K×K
+.
+0,
+0, · · ·
+
+
+lp,1 , 0, · · ·
+
+ 0, lp,2 , · · ·
+
+
+ , L = diag(lp ) =  ..
+..
+..
+ K×K
+ .
+.
+.
+2
+0,
+0, · · ·
+σx,K
+0
+0
+..
+.
+
+
+
+
+0
+0 
+
+..  ,
+. 
+
+
+0
+0 
+
+..  ,
+. 
+lp,K
+
+M2 = (u ⊙ Iω )′ ΣdX (u ⊙ Iω )
+K×K
+
+mK
+
+A system of two vector equations, each with K rows and K unknowns, is produced by pre-multiplying
+′
+′
+the first-order condition for ω with (ω ⊕ ) and (1⊕
+ω ) , respectively:
+28
+
+
+
+⊕ ′
+(v3 − v4 ) − 2Θλx
+ Lλp = 2 ω
+
+
+(54a)
+
+′
+
+⊕ ′
+⊕
+M1 λp = 2 1⊕
+ω (v3 − v4 ) − 2 1ω M2 ω λx
+
+(54b)
+
+Pre-multiplying 54a and 54b by L−1 and M−1
+1 , respectively, we get:
+
+′
+−1
+ω ⊕ (v3 − v4 ) − 2L−1 Θλx
+ λp = 2L
+
+
+(55a)
+
+′
+′
+−1
+⊕
+λp = 2M−1
+1⊕
+1⊕
+ω (v3 − v4 ) − 2M1
+ω M2 ω λx
+1
+
+(55b)
+
+The solution for λp given by 55b is more practical because 55a does not allow for the case of zero-sum
+weights (zeros on the diagonal of L would make it uninvertible).
+The solution for λx can be derived by setting the right-hand side of 55a equal to the right-hand side
+of 55b:
+′
+′
+′
+−1
+⊕
+2L−1 ω ⊕ (v3 − v4 ) − 2L−1 Θλx = 2M1−1 1⊕
+1⊕
+ω (v3 − v4 ) − 2M1
+ω M2 ω λx
+We can pre-multiply both sides by M1 L to avoid problems with inverting L in the presence of zero-sum
+weight constraints (note that M1 L = LM1 because both are diagonal):
+′
+′
+
+⊕ ′
+⊕
+2M1 ω ⊕ (v3 − v4 ) − 2M1 Θλx = 2L 1⊕
+ω (v3 − v4 ) − 2L 1ω M2 ω λx
+Re-arranging for λx we get:
+h
+i−1
+′
+′
+⊕
+λx = M1 Θ − L 1⊕
+M
+ω
+ω ⊕ M1 − 1⊕
+2
+ω
+ω L (v3 − v4 )
+
+E
+
+(56)
+
+Data reference
+Table 1: Data series used in the empirical study
+
+Dataset
+
+Source
+
+Ticker1
+
+Frequency
+
+History start
+
+Real GDP
+Personal Consumption Expenditure (Cons.)
+Gross Private Domestic Investment (Inv.)
+Government Consumption and Investment (Govt.)
+Exports of Goods and Services (Exp.)
+Imports of Goods and Services (Imp.)
+S&P 500
+Energy (En.)
+Materials (Mat.)
+Industrials (Ind.)
+Financials (Fin.)
+Healthcare (HC)
+Consumer Discretionary (Disc.)
+Consumer Staples (Stapl.)
+Communication (Telco)
+Technology (IT)
+Utilities (Util.)
+
+U.S. Bureau of Economic Analysis
+U.S. Bureau of Economic Analysis
+U.S. Bureau of Economic Analysis
+U.S. Bureau of Economic Analysis
+U.S. Bureau of Economic Analysis
+U.S. Bureau of Economic Analysis
+Investing.com
+Investing.com
+Investing.com
+Investing.com
+Investing.com
+Investing.com
+Investing.com
+Investing.com
+Investing.com
+Investing.com
+Investing.com
+
+GDPC1
+PCECC96
+GPDIC1
+GCEC1
+EXPGSC1
+IMPGSC1
+US500
+SPNY
+SPLRCM
+SPLRCI
+SPSY
+SPXHC
+SPLRCD
+SPLRCS
+SPLRCL
+SPLRCT
+SPLRCU
+
+Quarterly
+Quarterly
+Quarterly
+Quarterly
+Quarterly
+Quarterly
+Monthly
+Monthly
+Monthly
+Monthly
+Monthly
+Monthly
+Monthly
+Monthly
+Monthly
+Monthly
+Monthly
+
+1947Q1
+1947Q1
+1947Q1
+1947Q1
+1947Q1
+1947Q1
+1989-10
+1989-10
+1989-10
+1989-10
+1989-10
+1989-10
+1989-10
+1989-10
+1989-10
+1989-10
+1989-10
+
+1 Data for U.S. GDP and its individual expenditure components was retrieved from the St. Louis Federal Reserve economic database
+
+(FRED) on 25 April 2025. The corresponding tickers are identifiers for the FRED database. Data for the S&P 500 and its sector
+sub-indices was retrieved directly from Investing.com on 25 April 2025 using the tickers above.
+
+29
+
+
