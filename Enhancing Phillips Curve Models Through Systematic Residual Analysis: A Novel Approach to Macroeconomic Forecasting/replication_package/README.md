@@ -4,7 +4,11 @@
 
 This repository contains the complete replication package for the paper "Enhancing Phillips Curve Models Through Systematic Residual Analysis: A Novel Approach to Macroeconomic Forecasting" by Matthew Busigin (VoxGenius, Inc.).
 
-📄 **[Read the full paper (PDF)](outputs/phillips_curve_paper.pdf)**
+📄 **[Read the full paper (PDF)](phillips_curve_paper.pdf)**
+
+## Paper Status
+
+**Latest Update (January 2025)**: Completed third round of referee revisions addressing 12 remaining issues. Paper now ready for journal resubmission.
 
 ## Abstract
 
@@ -13,24 +17,40 @@ This paper presents a novel methodology for enhancing macroeconomic Phillips Cur
 ### Key Results
 
 - **68x improvement** in explanatory power (R² from 0.006 to 0.410)
-- **80-82% reduction** in out-of-sample forecasting errors
+- **80-82% reduction** in out-of-sample forecasting errors vs baseline Phillips Curve
+- **81.8% RMSE improvement** over best univariate benchmark (survey expectations only)
 - **Novel recession prediction** capability using Phillips Curve residuals (AUC = 0.618)
 - Identification of external sector and market-based expectations as key enhancement channels
+- Robust performance confirmed across multiple testing procedures (Diebold-Mariano, Clark-West, Hansen SPA)
 
 ## Repository Structure
 
 ```
 replication_package/
 ├── README.md                           # This file
-├── outputs/
-│   ├── phillips_curve_paper.pdf        # Full paper
-│   └── phillips_curve_paper.tex        # LaTeX source
+├── phillips_curve_paper.pdf            # Full paper (36 pages)
+├── phillips_curve_paper.tex            # LaTeX source
 ├── figures/                            # All paper figures
-├── tables/                             # All paper tables
+│   ├── time_series_overview.pdf
+│   ├── residual_analysis.pdf
+│   ├── structural_breaks.pdf
+│   ├── variable_selection.pdf
+│   └── recession_prediction_analysis.pdf
+├── tables/                             # All paper tables (LaTeX format)
+│   ├── descriptive_stats.tex
+│   ├── model_comparison.tex
+│   ├── baseline_benchmarks.tex
+│   ├── variable_selection.tex
+│   ├── structural_breaks.tex
+│   └── robustness.tex
+├── outputs/                            # Additional analysis outputs
+│   ├── full_candidate_ledger.csv       # All 89 tested variables
+│   └── vintage_date_matrix.csv         # Real-time data documentation
+├── config/                             # Configuration files
+│   └── oos_protocol.json               # Out-of-sample validation specs
 ├── real_data_visualizations.py         # Main data analysis and visualization
 ├── recession_prediction_analysis.py    # Recession forecasting analysis
-├── tweets.js                           # Sample data for style analysis
-└── phillips_curve_tweetstorm.txt       # Twitter thread summary
+└── REVISION_SUMMARY.md                 # Detailed revision history
 ```
 
 ## Quick Start
@@ -82,12 +102,18 @@ Our systematic 7-step framework for model enhancement:
 ## Data
 
 All data sourced from FRED (Federal Reserve Economic Data):
-- **CPIAUCSL**: Consumer Price Index for All Urban Consumers
+- **CPIAUCSL**: Consumer Price Index for All Urban Consumers (YoY % change)
 - **UNRATE**: Civilian Unemployment Rate  
-- **NROU**: Natural Rate of Unemployment
-- **MICH**: University of Michigan Consumer Sentiment
-- **DTWEXBGS**: Trade Weighted U.S. Dollar Index
+- **NROU**: Natural Rate of Unemployment (CBO estimate, quarterly interpolated)
+- **MICH1Y**: University of Michigan 1-Year Inflation Expectations
+- **DTWEXBGS**: Trade Weighted U.S. Dollar Index: Goods (Broad)
 - **T5YIE**: 5-Year Breakeven Inflation Rate
+
+### Real-Time Data Protocol
+- Forecasts made at month-end using only data available at that time
+- Vintage data pulled from ALFRED to ensure no look-ahead bias
+- Publication lags respected: CPI(t-1), UNRATE(t-1), MICH1Y(t), T5YIE(t), DTWEXBGS(t)
+- Complete vintage documentation in `outputs/vintage_date_matrix.csv`
 
 ## Citation
 
