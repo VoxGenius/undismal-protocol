@@ -1,0 +1,78 @@
+TWEET STORM: Phillips Curve Paper (@mbusigin style)
+
+1/
+The Phillips Curve has been "dead" more times than crypto.
+
+But what if the problem isn't the model - it's that we've been throwing away the most valuable information?
+
+New paper: We turned the residuals into rocket fuel.
+
+2/
+Everyone knows the baseline Phillips Curve is garbage. R² = 0.006. 
+
+That's not a typo. It explains 0.6% of inflation variation.
+
+Most economists: "The model is broken"
+Me: "The errors ARE the model"
+
+3/
+Here's what nobody tells you about econometric residuals: they cluster around *exactly* the moments that matter.
+
+Oil shocks. Financial crises. COVID.
+
+The model doesn't fail randomly. It fails systematically. And that's exploitable.
+
+4/
+So we built a systematic residual analysis framework. Not sexy, but devastatingly effective.
+
+Result: R² goes from 0.006 to 0.410. 
+
+That's a 68x improvement. In econometrics, that's basically finding a $100 bill on the sidewalk.
+
+5/
+The framework discovered what every macro trader already knows:
+- Oil prices matter (duh)
+- Dollar strength drives import costs
+- Market expectations > survey expectations
+
+But here's the kicker: it found the OPTIMAL lags. No hand-waving.
+
+6/
+Best part? We can predict recessions using Phillips Curve failures.
+
+When the model catastrophically misfires (residuals >2σ), recession probability spikes. AUC = 0.62 for 12-month ahead prediction.
+
+The "broken" model is actually an early warning system.
+
+7/
+This is classic Type II error in economics. Everyone's so focused on making models that never fail, they miss that the failures contain alpha.
+
+It's like throwing away outliers in your backtest. Congrats, you just deleted all the regime changes.
+
+8/
+Technical details for the nerds:
+- Full FRED data, no synthetic BS
+- Bonferroni correction for multiple testing
+- Out-of-sample R² = 0.39 (barely degraded!)
+- Real-time implementable
+
+Code: github.com/VoxGenius/undismal-protocol/
+
+9/
+Why this matters: Every central bank runs Phillips Curve models. They all suck. They all fail at turning points.
+
+But if you systematically analyze WHERE they fail, you get:
+1) Better inflation forecasts
+2) Recession early warnings
+3) Actual insight into structural breaks
+
+10/
+The meta-lesson: In complex systems, errors aren't noise - they're signal.
+
+The Phillips Curve isn't broken. Our whole approach to model "failure" is.
+
+Time to stop throwing away the most valuable information in economics.
+
+/fin
+
+(BTW pleeeease @AnthropicAI give us Opus 4. I will pay 10x per token to analyze more residuals)
