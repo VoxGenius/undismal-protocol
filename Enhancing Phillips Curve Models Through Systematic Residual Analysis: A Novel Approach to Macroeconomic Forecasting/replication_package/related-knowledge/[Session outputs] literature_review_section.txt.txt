@@ -1,0 +1,32 @@
+LITERATURE REVIEW SECTION\n==================================================\n\nINTRODUCTION\n------------\nThe Phillips Curve, originally documented by Phillips (1958), represents one of the most important 
+relationships in macroeconomic theory, linking unemployment and inflation dynamics. Since its 
+introduction, extensive research has developed both the theoretical foundations and empirical 
+methodologies for estimating and enhancing Phillips Curve models.\n\nFOUNDATIONAL WORK\n-----------------\nThe original Phillips Curve established the inverse relationship between unemployment and wage 
+inflation in the United Kingdom. This work was extended by Okun (1962), who developed the 
+complementary relationship between unemployment and output gaps, now known as Okun's Law. 
+These foundational relationships form the core of modern macroeconomic models used for policy 
+analysis and forecasting.\n\nMETHODOLOGICAL DEVELOPMENTS\n---------------------------\nSignificant methodological advances have enhanced Phillips Curve estimation. Hodrick and Prescott (1997) 
+introduced the HP filter for trend-cycle decomposition, while Baxter and King (1999) developed 
+alternative band-pass filtering approaches. More recently, Kamber et al. (2018) proposed the 
+Beveridge-Nelson filter for more intuitive output gap estimates.
+
+The challenge of structural instability in Phillips Curve relationships has been addressed through 
+structural break testing methodologies developed by Bai and Perron (2003). These techniques allow 
+for the systematic detection of parameter changes over time, which is crucial given the known 
+instability of Phillips Curve relationships across different economic regimes.\n\nMODEL SELECTION\n---------------\nModern econometric practice emphasizes the importance of systematic model selection procedures. 
+Hjort and Claeskens (2003) developed frequentist model averaging estimators that account for 
+model uncertainty. The multiple testing problem, central to our methodology, has been extensively 
+studied in the econometric literature, with various correction procedures developed to control 
+family-wise error rates and false discovery rates.\n\nRECENT APPLICATIONS\n-------------------\nRecent empirical work has focused on enhancing Phillips Curve models through systematic variable 
+selection and validation. Ball et al. (2017) revisited Okun's Law relationships using modern data, 
+while Fleischman and Roberts (2011) developed multivariate approaches to trend-cycle decomposition 
+that incorporate multiple economic indicators.
+
+The integration of real-time data constraints, as emphasized in our ALFRED-based validation approach, 
+reflects the practical requirements of policy-relevant forecasting models. This addresses the 
+critique that many academic models perform well in-sample but fail to deliver reliable real-time 
+forecasts.\n\nCONTRIBUTION\n------------\nOur research contributes to this literature by developing a systematic framework for Phillips Curve 
+enhancement that combines rigorous statistical methodology with economic theory. The "Undismal Protocol" 
+addresses several gaps in existing approaches: (1) systematic out-of-sample validation with real-time 
+data constraints, (2) comprehensive treatment of multiple testing issues, (3) theory-guided variable 
+selection across multiple economic domains, and (4) transparent documentation of all modeling decisions.\n\n

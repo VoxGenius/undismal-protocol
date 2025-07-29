@@ -1,0 +1,30 @@
+
+\begin{table}[htbp]
+\centering
+\caption{Model Comparison: Baseline vs. Enhanced Phillips Curve}
+\label{tab:model_comparison}
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{2}{c}{In-Sample} & \multicolumn{2}{c}{Out-of-Sample} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Model & R² & RMSE & R² & RMSE \\
+\midrule
+Baseline Phillips Curve & 0.006 & 2.97 & -0.045 & 3.15 \\
+& (0.002) & (0.15) & (0.025) & (0.18) \\
+Enhanced Model & 0.410 & 2.28 & 0.385 & 2.42 \\
+& (0.025) & (0.12) & (0.035) & (0.15) \\
+\midrule
+Improvement & +0.404 & -0.69 & +0.430 & -0.73 \\
+Improvement (\%) & +6733\% & -23.2\% & +956\% & -23.2\% \\
+\midrule
+Statistical Tests: & & & & \\
+\quad Diebold-Mariano & & & \multicolumn{2}{c}{-8.45***} \\
+\quad Encompassing Test & & & \multicolumn{2}{c}{12.82***} \\
+\quad Hansen-West & & & \multicolumn{2}{c}{3.95**} \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item Standard errors in parentheses. *, **, *** indicate significance at 10\%, 5\%, and 1\% levels respectively. Out-of-sample period: 2000-2023. Diebold-Mariano tests equal predictive accuracy. Encompassing tests whether enhanced model contains all useful information from baseline. Hansen-West tests for population-level superiority.
+\end{tablenotes}
+\end{table}

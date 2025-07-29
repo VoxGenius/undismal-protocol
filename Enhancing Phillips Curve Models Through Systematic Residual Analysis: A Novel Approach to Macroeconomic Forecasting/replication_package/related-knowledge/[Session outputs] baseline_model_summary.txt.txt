@@ -1,0 +1,26 @@
+BASELINE PHILLIPS CURVE MODEL\n========================================\n\n                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              inflation   R-squared:                       0.006
+Model:                            OLS   Adj. R-squared:                 -0.010
+Method:                 Least Squares   F-statistic:                    0.3649
+Date:                Tue, 29 Jul 2025   Prob (F-statistic):              0.695
+Time:                        14:50:13   Log-Likelihood:                -188.87
+No. Observations:                 132   AIC:                             383.7
+Df Residuals:                     129   BIC:                             392.4
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==========================================================================================
+                             coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------
+const                      0.3192      0.418      0.763      0.447      -0.508       1.147
+unemployment_gap          -0.0121      0.050     -0.241      0.810      -0.111       0.087
+inflation_expectations     0.1040      0.131      0.791      0.430      -0.156       0.364
+==============================================================================
+Omnibus:                       91.898   Durbin-Watson:                   0.186
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              451.025
+Skew:                           2.638   Prob(JB):                     1.15e-98
+Kurtosis:                      10.359   Cond. No.                         16.8
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

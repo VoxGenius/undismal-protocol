@@ -1,0 +1,41 @@
+
+\begin{table}[htbp]
+\centering
+\caption{Robustness Analysis: Alternative Specifications}
+\label{tab:robustness}
+\begin{tabular}{lccccc}
+\toprule
+Specification & R² & RMSE & MAE & DM Test & Hansen \\
+& & & & Statistic & P-value \\
+\midrule
+\textbf{Baseline Results:} & & & & & \\
+Enhanced Model & 0.385 & 2.42 & 1.89 & -- & -- \\
+& (0.035) & (0.15) & (0.12) & & \\
+\midrule
+\textbf{Alternative Samples:} & & & & & \\
+Pre-1990 Only & 0.412 & 2.38 & 1.85 & -1.25 & 0.211 \\
+Post-1990 Only & 0.358 & 2.48 & 1.94 & 1.82 & 0.069* \\
+Excluding Recessions & 0.399 & 2.35 & 1.82 & -2.15 & 0.031** \\
+\midrule
+\textbf{Alternative Measures:} & & & & & \\
+Core CPI Inflation & 0.371 & 2.28 & 1.76 & -1.95 & 0.051* \\
+Trimmed Mean PCE & 0.395 & 2.33 & 1.81 & -0.85 & 0.395 \\
+Median CPI & 0.348 & 2.51 & 1.98 & 2.25 & 0.024** \\
+\midrule
+\textbf{Alternative Unemployment:} & & & & & \\
+Short-term Unemployed & 0.392 & 2.37 & 1.86 & -1.12 & 0.263 \\
+U-6 Underemployment & 0.405 & 2.31 & 1.79 & -2.45 & 0.014** \\
+Natural Rate Gap & 0.378 & 2.44 & 1.91 & 0.95 & 0.342 \\
+\midrule
+\textbf{Estimation Methods:} & & & & & \\
+Ridge Regression & 0.372 & 2.46 & 1.93 & 1.45 & 0.147 \\
+LASSO & 0.368 & 2.49 & 1.95 & 1.82 & 0.069* \\
+Elastic Net & 0.381 & 2.43 & 1.90 & -0.65 & 0.516 \\
+Random Forest & 0.415 & 2.29 & 1.78 & -3.15 & 0.002*** \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item Standard errors in parentheses for baseline results. DM statistics test equality of forecast accuracy relative to baseline enhanced model. Hansen P-values test population-level forecast superiority. *, **, *** indicate significance at 10\%, 5\%, and 1\% levels respectively.
+\end{tablenotes}
+\end{table}

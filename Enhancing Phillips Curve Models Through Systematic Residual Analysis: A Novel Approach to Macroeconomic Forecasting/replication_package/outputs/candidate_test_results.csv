@@ -1,0 +1,90 @@
+variable,domain,r_squared,p_value,coefficient,observations,economic_rationale
+DTWEXBGS_yoy_lag12,EXTERNAL,0.15579384952969133,0.0006586092392876794,0.28419299978797685,71,External factors influence domestic inflation through trade and commodities
+STLFSI4_level_lag1,EXPECTATIONS,0.15092384391517744,0.015937856715130604,0.5655355297776664,38,Forward-looking expectations drive inflation dynamics
+T5YIE_level_lag3,EXPECTATIONS,0.10495361943074633,0.007486081026154308,0.5670317647886183,67,Forward-looking expectations drive inflation dynamics
+T5YIE_level,EXPECTATIONS,0.10398641631493266,0.03277449020739547,0.6409037395532552,44,Forward-looking expectations drive inflation dynamics
+T5YIE_level_lag1,EXPECTATIONS,0.09761272508368946,0.010052721407568847,0.5680048240132908,67,Forward-looking expectations drive inflation dynamics
+T10YIE_level_lag3,EXPECTATIONS,0.08266999769250827,0.01831199013420559,0.6659644076333576,67,Forward-looking expectations drive inflation dynamics
+DEXUSEU_yoy_lag12,FINANCIAL,0.07812413981922839,0.00508166259737368,-0.14157319784133557,99,Financial conditions transmit to real economy and prices
+GS10_level,MONETARY,0.07101733873451288,0.002010481915977978,0.1381125742218867,132,Monetary policy transmission affects inflation expectations and demand
+AWHMAN_level,LABOR_HOURS,0.06926260657095396,0.002297112545917851,-0.4010097694644051,132,Labor market intensive margins capture capacity utilization effects
+AWHI_level,LABOR_HOURS,0.05780594560592556,0.005488059075332032,-0.023119809796450008,132,Labor market intensive margins capture capacity utilization effects
+GS2_level,MONETARY,0.052560976710037455,0.008186438176422844,0.1023326236108902,132,Monetary policy transmission affects inflation expectations and demand
+T10YIE_level_lag1,EXPECTATIONS,0.05177760541067855,0.06404376075358025,0.5416080770259062,67,Forward-looking expectations drive inflation dynamics
+T10YIE_level,EXPECTATIONS,0.04925271670982345,0.14765622557651026,0.5912290768458163,44,Forward-looking expectations drive inflation dynamics
+BOGMBASE_yoy_lag12,MONETARY,0.04659450914864882,0.01292584836798,0.22142774654571987,132,Monetary policy transmission affects inflation expectations and demand
+T5YIE_level_lag6,EXPECTATIONS,0.04026904665945941,0.1275197985881694,0.3701590962891532,59,Forward-looking expectations drive inflation dynamics
+FEDFUNDS_level,MONETARY,0.03212912248629696,0.0397363991168555,0.07936040491198083,132,Monetary policy transmission affects inflation expectations and demand
+M2SL_yoy_lag12,MONETARY,0.02856227608451989,0.05272137205408407,0.4935680944160167,132,Monetary policy transmission affects inflation expectations and demand
+DTWEXBGS_yoy_lag6,EXTERNAL,0.027961908231197485,0.16336864400641535,0.1733700522032812,71,External factors influence domestic inflation through trade and commodities
+LNU01300060_yoy,DEMOGRAPHICS,0.027124155937432448,0.05914662625165069,-0.4318092412806264,132,Demographic shifts alter labor supply and demand patterns
+DCOILWTICO_yoy_lag3,EXTERNAL,0.019754984250876628,0.10795446834664953,-0.017969911380534283,132,External factors influence domestic inflation through trade and commodities
+PSAVERT_level,FINANCIAL,0.019637523629297493,0.109018199272587,0.040801843194548576,132,Financial conditions transmit to real economy and prices
+DCOILWTICO_yoy_lag1,EXTERNAL,0.01639367409788839,0.14344555237185788,-0.018654740656226715,132,External factors influence domestic inflation through trade and commodities
+DTWEXBGS_yoy_lag1,EXTERNAL,0.015845053425206812,0.2955608428815765,-0.13856159021541484,71,External factors influence domestic inflation through trade and commodities
+CIVPART_level,DEMOGRAPHICS,0.015391945605274682,0.15639090888173657,0.06488127008972827,132,Demographic shifts alter labor supply and demand patterns
+DEXUSEU_yoy,FINANCIAL,0.014413401195528253,0.23654919647355227,0.07361241078872359,99,Financial conditions transmit to real economy and prices
+DTWEXBGS_yoy,EXTERNAL,0.01339396367526935,0.3365005051015272,-0.14268085801458236,71,External factors influence domestic inflation through trade and commodities
+STLFSI4_level_lag6,EXPECTATIONS,0.012274769495440707,0.5138835879675898,0.10072099928967425,37,Forward-looking expectations drive inflation dynamics
+T10YIE_level_lag6,EXPECTATIONS,0.011302556619831039,0.42289314066514017,0.2466689933673763,59,Forward-looking expectations drive inflation dynamics
+GFDEBTN_level,FISCAL,0.011252488960520446,0.22606113012044676,-1.226244621101362e-08,132,Fiscal policy influences aggregate demand and inflation pressures
+DEXUSEU_yoy_lag1,FINANCIAL,0.011201890067228382,0.29711411820082484,0.06515074983134242,99,Financial conditions transmit to real economy and prices
+DCOILWTICO_yoy_lag6,EXTERNAL,0.011000772336229536,0.23135530865095996,-0.013007612522589298,132,External factors influence domestic inflation through trade and commodities
+DFEDTARU_level_lag6,MONETARY,0.010792570629319154,0.4295742037948508,0.08644792555251024,60,Monetary policy transmission affects inflation expectations and demand
+DFEDTARU_level_lag3,MONETARY,0.010744938890964395,0.43059963232635845,0.08602554706495531,60,Monetary policy transmission affects inflation expectations and demand
+DFEDTARU_level,MONETARY,0.010744938890964395,0.43059963232635845,0.08602554706495531,60,Monetary policy transmission affects inflation expectations and demand
+DFEDTARU_level_lag1,MONETARY,0.010744938890964395,0.43059963232635845,0.08602554706495531,60,Monetary policy transmission affects inflation expectations and demand
+DSPIC96_yoy_lag12,FINANCIAL,0.009886752440317559,0.25665341438779676,0.15721343911544788,132,Financial conditions transmit to real economy and prices
+T5YIE_level_lag12,EXPECTATIONS,0.008686306381825437,0.47121965370851915,0.19585194381324064,62,Forward-looking expectations drive inflation dynamics
+DFEDTARU_level_lag12,MONETARY,0.00841959750543586,0.4856282981554515,0.07828355092198483,60,Monetary policy transmission affects inflation expectations and demand
+NETEXP_level,EXTERNAL,0.00828259661035835,0.29935309200809757,0.00034152730861974163,132,External factors influence domestic inflation through trade and commodities
+DEXUSEU_yoy_lag6,FINANCIAL,0.007871058233091532,0.38252388408471283,-0.048788338534559925,99,Financial conditions transmit to real economy and prices
+DCOILWTICO_yoy_lag12,EXTERNAL,0.007404750192260612,0.3265596889749073,-0.009599619547262978,132,External factors influence domestic inflation through trade and commodities
+HOANBS_yoy,LABOR_HOURS,0.007362009358704236,0.3279650294774634,-0.05315498029596148,132,Labor market intensive margins capture capacity utilization effects
+DTWEXBGS_yoy_lag3,EXTERNAL,0.006883664970525838,0.4915296500908263,0.09499233287498714,71,External factors influence domestic inflation through trade and commodities
+EMRATIO_level,DEMOGRAPHICS,0.006540693891988636,0.35660604410011776,0.035772345734300146,132,Demographic shifts alter labor supply and demand patterns
+FGEXPND_yoy,FISCAL,0.006443177225539665,0.3602277499617216,0.009199490768615553,132,Fiscal policy influences aggregate demand and inflation pressures
+VIXCLS_level_lag3,FINANCIAL,0.005137105354295901,0.4445261887377703,0.009444408507287824,116,Financial conditions transmit to real economy and prices
+DCOILWTICO_yoy,EXTERNAL,0.00403241949213895,0.469454954353586,-0.008877102799819764,132,External factors influence domestic inflation through trade and commodities
+BOGMBASE_yoy,MONETARY,0.003768792517671815,0.48438047469504353,-0.01747613154480141,132,Monetary policy transmission affects inflation expectations and demand
+FGRECPT_yoy,FISCAL,0.0034339411082083826,0.5044967129718001,-0.020370885283395933,132,Fiscal policy influences aggregate demand and inflation pressures
+VIXCLS_level_lag1,FINANCIAL,0.0031642297796298235,0.552208836332782,0.006995520736158799,114,Financial conditions transmit to real economy and prices
+VIXCLS_level_lag12,FINANCIAL,0.002173569419482102,0.6270432874622793,0.005086234294592413,111,Financial conditions transmit to real economy and prices
+LNU01300060_yoy_lag12,DEMOGRAPHICS,0.00215810132561145,0.5968464961887623,-0.19230225919465713,132,Demographic shifts alter labor supply and demand patterns
+VIXCLS_level_lag6,FINANCIAL,0.0020357336939132997,0.6460505342666001,0.005221056821652059,106,Financial conditions transmit to real economy and prices
+M2SL_yoy,MONETARY,0.0019562084584476835,0.6145660867390956,0.06797718265258917,132,Monetary policy transmission affects inflation expectations and demand
+FYONGDA188S_level,FISCAL,0.0016311435289912968,0.8234163736032861,0.012535448185835407,33,Fiscal policy influences aggregate demand and inflation pressures
+VIXCLS_level,FINANCIAL,0.001136526032851859,0.7817353506667895,0.004366763727170583,70,Financial conditions transmit to real economy and prices
+T10YIE_level_lag12,EXPECTATIONS,0.0009610463279620118,0.8109583316980773,-0.08540936441668356,62,Forward-looking expectations drive inflation dynamics
+OPHNFB_yoy,LABOR_HOURS,0.0008156295647072653,0.7451310764901389,-0.03574974333342476,132,Labor market intensive margins capture capacity utilization effects
+DEXUSEU_yoy_lag3,FINANCIAL,0.00037035557679854225,0.8500401228894335,-0.01117642632133194,99,Financial conditions transmit to real economy and prices
+DSPIC96_yoy,FINANCIAL,7.26312012244712e-06,0.9755335539455305,-0.0011771157500880293,132,Financial conditions transmit to real economy and prices
+M2SL_yoy_lag6,MONETARY,0.0,,0.0,132,Monetary policy transmission affects inflation expectations and demand
+HOANBS_yoy_lag12,LABOR_HOURS,0.0,,0.0,132,Labor market intensive margins capture capacity utilization effects
+HOANBS_yoy_lag6,LABOR_HOURS,0.0,,0.0,132,Labor market intensive margins capture capacity utilization effects
+OPHNFB_yoy_lag1,LABOR_HOURS,0.0,,0.0,132,Labor market intensive margins capture capacity utilization effects
+OPHNFB_yoy_lag3,LABOR_HOURS,0.0,,0.0,132,Labor market intensive margins capture capacity utilization effects
+OPHNFB_yoy_lag6,LABOR_HOURS,0.0,,0.0,132,Labor market intensive margins capture capacity utilization effects
+OPHNFB_yoy_lag12,LABOR_HOURS,0.0,,0.0,132,Labor market intensive margins capture capacity utilization effects
+FGRECPT_yoy_lag12,FISCAL,0.0,,0.0,132,Fiscal policy influences aggregate demand and inflation pressures
+FGRECPT_yoy_lag6,FISCAL,0.0,,0.0,132,Fiscal policy influences aggregate demand and inflation pressures
+FGEXPND_yoy_lag12,FISCAL,0.0,,0.0,132,Fiscal policy influences aggregate demand and inflation pressures
+FGEXPND_yoy_lag6,FISCAL,0.0,,0.0,132,Fiscal policy influences aggregate demand and inflation pressures
+FGEXPND_yoy_lag1,FISCAL,0.0,,0.0,132,Fiscal policy influences aggregate demand and inflation pressures
+FGEXPND_yoy_lag3,FISCAL,0.0,,0.0,132,Fiscal policy influences aggregate demand and inflation pressures
+FGRECPT_yoy_lag3,FISCAL,0.0,,0.0,132,Fiscal policy influences aggregate demand and inflation pressures
+BOGMBASE_yoy_lag1,MONETARY,0.0,,0.0,132,Monetary policy transmission affects inflation expectations and demand
+BOGMBASE_yoy_lag6,MONETARY,0.0,,0.0,132,Monetary policy transmission affects inflation expectations and demand
+BOGMBASE_yoy_lag3,MONETARY,0.0,,0.0,132,Monetary policy transmission affects inflation expectations and demand
+M2SL_yoy_lag1,MONETARY,0.0,,0.0,132,Monetary policy transmission affects inflation expectations and demand
+M2SL_yoy_lag3,MONETARY,0.0,,0.0,132,Monetary policy transmission affects inflation expectations and demand
+HOANBS_yoy_lag1,LABOR_HOURS,0.0,,0.0,132,Labor market intensive margins capture capacity utilization effects
+HOANBS_yoy_lag3,LABOR_HOURS,0.0,,0.0,132,Labor market intensive margins capture capacity utilization effects
+LNU01300060_yoy_lag3,DEMOGRAPHICS,0.0,,0.0,132,Demographic shifts alter labor supply and demand patterns
+FGRECPT_yoy_lag1,FISCAL,0.0,,0.0,132,Fiscal policy influences aggregate demand and inflation pressures
+LNU01300060_yoy_lag6,DEMOGRAPHICS,0.0,,0.0,132,Demographic shifts alter labor supply and demand patterns
+LNU01300060_yoy_lag1,DEMOGRAPHICS,0.0,,0.0,132,Demographic shifts alter labor supply and demand patterns
+DSPIC96_yoy_lag1,FINANCIAL,0.0,,0.0,132,Financial conditions transmit to real economy and prices
+DSPIC96_yoy_lag6,FINANCIAL,0.0,,0.0,132,Financial conditions transmit to real economy and prices
+DSPIC96_yoy_lag3,FINANCIAL,0.0,,0.0,132,Financial conditions transmit to real economy and prices
+MICH_level,EXPECTATIONS,-2.220446049250313e-16,0.9999999999999963,-5.828670879282072e-16,132,Forward-looking expectations drive inflation dynamics

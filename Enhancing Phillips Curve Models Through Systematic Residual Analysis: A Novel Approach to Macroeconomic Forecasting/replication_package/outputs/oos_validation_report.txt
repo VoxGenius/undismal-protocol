@@ -1,0 +1,1 @@
+RIGOROUS OUT-OF-SAMPLE VALIDATION REPORT\n==================================================\n\nTotal Predictions Generated: 188\nModels Tested: 3\nValidation Windows: 23\n\nOVERALL PERFORMANCE RANKING:\n------------------------------\n1. enhanced_v2: RMSE = 0.2360\n2. enhanced_v1: RMSE = 0.2518\n3. baseline: RMSE = 1.3189\n

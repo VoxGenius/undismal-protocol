@@ -1,0 +1,15 @@
+{
+  "monetary_policy": {
+    "inflation_forecasting": "\n                Central banks can improve inflation forecasts by incorporating external sector\n                variables (exchange rates) and market-based expectations alongside traditional\n                Phillips Curve variables. The identified lag structures provide guidance on\n                policy transmission timing.\n                ",
+    "policy_communication": "\n                The role of financial market expectations in our enhanced model underscores\n                the importance of central bank communication in shaping inflation outcomes.\n                Market-based measures provide real-time feedback on policy credibility.\n                ",
+    "regime_monitoring": "\n                The evidence of structural instability suggests central banks should continuously\n                monitor Phillips Curve relationships and be prepared to adapt policy frameworks\n                as underlying relationships evolve.\n                "
+  },
+  "fiscal_policy": {
+    "coordination": "\n                The enhanced model's incorporation of external sector effects highlights potential\n                coordination benefits between monetary and fiscal policy, particularly regarding\n                exchange rate impacts on inflation.\n                ",
+    "automatic_stabilizers": "\n                Understanding improved inflation dynamics can inform the design of automatic\n                fiscal stabilizers that respond appropriately to different sources of\n                inflationary pressure.\n                "
+  },
+  "academic_research": {
+    "methodology": "\n                Our systematic approach demonstrates the value of comprehensive model validation,\n                multiple testing awareness, and robustness checking in macroeconomic research.\n                Future Phillips Curve research should adopt similar methodological rigor.\n                ",
+    "variable_selection": "\n                The analysis shows that theory-guided variable selection combined with\n                out-of-sample validation provides more reliable model enhancement than\n                purely statistical approaches.\n                "
+  }
+}

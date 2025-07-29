@@ -1,0 +1,255 @@
+{
+  "system_overview": {
+    "name": "Phillips Curve Model Monitoring System",
+    "purpose": "Automated detection of model degradation and regime changes",
+    "methodology": "Undismal Protocol with continuous monitoring",
+    "created": "2025-07-29T14:33:27.780284",
+    "version": "1.0"
+  },
+  "triggers": {
+    "statistical_breaks": {
+      "chow_test": {
+        "description": "Structural break test for parameter stability",
+        "frequency": "Monthly",
+        "threshold": "F-statistic p-value < 0.01",
+        "lookback_window": "24 months",
+        "action": "Force model refit if break detected"
+      },
+      "cusum_test": {
+        "description": "Cumulative sum test for parameter drift",
+        "frequency": "Monthly",
+        "threshold": "CUSUM crosses 5% significance bounds",
+        "action": "Alert for potential parameter instability"
+      },
+      "recursive_residuals": {
+        "description": "Recursive residual monitoring",
+        "frequency": "Monthly",
+        "threshold": "Standardized residual > 3 standard deviations",
+        "consecutive_limit": 3,
+        "action": "Investigate outliers and potential regime change"
+      }
+    },
+    "performance_degradation": {
+      "oos_rmse_drift": {
+        "description": "Out-of-sample RMSE deterioration",
+        "frequency": "Monthly",
+        "benchmark": "Rolling 12-month average RMSE",
+        "threshold": "Current RMSE > benchmark + 2 standard deviations",
+        "consecutive_periods": 3,
+        "action": "Mandatory model refit and candidate search"
+      },
+      "r_squared_decline": {
+        "description": "In-sample R\u00b2 degradation",
+        "frequency": "Quarterly",
+        "threshold": "R\u00b2 drops below 0.60 (baseline - 0.026)",
+        "action": "Emergency refit with expanded candidate set"
+      },
+      "forecast_bias": {
+        "description": "Systematic forecast bias detection",
+        "frequency": "Monthly",
+        "test": "Mean forecast error significantly different from zero",
+        "threshold": "t-test p-value < 0.05 over 6-month window",
+        "action": "Bias correction and potential refit"
+      }
+    },
+    "data_quality": {
+      "fred_data_revisions": {
+        "description": "Major data revisions in key series",
+        "monitoring": "ALFRED real-time database comparison",
+        "frequency": "Monthly",
+        "threshold": "Revision > 0.5 percentage points in unemployment or inflation",
+        "action": "Refit with revised data and update forecasts"
+      },
+      "missing_data": {
+        "description": "Missing or delayed data releases",
+        "frequency": "Weekly",
+        "threshold": "Key variable missing > 2 weeks past expected release",
+        "action": "Activate nowcasting mode with alternative indicators"
+      },
+      "data_quality_flags": {
+        "description": "FRED data quality indicators",
+        "monitoring": "Series notes and revision flags",
+        "frequency": "Monthly",
+        "action": "Review affected series and consider alternatives"
+      }
+    },
+    "calendar_based": {
+      "quarterly_refit": {
+        "description": "Scheduled quarterly model update",
+        "frequency": "Quarterly (March, June, September, December)",
+        "scope": "Full candidate search and model reselection",
+        "action": "Complete Undismal Protocol execution"
+      },
+      "annual_comprehensive_review": {
+        "description": "Annual methodology review",
+        "frequency": "Annually (January)",
+        "scope": "Review candidate universe, add new theory domains",
+        "action": "Expand theory-scoped candidates and update protocol"
+      },
+      "fomc_meeting_updates": {
+        "description": "Update after FOMC meetings",
+        "frequency": "8 times per year",
+        "scope": "Refresh monetary policy variables",
+        "action": "Update policy expectations and Taylor rule variables"
+      }
+    }
+  },
+  "monitors": {
+    "economic_regimes": {
+      "monetary_policy_regime": {
+        "indicators": [
+          "FEDFUNDS",
+          "GS10",
+          "Taylor_rule_deviation"
+        ],
+        "detection_method": "Markov regime switching model",
+        "frequency": "Monthly",
+        "trigger_condition": "Regime probability > 0.8 for new state",
+        "action": "Refit model with regime-specific parameters"
+      },
+      "inflation_regime": {
+        "indicators": [
+          "Core_CPI_volatility",
+          "Inflation_persistence",
+          "Expectations_anchoring"
+        ],
+        "detection_method": "Volatility regime switching",
+        "frequency": "Monthly",
+        "trigger_condition": "Volatility state change > 3 months",
+        "action": "Update Phillips Curve specification"
+      },
+      "external_shock_regime": {
+        "indicators": [
+          "Oil_price_volatility",
+          "Dollar_volatility",
+          "VIX_level"
+        ],
+        "detection_method": "Multivariate threshold model",
+        "frequency": "Weekly",
+        "trigger_condition": "Multiple indicators exceed 95th percentile",
+        "action": "Activate crisis-period model adjustments"
+      }
+    },
+    "dashboard_specification": {
+      "real_time_indicators": {
+        "model_performance": [
+          "Rolling 6-month RMSE",
+          "Current vs benchmark R\u00b2",
+          "Forecast bias statistics",
+          "Residual autocorrelation"
+        ],
+        "stability_tests": [
+          "Chow test p-values (rolling)",
+          "CUSUM test statistics",
+          "Recursive residual bounds",
+          "Parameter confidence intervals"
+        ],
+        "regime_indicators": [
+          "Monetary policy regime probabilities",
+          "Inflation volatility state",
+          "External shock indicators",
+          "Crisis probability index"
+        ]
+      },
+      "alert_system": {
+        "severity_levels": {
+          "GREEN": "Normal operation",
+          "YELLOW": "Monitor closely",
+          "ORANGE": "Prepare for refit",
+          "RED": "Immediate refit required"
+        },
+        "notification_channels": [
+          "Email alerts to model owners",
+          "Dashboard visual indicators",
+          "API status endpoints",
+          "Log file entries"
+        ]
+      },
+      "automated_actions": {
+        "data_fetching": "Daily FRED API updates",
+        "test_execution": "Weekly stability test battery",
+        "report_generation": "Monthly performance reports",
+        "refit_triggering": "Automated based on trigger conditions"
+      }
+    },
+    "ci_pipeline": {
+      "data_pipeline": {
+        "stage_1_data_ingestion": {
+          "frequency": "Daily",
+          "tasks": [
+            "Fetch latest FRED data",
+            "Validate data quality",
+            "Check for revisions",
+            "Update data warehouse"
+          ],
+          "trigger_conditions": "New data available"
+        },
+        "stage_2_monitoring": {
+          "frequency": "Daily",
+          "tasks": [
+            "Execute stability tests",
+            "Calculate performance metrics",
+            "Check regime indicators",
+            "Generate alerts if needed"
+          ],
+          "trigger_conditions": "Data pipeline completion"
+        }
+      },
+      "model_pipeline": {
+        "stage_3_refit_decision": {
+          "frequency": "On alert",
+          "tasks": [
+            "Evaluate trigger conditions",
+            "Determine refit scope",
+            "Initialize Undismal Protocol",
+            "Log refit decision"
+          ],
+          "trigger_conditions": "Any trigger condition met"
+        },
+        "stage_4_model_refit": {
+          "frequency": "As needed",
+          "tasks": [
+            "Execute full Undismal Protocol",
+            "Validate new model performance",
+            "Update production model",
+            "Document changes in ledger"
+          ],
+          "trigger_conditions": "Refit decision approval"
+        }
+      },
+      "deployment_pipeline": {
+        "stage_5_validation": {
+          "tasks": [
+            "Backtest new model",
+            "Compare to benchmark",
+            "Stress test scenarios",
+            "Get stakeholder approval"
+          ]
+        },
+        "stage_6_deployment": {
+          "tasks": [
+            "Deploy to production",
+            "Update monitoring systems",
+            "Notify users",
+            "Archive previous model"
+          ]
+        }
+      }
+    }
+  },
+  "implementation_notes": {
+    "technology_stack": [
+      "Python",
+      "statsmodels",
+      "pandas",
+      "FRED API"
+    ],
+    "deployment_requirements": [
+      "Real-time data access",
+      "Automated scheduling",
+      "Alert system"
+    ],
+    "maintenance": "Quarterly review of trigger thresholds",
+    "documentation": "All trigger activations logged in comprehensive ledger"
+  }
+}

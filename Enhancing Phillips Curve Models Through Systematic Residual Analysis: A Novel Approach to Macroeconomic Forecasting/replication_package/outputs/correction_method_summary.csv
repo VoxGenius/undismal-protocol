@@ -1,0 +1,6 @@
+method,n_significant,significant_vars,description
+uncorrected,13,"['DTWEXBGS_yoy_lag12', 'STLFSI4_level_lag1', 'T5YIE_level_lag3', 'T5YIE_level', 'T5YIE_level_lag1', 'T10YIE_level_lag3', 'DEXUSEU_yoy_lag12', 'GS10_level', 'AWHMAN_level', 'AWHI_level', 'GS2_level', 'BOGMBASE_yoy_lag12', 'FEDFUNDS_level']",No multiple testing correction applied
+bonferroni,0,[],Controls family-wise error rate by α/m adjustment
+fdr_bh,0,[],Benjamini-Hochberg procedure controlling false discovery rate
+fdr_by,0,[],Benjamini-Yekutieli procedure for dependent tests
+holm,0,[],Step-down method controlling family-wise error rate

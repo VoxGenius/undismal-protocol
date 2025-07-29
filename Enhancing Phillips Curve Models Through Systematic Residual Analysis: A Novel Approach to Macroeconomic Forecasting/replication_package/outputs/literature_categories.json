@@ -1,0 +1,1211 @@
+{
+  "foundational_phillips_curve": [],
+  "methodological_econometrics": [
+    {
+      "title": "Specification tests in econometrics",
+      "authors": [],
+      "year": null,
+      "journal": "JA Hausman - Econometrica: Journal of the econometric society, 1978 - JSTOR",
+      "citations": 28658,
+      "link": "https://www.jstor.org/stable/1913827",
+      "snippet": "\u2026 departures from the null hypothesis. An instrumental variable test as well as tests for a time series cross section model and the simultaneous equation model are presented. An empirical \u2026",
+      "search_term": "multiple testing econometrics model selection"
+    },
+    {
+      "title": "A nine-variable probabilistic macroeconomic forecasting model",
+      "authors": [
+        {
+          "name": "CA Sims",
+          "link": "https://scholar.google.com/citations?user=uXNOHdAAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=uXNOHdAAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "uXNOHdAAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "CA Sims - Business cycles, indicators, and forecasting, 1993 - nber.org",
+      "citations": 347,
+      "link": "https://www.nber.org/system/files/chapters/c7192/c7192.pdf",
+      "snippet": "\u2026 forecasting aggregate macroeconomic variables using a small Bayesian vector autoregressive (BVAR) model. The \u2026 This paper describes the current form of the model, explains why it \u2026",
+      "search_term": "macroeconomic forecasting model selection"
+    },
+    {
+      "title": "How is machine learning useful for macroeconomic forecasting?",
+      "authors": [
+        {
+          "name": "P Goulet Coulombe",
+          "link": "https://scholar.google.com/citations?user=xtnZTWIAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=xtnZTWIAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "xtnZTWIAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "P Goulet Coulombe, M Leroux\u2026 - Journal of Applied \u2026, 2022 - Wiley Online Library",
+      "citations": 315,
+      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1002/jae.2910",
+      "snippet": "\u2026 POOS) forecasting horse race between many models that \u2026 selection, and loss function. To create variation around those treatments, we will generate forecast errors from different models \u2026",
+      "search_term": "macroeconomic forecasting model selection"
+    },
+    {
+      "title": "Forecasting with real-time macroeconomic data",
+      "authors": [
+        {
+          "name": "D Croushore",
+          "link": "https://scholar.google.com/citations?user=4gzOghMAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=4gzOghMAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "4gzOghMAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "D Croushore - Handbook of economic forecasting, 2006 - Elsevier",
+      "citations": 216,
+      "link": "https://www.sciencedirect.com/science/article/pii/S1574070605010177",
+      "snippet": "\u2026 Then we investigate the influence data revisions have on model selection and specification. Finally, we examine the evidence on the predictive content of variables when subject to \u2026",
+      "search_term": "macroeconomic forecasting model selection"
+    },
+    {
+      "title": "Econometric analysis of Fisher's equation",
+      "authors": [
+        {
+          "name": "PCB Phillips",
+          "link": "https://scholar.google.com/citations?user=TBvhBwgAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=TBvhBwgAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "TBvhBwgAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "PCB Phillips - American Journal of Economics and Sociology, 2005 - Wiley Online Library",
+      "citations": 147,
+      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1536-7150.2005.00355.x",
+      "snippet": "\u2026 Another goal of the paper is to contribute some new methods to assist in the econometric analysis of data of this type. The methods given here furnish a new way of describing and \u2026",
+      "search_term": "Phillips Curve residual analysis econometrics"
+    },
+    {
+      "title": "The econometrics of macroeconomic forecasting",
+      "authors": [
+        {
+          "name": "DF Hendry",
+          "link": "https://scholar.google.com/citations?user=Td85eWgAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Td85eWgAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "Td85eWgAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "DF Hendry - The Economic Journal, 1997 - academic.oup.com",
+      "citations": 106,
+      "link": "https://academic.oup.com/ej/article-abstract/107/444/1330/5064047",
+      "snippet": "\u2026 forecasting is reasonably well developed. However, less is known about forecasting when model \u2026 the invariance of forecast accuracy measures to isomorphic model representations; the \u2026",
+      "search_term": "macroeconomic forecasting model selection"
+    },
+    {
+      "title": "UK macroeconomic forecasting with many predictors: Which models forecast best and when do they do so?",
+      "authors": [
+        {
+          "name": "G Koop",
+          "link": "https://scholar.google.com/citations?user=pr5F5oQAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=pr5F5oQAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "pr5F5oQAAAAJ"
+        },
+        {
+          "name": "D Korobilis",
+          "link": "https://scholar.google.com/citations?user=DWc5xn8AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=DWc5xn8AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "DWc5xn8AAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "G Koop, D Korobilis - Economic Modelling, 2011 - Elsevier",
+      "citations": 89,
+      "link": "https://www.sciencedirect.com/science/article/pii/S0264999311001076",
+      "snippet": "\u2026 forecasting models to hold at different points in time. In this paper, we use dynamic model averaging and dynamic model selection \u2026 attached to different forecasting models as evidence \u2026",
+      "search_term": "macroeconomic forecasting model selection"
+    },
+    {
+      "title": "Oil and US GDP: A real\u2010time out\u2010of\u2010sample examination",
+      "authors": [
+        {
+          "name": "F Ravazzolo",
+          "link": "https://scholar.google.com/citations?user=bXhwBAoAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=bXhwBAoAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "bXhwBAoAAAAJ"
+        },
+        {
+          "name": "P Rothman",
+          "link": "https://scholar.google.com/citations?user=eVeltvAAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=eVeltvAAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "eVeltvAAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "F Ravazzolo, P Rothman - Journal of Money, Credit and \u2026, 2013 - Wiley Online Library",
+      "citations": 85,
+      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jmcb.12009",
+      "snippet": "\u2026 This is in contrast to testing for finite-sample predictability, which focuses on testing the null hypothesis of equal OOS MSPEs. The finite-sample predictability null will always be rejected \u2026",
+      "search_term": "out-of-sample validation Phillips Curve"
+    },
+    {
+      "title": "A one covariate at a time, multiple testing approach to variable selection in high\u2010dimensional linear regression models",
+      "authors": [
+        {
+          "name": "A Chudik",
+          "link": "https://scholar.google.com/citations?user=s9CJ03QAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=s9CJ03QAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "s9CJ03QAAAAJ"
+        },
+        {
+          "name": "G Kapetanios",
+          "link": "https://scholar.google.com/citations?user=c5PNNq4AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=c5PNNq4AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "c5PNNq4AAAAJ"
+        },
+        {
+          "name": "MH Pesaran",
+          "link": "https://scholar.google.com/citations?user=4wHTKPUAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=4wHTKPUAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "4wHTKPUAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "A Chudik, G Kapetanios, MH Pesaran - Econometrica, 2018 - Wiley Online Library",
+      "citations": 79,
+      "link": "https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA14176",
+      "snippet": "\u2026 TO THE LITERATURE by proposing a multiple testing procedure to model selection in high-\u2026 procedure is to select an approximating model that encompasses the true model, and does \u2026",
+      "search_term": "multiple testing econometrics model selection"
+    },
+    {
+      "title": "Forecasting exchange rates out-of-sample with panel methods and real-time data",
+      "authors": [],
+      "year": null,
+      "journal": "O Ince - Journal of International Money and Finance, 2014 - Elsevier",
+      "citations": 76,
+      "link": "https://www.sciencedirect.com/science/article/pii/S0261560613001782",
+      "snippet": "\u2026 This paper evaluates out-of-sample exchange rate forecasting with Purchasing Power Parity (\u2026 Using bootstrapped out-of-sample test statistics, the exchange rate model with Taylor rule \u2026",
+      "search_term": "out-of-sample validation Phillips Curve"
+    },
+    {
+      "title": "A comprehensive evaluation of macroeconomic forecasting methods",
+      "authors": [
+        {
+          "name": "A Carriero",
+          "link": "https://scholar.google.com/citations?user=wPasUecAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=wPasUecAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "wPasUecAAAAJ"
+        },
+        {
+          "name": "AB Galvao",
+          "link": "https://scholar.google.com/citations?user=KEl7a7AAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=KEl7a7AAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "KEl7a7AAAAAJ"
+        },
+        {
+          "name": "G Kapetanios",
+          "link": "https://scholar.google.com/citations?user=c5PNNq4AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=c5PNNq4AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "c5PNNq4AAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "A Carriero, AB Galvao, G Kapetanios - International Journal of Forecasting, 2019 - Elsevier",
+      "citations": 75,
+      "link": "https://www.sciencedirect.com/science/article/pii/S0169207019300731",
+      "snippet": "\u2026 that vary with the forecasting horizon, country, model class and \u2026 forecasting of GDP growth and inflation, we find that models with large numbers of predictors do not outperform models \u2026",
+      "search_term": "macroeconomic forecasting model selection"
+    },
+    {
+      "title": "Comparing out-of-sample performance of machine learning methods to forecast US GDP growth",
+      "authors": [
+        {
+          "name": "S Qureshi",
+          "link": "https://scholar.google.com/citations?user=fQBb7mwAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=fQBb7mwAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "fQBb7mwAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "B Chu, S Qureshi - Computational Economics, 2023 - Springer",
+      "citations": 42,
+      "link": "https://link.springer.com/article/10.1007/s10614-022-10312-z",
+      "snippet": "\u2026 , validate, and test a model. Note that we set the same sizes for training, validating, and testing samples in \u2026 for training a model, 15 observations for validating this model, and the last four \u2026",
+      "search_term": "out-of-sample validation Phillips Curve"
+    },
+    {
+      "title": "On the selection of common factors for macroeconomic forecasting",
+      "authors": [
+        {
+          "name": "T Proietti",
+          "link": "https://scholar.google.com/citations?user=-ww11B8AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=-ww11B8AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "-ww11B8AAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "T Proietti - Dynamic factor models, 2016 - emerald.com",
+      "citations": 11,
+      "link": "https://www.emerald.com/insight/content/doi/10.1108/S0731-905320150000035015/full/html",
+      "snippet": "\u2026 Our approach is a particular case of the generalised shrinkage model considered in Stock and Watson (2012b). In the sequel we will assume that the forecasting model does not contain \u2026",
+      "search_term": "macroeconomic forecasting model selection"
+    },
+    {
+      "title": "Variable selection via multiple testing with an application to growth econometrics",
+      "authors": [],
+      "year": null,
+      "journal": "T Deckers, C Hanck - 2010 - researchgate.net",
+      "citations": 2,
+      "link": "https://www.researchgate.net/profile/Christoph-Hanck/publication/228547966_Variable_Selection_via_Multiple_Testing_with_an_Application_to_Growth_Econometrics/links/0912f508fcf6a90ca8000000/Variable-Selection-via-Multiple-Testing-with-an-Application-to-Growth-Econometrics.pdf",
+      "snippet": "\u2026 with those found using other model selection strategies. \u2026 as Bayesian Model Averaging, may be sensitive to user choices and \u2026 of the multiple testing approach, we believe the selection of \u2026",
+      "search_term": "multiple testing econometrics model selection"
+    },
+    {
+      "title": "Selection of Macroeconomic Forecasting Models: One Size Fits All?",
+      "authors": [
+        {
+          "name": "Y Lv",
+          "link": "https://scholar.google.com/citations?user=S17LLYwAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=S17LLYwAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "S17LLYwAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "Y Lv - Theoretical Economics Letters, 2017 - scirp.org",
+      "citations": 1,
+      "link": "https://www.scirp.org/journal/paperinformation?paperid=76047",
+      "snippet": "\u2026 step-ahead forecasting models as the forecasting horizon increases \u2026 one- step-ahead model. The new assumption raises the \u2026 The forecasting models selected by my approach may only \u2026",
+      "search_term": "macroeconomic forecasting model selection"
+    }
+  ],
+  "model_selection": [
+    {
+      "title": "A model selection approach to real-time macroeconomic forecasting using linear models and artificial neural networks",
+      "authors": [
+        {
+          "name": "NR Swanson",
+          "link": "https://scholar.google.com/citations?user=zVXa72QAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=zVXa72QAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "zVXa72QAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "NR Swanson, H White - Review of Economics and Statistics, 1997 - direct.mit.edu",
+      "citations": 520,
+      "link": "https://direct.mit.edu/rest/article-abstract/79/4/540/57032",
+      "snippet": "\u2026 of two nested models. By adopting this model selection approach in a real-time forecasting \u2026 of the usefulness of econometric models for predicting macroeconomic variables, but also to \u2026",
+      "search_term": "macroeconomic forecasting model selection"
+    },
+    {
+      "title": "Model selection tests for nonlinear dynamic models",
+      "authors": [
+        {
+          "name": "D Rivers",
+          "link": "https://scholar.google.com/citations?user=3P9X71kAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=3P9X71kAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "3P9X71kAAAAJ"
+        },
+        {
+          "name": "Q Vuong",
+          "link": "https://scholar.google.com/citations?user=Jp-0jdwAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Jp-0jdwAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "Jp-0jdwAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "D Rivers, Q Vuong - The Econometrics Journal, 2002 - academic.oup.com",
+      "citations": 402,
+      "link": "https://academic.oup.com/ectj/article-abstract/5/1/1/5073365",
+      "snippet": "\u2026 Thus, as in classical nested hypothesis testing, outcomes of the tests provide information on \u2026 Our model selection test involves comparing values of T n with critical values of a standard \u2026",
+      "search_term": "multiple testing econometrics model selection"
+    },
+    {
+      "title": "Comments on testing economic theories and the use of model selection criteria",
+      "authors": [
+        {
+          "name": "ML King",
+          "link": "https://scholar.google.com/citations?user=Uyh_-SwAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Uyh_-SwAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "Uyh_-SwAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "CWJ Granger, ML King, H White - Journal of Econometrics, 1995 - Elsevier",
+      "citations": 245,
+      "link": "https://www.sciencedirect.com/science/article/pii/030440769401632A",
+      "snippet": "\u2026 , we no longer have a classical hypothesis testing problem in which the null hypothesis has its special role. Instead we have a model selection problem in which the relative importance \u2026",
+      "search_term": "multiple testing econometrics model selection"
+    },
+    {
+      "title": "Multiple testing and error control in Gaussian graphical model selection",
+      "authors": [
+        {
+          "name": "M Drton",
+          "link": "https://scholar.google.com/citations?user=CjRMyA4AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=CjRMyA4AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "CjRMyA4AAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "M Drton, MD Perlman - 2007 - projecteuclid.org",
+      "citations": 186,
+      "link": "https://projecteuclid.org/journals/statistical-science/volume-22/issue-3/Multiple-Testing-and-Error-Control-in-Gaussian-Graphical-Model-Selection/10.1214/088342307000000113.short",
+      "snippet": "\u2026 In this section, we demonstrate multiple testingbased graphical model selection using data \u2026 We select graphical models by multiple testing in order to discover the key features of the \u2026",
+      "search_term": "multiple testing econometrics model selection"
+    },
+    {
+      "title": "Econometric model selection: A new approach",
+      "authors": [],
+      "year": null,
+      "journal": "AA Grasa - 2013 - books.google.com",
+      "citations": 166,
+      "link": "https://books.google.com/books?hl=en&lr=&id=wwrsCAAAQBAJ&oi=fnd&pg=PA3&dq=multiple+testing+econometrics+model+selection&ots=olzpgo9WWq&sig=pwRaPWTcCI2D9NtE5L_Q1a9gjXA",
+      "snippet": "\u2026 The purpose of this book is to present a new model selection procedure that answers those \u2026 selection procedures developed in the econometric literature which may be useful in order to \u2026",
+      "search_term": "multiple testing econometrics model selection"
+    },
+    {
+      "title": "Challenges for econometric model selection",
+      "authors": [
+        {
+          "name": "BE Hansen",
+          "link": "https://scholar.google.com/citations?user=FK5wEzkAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=FK5wEzkAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "FK5wEzkAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "BE Hansen - Econometric Theory, 2005 - cambridge.org",
+      "citations": 162,
+      "link": "https://www.cambridge.org/core/journals/econometric-theory/article/challenges-for-econometric-model-selection/EFC343EBB91A7CD60F9A79B0E9A7903F",
+      "snippet": "\u2026 In model selection, we posit a finite class of potential models+ In most treat\u2026 models+ Given this assumption, it is natural to ask the model selection procedure to be consistent\u2014to select \u2026",
+      "search_term": "multiple testing econometrics model selection"
+    },
+    {
+      "title": "Model selection criteria and model selection tests in regression models",
+      "authors": [
+        {
+          "name": "T Ter\u00e4svirta",
+          "link": "https://scholar.google.com/citations?user=KtRoG7gAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=KtRoG7gAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "KtRoG7gAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "T Ter\u00e4svirta, I Mellin - Scandinavian Journal of Statistics, 1986 - JSTOR",
+      "citations": 118,
+      "link": "https://www.jstor.org/stable/4616022",
+      "snippet": "\u2026 First, we approximate (5.1) from above and below to demonstrate asymptotic properties of model selection criteria in this multiple comparison situation. We see that (5.1) is the probabil\u2026",
+      "search_term": "multiple testing econometrics model selection"
+    },
+    {
+      "title": "Forecasting macroeconomic variables using neural network models and three automated model selection techniques",
+      "authors": [
+        {
+          "name": "A Bredahl Kock",
+          "link": "https://scholar.google.com/citations?user=7DmIb44AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=7DmIb44AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "7DmIb44AAAAJ"
+        },
+        {
+          "name": "T Ter\u00e4svirta",
+          "link": "https://scholar.google.com/citations?user=KtRoG7gAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=KtRoG7gAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "KtRoG7gAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "A Bredahl Kock, T Ter\u00e4svirta - Econometric Reviews, 2016 - Taylor & Francis",
+      "citations": 59,
+      "link": "https://www.tandfonline.com/doi/abs/10.1080/07474938.2015.1035163",
+      "snippet": "\u2026 In this article we consider macroeconomic forecasting with a flexible nonlinear model, the single-hidden layer feed-forward neural network model that is a universal approximator. We \u2026",
+      "search_term": "macroeconomic forecasting model selection"
+    },
+    {
+      "title": "Econometric model selection with more variables than observations",
+      "authors": [],
+      "year": null,
+      "journal": "JA Doornik - 2009 - econ.au.dk",
+      "citations": 55,
+      "link": "https://econ.au.dk/fileadmin/site_files/filer_oekonomi/subsites/creates/Seminar_Papers/2009/Jurgen_Doornik_051109.pdf",
+      "snippet": "\u2026 testing. Then diagnostic tracking ensures that all terminal candidate models also satisfy these tests. \u2026 In Autometrics, which is used for all model selection results in this paper, this is a tree \u2026",
+      "search_term": "multiple testing econometrics model selection"
+    }
+  ],
+  "structural_breaks": [
+    {
+      "title": "Structural breaks in financial time series",
+      "authors": [
+        {
+          "name": "E Andreou",
+          "link": "https://scholar.google.com/citations?user=ofrpaqkAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=ofrpaqkAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "ofrpaqkAAAAJ"
+        },
+        {
+          "name": "E Ghysels",
+          "link": "https://scholar.google.com/citations?user=se30-eEAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=se30-eEAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "se30-eEAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "E Andreou, E Ghysels - Handbook of financial time series, 2009 - Springer",
+      "citations": 159,
+      "link": "https://link.springer.com/chapter/10.1007/978-3-540-71297-8_37",
+      "snippet": "\u2026 structural breaks in financial time series for statistical inference purposes. In the third section we discuss change-point tests in financial time series\u2026 as single and multiple break tests. The \u2026",
+      "search_term": "Phillips Curve structural breaks time series"
+    },
+    {
+      "title": "Periods and structural breaks in US economic history 1959\u20132007",
+      "authors": [
+        {
+          "name": "KL Seip",
+          "link": "https://scholar.google.com/citations?user=U9R4PRsAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=U9R4PRsAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "U9R4PRsAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "R McNown, KL Seip - Journal of Policy Modeling, 2011 - Elsevier",
+      "citations": 21,
+      "link": "https://www.sciencedirect.com/science/article/pii/S0161893810000505",
+      "snippet": "\u2026 as the Fisher hypothesis and the Phillips curve, with direct implications for economic policy. Finally, we hypothesize that lead and lag features among the time series are consistent over \u2026",
+      "search_term": "Phillips Curve structural breaks time series"
+    },
+    {
+      "title": "Structural breaks in US macroeconomic time series: A bayesian model averaging approach",
+      "authors": [
+        {
+          "name": "A Check",
+          "link": "https://scholar.google.com/citations?user=naINIMgAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=naINIMgAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "naINIMgAAAAJ"
+        },
+        {
+          "name": "J Piger",
+          "link": "https://scholar.google.com/citations?user=oLVUyHAAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=oLVUyHAAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "oLVUyHAAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "A Check, J Piger - Journal of Money, Credit and Banking, 2021 - Wiley Online Library",
+      "citations": 15,
+      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jmcb.12822",
+      "snippet": "\u2026 evidence for structural breaks in autoregressive models of US macroeconomic time series. \u2026 , the number of structural breaks, and the specific parameters that break. We develop a \u2026",
+      "search_term": "Phillips Curve structural breaks time series"
+    },
+    {
+      "title": "Time Series Analysis and structural break detection: A case of Zambia's CPI",
+      "authors": [],
+      "year": null,
+      "journal": "E Phiri, W Wang - Economic Policy and Sustainable \u2026, 2022 - books.google.com",
+      "citations": 2,
+      "link": "https://books.google.com/books?hl=en&lr=&id=hW_REAAAQBAJ&oi=fnd&pg=PA91&dq=Phillips+Curve+structural+breaks+time+series&ots=yOpSzYsAua&sig=NycMC8btd5jYdTY3hcW6qVrafoQ",
+      "snippet": "\u2026 This study considers structural break in the time series model using Zambia's Consumer Price Index (CPI) for 10 years. The data used in this study is secondary and was obtained from \u2026",
+      "search_term": "Phillips Curve structural breaks time series"
+    }
+  ],
+  "recent_applications": [
+    {
+      "title": "New Keynesian economics and the Phillips curve",
+      "authors": [],
+      "year": null,
+      "journal": "JM Roberts - Journal of money, credit and banking, 1995 - JSTOR",
+      "citations": 1276,
+      "link": "https://www.jstor.org/stable/2077783",
+      "snippet": "\u2026 has the advantage of econometric efficiency if the model is \u2026 These results suggest that the New Keynesian Phillips curve \u2026 To implement the test, I introduced lagged residuals from the \u2026",
+      "search_term": "Phillips Curve residual analysis econometrics"
+    },
+    {
+      "title": "New tests of the new-Keynesian Phillips curve",
+      "authors": [
+        {
+          "name": "K Whelan",
+          "link": "https://scholar.google.com/citations?user=jsFeKTYAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=jsFeKTYAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "jsFeKTYAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "J Rudd, K Whelan - Journal of Monetary Economics, 2005 - Elsevier",
+      "citations": 689,
+      "link": "https://www.sciencedirect.com/science/article/pii/S0304393205000772",
+      "snippet": "\u2026 Phillips curve? Gal\u00ed and Gertler [1999. Inflation dynamics: a structural econometric analysis. \u2026 also consistent with a backward-looking Phillips curve. Using an alternative approach, we \u2026",
+      "search_term": "Phillips Curve residual analysis econometrics"
+    },
+    {
+      "title": "Phillips curve inflation forecasts",
+      "authors": [
+        {
+          "name": "MW Watson",
+          "link": "https://scholar.google.com/citations?user=W2OkFFUAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=W2OkFFUAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "W2OkFFUAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "JH Stock, MW Watson - 2008 - nber.org",
+      "citations": 666,
+      "link": "https://www.nber.org/papers/w14322",
+      "snippet": "\u2026 in the US provided a small improvement over the AO forecast, and the new Keynesian \u2026 time variation in the inflation process, in predictive relations, and in Phillips curve forecasts. This is \u2026",
+      "search_term": "Phillips Curve model enhancement methodology"
+    },
+    {
+      "title": "The post-war US Phillips curve: a revisionist econometric history",
+      "authors": [
+        {
+          "name": "RG King",
+          "link": "https://scholar.google.com/citations?user=o5IcxRYAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=o5IcxRYAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "o5IcxRYAAAAJ"
+        },
+        {
+          "name": "MW Watson",
+          "link": "https://scholar.google.com/citations?user=W2OkFFUAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=W2OkFFUAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "W2OkFFUAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "RG King, MW Watson - Carnegie-Rochester Conference Series on Public \u2026, 1994 - Elsevier",
+      "citations": 493,
+      "link": "https://www.sciencedirect.com/science/article/pii/0167223194000182",
+      "snippet": "\u2026 series econometric methodologies. Our history of the Phillips curve and the Phillips correlation is revisionist because it challenges important aspects of the views of each of the \u2026",
+      "search_term": "Phillips Curve residual analysis econometrics"
+    },
+    {
+      "title": "Optimal inflation and the identification of the Phillips curve",
+      "authors": [
+        {
+          "name": "M McLeay",
+          "link": "https://scholar.google.com/citations?user=5vknXg0AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=5vknXg0AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "5vknXg0AAAAJ"
+        },
+        {
+          "name": "S Tenreyro",
+          "link": "https://scholar.google.com/citations?user=vApJ0HwAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=vApJ0HwAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "vApJ0HwAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "M McLeay, S Tenreyro - NBER macroeconomics annual, 2020 - journals.uchicago.edu",
+      "citations": 359,
+      "link": "https://www.journals.uchicago.edu/doi/abs/10.1086/707181",
+      "snippet": "\u2026 econometricians could recover the structural Phillips curve: \u2026 residuals from a regression of core CPI inflation on all regressors other than the unemployment rate, against the residuals \u2026",
+      "search_term": "Phillips Curve residual analysis econometrics"
+    },
+    {
+      "title": "Price expectations and the Phillips curve",
+      "authors": [],
+      "year": null,
+      "journal": "RE Lucas, LA Rapping - The American Economic Review, 1969 - JSTOR",
+      "citations": 289,
+      "link": "https://www.jstor.org/stable/1808963",
+      "snippet": "\u2026 the residual sum of squares and the degrees of freedom under the maintained hypothesis, let SS,, be the residual sum \u2026 As reported econometric models go, ours can scarcely be called \u2026",
+      "search_term": "Phillips Curve residual analysis econometrics"
+    },
+    {
+      "title": "The predictive content of the output gap for inflation: Resolving in-sample and out-of-sample evidence",
+      "authors": [
+        {
+          "name": "TE Clark",
+          "link": "https://scholar.google.com/citations?user=2pg2mg4AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=2pg2mg4AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "2pg2mg4AAAAJ"
+        },
+        {
+          "name": "MW McCracken",
+          "link": "https://scholar.google.com/citations?user=Dz0fGc4AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Dz0fGc4AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "Dz0fGc4AAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "TE Clark, MW McCracken - Journal of Money, Credit and Banking, 2006 - JSTOR",
+      "citations": 173,
+      "link": "https://www.jstor.org/stable/3839001",
+      "snippet": "\u2026 Phillips curve analyses have also explicitly treated forecast performance as a test of model validity\u2026 of the relatively weak out-of-sample performance of the Phillips curve can be attributed \u2026",
+      "search_term": "out-of-sample validation Phillips Curve"
+    },
+    {
+      "title": "What's happened to the Phillips curve?",
+      "authors": [
+        {
+          "name": "JC Williams",
+          "link": "https://scholar.google.com/citations?user=ZOiJvgIAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=ZOiJvgIAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "ZOiJvgIAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "F Brayton, JM Roberts, JC Williams - 1999 - federalreserve.gov",
+      "citations": 151,
+      "link": "https://www.federalreserve.gov/econres/feds/what39s-happened-to-the-phillips-curve.htm",
+      "snippet": "\u2026 with the properties of a standard Phillips curve. We find this result \u2026 Two alternative modifications to the standard Phillips curve \u2026 augments the standard Phillips curve to include an\" error-\u2026",
+      "search_term": "Phillips Curve residual analysis econometrics"
+    },
+    {
+      "title": "A search for a structural Phillips curve",
+      "authors": [
+        {
+          "name": "AM Sbordone",
+          "link": "https://scholar.google.com/citations?user=stfXOc0AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=stfXOc0AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "stfXOc0AAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "TW Cogley, AM Sbordone - 2005 - econstor.eu",
+      "citations": 149,
+      "link": "https://www.econstor.eu/handle/10419/31370",
+      "snippet": "\u2026 In the first, we estimate an unrestricted time series representation for the variables that drive \u2026 form as a time-varying V AR, in order to allow for the possibility of structural breaks. The \u2026",
+      "search_term": "Phillips Curve structural breaks time series"
+    },
+    {
+      "title": "Econometric evaluation of the New Keynesian Phillips curve",
+      "authors": [
+        {
+          "name": "G B\u00e5rdsen",
+          "link": "https://scholar.google.com/citations?user=v9U8aVMAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=v9U8aVMAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "v9U8aVMAAAAJ"
+        },
+        {
+          "name": "ES Jansen",
+          "link": "https://scholar.google.com/citations?user=F4dnIJIAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=F4dnIJIAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "F4dnIJIAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "G B\u00e5rdsen, ES Jansen\u2026 - Oxford Bulletin of \u2026, 2004 - Wiley Online Library",
+      "citations": 146,
+      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0084.2004.00097.x",
+      "snippet": "\u2026 (iv) If the residual autocorrelation of the NPCMs above are induced by the forward solution \u2026 process in the residuals of equation (13). As there is no detectable residual autocorrelation, \u2026",
+      "search_term": "Phillips Curve residual analysis econometrics"
+    },
+    {
+      "title": "Unemployment hysteresis in OECD countries: Centurial time series evidence with structural breaks",
+      "authors": [
+        {
+          "name": "CC Lee",
+          "link": "https://scholar.google.com/citations?user=_MopwkkAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=_MopwkkAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "_MopwkkAAAAJ"
+        },
+        {
+          "name": "CP Chang",
+          "link": "https://scholar.google.com/citations?user=ASejf9sAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=ASejf9sAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "ASejf9sAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "CC Lee, CP Chang - Economic Modelling, 2008 - Elsevier",
+      "citations": 120,
+      "link": "https://www.sciencedirect.com/science/article/pii/S0264999307000843",
+      "snippet": "\u2026 We utilize a new powerful Lagrange Multiplier unit root test that endogenously determines structural breaks in level and/or trend, as proposed by Lee and Strazicich [Lee, J., Strazicich, \u2026",
+      "search_term": "Phillips Curve structural breaks time series"
+    },
+    {
+      "title": "The Phillips curve: A revisionist interpretation",
+      "authors": [],
+      "year": null,
+      "journal": "M Desai - Economica, 1975 - JSTOR",
+      "citations": 102,
+      "link": "https://www.jstor.org/stable/2552982",
+      "snippet": "\u2026 econometric properties. An understanding of the method leads to an interpretation of the Phillips curve \u2026 and the estimate of a derived by averaging the residuals obtained when this \u2026",
+      "search_term": "Phillips Curve residual analysis econometrics"
+    },
+    {
+      "title": "The Phillips curve at the ECB",
+      "authors": [
+        {
+          "name": "PR Lane",
+          "link": "https://scholar.google.com/citations?user=8iXVkrEAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=8iXVkrEAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "8iXVkrEAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "F Eser, P Karadi, PR Lane, L Moretti\u2026 - The Manchester \u2026, 2020 - Wiley Online Library",
+      "citations": 101,
+      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1111/manc.12339",
+      "snippet": "\u2026 Using a simple empirical approach, Galstyan (2019) includes in a Phillips Curve for the euro area the current account or trade balance as a measure of relative demand imbalance and \u2026",
+      "search_term": "Phillips Curve model enhancement methodology"
+    },
+    {
+      "title": "An empirical investigation into the effect of unemployment and inflation on economic growth in Nigeria",
+      "authors": [
+        {
+          "name": "A Umaru",
+          "link": "https://scholar.google.com/citations?user=UGKdVdsAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=UGKdVdsAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "UGKdVdsAAAAJ"
+        },
+        {
+          "name": "S Musa",
+          "link": "https://scholar.google.com/citations?user=MQXQxbwAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=MQXQxbwAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "MQXQxbwAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "A Umaru, M Donga, S Musa - Interdisciplinary Journal of Research \u2026, 2013 - researchgate.net",
+      "citations": 49,
+      "link": "https://www.researchgate.net/profile/Salihu-Musa-3/publication/353021117_An_Empirical_Investigation_into_the_Effect_of_Unemployment_and_Inflation_on_Economic_Growth_in_Nigeria/links/60e483df92851ca944b4f335/An-Empirical-Investigation-into-the-Effect-of-Unemployment-and-Inflation-on-Economic-Growth-in-Nigeria.pdf",
+      "snippet": "\u2026 The relationship between unemployment and inflation is also known as the Phillips curve. In \u2026 is: to empirically examine the impact of unemployment and inflation on economic growth in \u2026",
+      "search_term": "inflation unemployment relationship empirical"
+    },
+    {
+      "title": "Phillips curve inflation and unemployment: an empirical research for Greece",
+      "authors": [
+        {
+          "name": "C Dritsaki",
+          "link": "https://scholar.google.com/citations?user=soiwNxcAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=soiwNxcAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "soiwNxcAAAAJ"
+        },
+        {
+          "name": "M Dritsaki",
+          "link": "https://scholar.google.com/citations?user=SHZCuRcAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=SHZCuRcAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "SHZCuRcAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "C Dritsaki, M Dritsaki - International Journal of \u2026, 2013 - inderscienceonline.com",
+      "citations": 48,
+      "link": "https://www.inderscienceonline.com/doi/abs/10.1504/IJCEE.2013.056265",
+      "snippet": "\u2026 However, this relationship appeared to \u2026 the relationship between inflation and unemployment in Greece using annual data from 1980 until 2010. To examine the long-run relationship for \u2026",
+      "search_term": "inflation unemployment relationship empirical"
+    },
+    {
+      "title": "Trend inflation and the nature of structural breaks in the New Keynesian Phillips curve",
+      "authors": [
+        {
+          "name": "CJ Kim",
+          "link": "https://scholar.google.com/citations?user=rC9w3W0AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=rC9w3W0AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "rC9w3W0AAAAJ"
+        },
+        {
+          "name": "P Manopimoke",
+          "link": "https://scholar.google.com/citations?user=ORIDsdIAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=ORIDsdIAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "ORIDsdIAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "CJ Kim, P Manopimoke\u2026 - Journal of Money, Credit \u2026, 2014 - Wiley Online Library",
+      "citations": 46,
+      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jmcb.12105",
+      "snippet": "\u2026 Rather, we investigate the nature and the implications of structural breaks in the Phillips curve given earlier, with a focus on the structural breaks on the k parameter and the persistence \u2026",
+      "search_term": "Phillips Curve structural breaks time series"
+    },
+    {
+      "title": "The duration of unemployment and unexpected inflation: an empirical analysis",
+      "authors": [
+        {
+          "name": "A Bj\u00f6rklund",
+          "link": "https://scholar.google.com/citations?user=AyGhle0AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=AyGhle0AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "AyGhle0AAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "A Bj\u00f6rklund, B Holmlund - The American Economic Review, 1981 - JSTOR",
+      "citations": 35,
+      "link": "https://www.jstor.org/stable/1805044",
+      "snippet": "\u2026 rate will increase inflation thereby \u2026 empirical validity, at least for the short-term unemployed and for a labor market such as Sweden's. But we have also shown that unexpected inflation \u2026",
+      "search_term": "inflation unemployment relationship empirical"
+    },
+    {
+      "title": "A neural phillips curve and a deep output gap",
+      "authors": [
+        {
+          "name": "P Goulet Coulombe",
+          "link": "https://scholar.google.com/citations?user=xtnZTWIAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=xtnZTWIAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "xtnZTWIAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "P Goulet Coulombe - Journal of Business & Economic Statistics, 2025 - Taylor & Francis",
+      "citations": 32,
+      "link": "https://www.tandfonline.com/doi/abs/10.1080/07350015.2024.2421279",
+      "snippet": "\u2026 and comparing predictive performance out-of-sample or out-\u2026 This section provides a validation of the new methodology by \u2026 The pseudo-out-of-sample period starts in 2008Q1 and ends \u2026",
+      "search_term": "out-of-sample validation Phillips Curve"
+    },
+    {
+      "title": "Breaks in the Phillips curve: Evidence from panel data",
+      "authors": [
+        {
+          "name": "SC Smith",
+          "link": "https://scholar.google.com/citations?user=Li1lNygAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Li1lNygAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "Li1lNygAAAAJ"
+        },
+        {
+          "name": "A Timmermann",
+          "link": "https://scholar.google.com/citations?user=38t3MC4AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=38t3MC4AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "38t3MC4AAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "SC Smith, A Timmermann\u2026 - Journal of Applied \u2026, 2025 - Wiley Online Library",
+      "citations": 31,
+      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1002/jae.3102",
+      "snippet": "\u2026 We revisit the Phillips curve, applying new Bayesian panel methods with structural breaks to \u2026 The red dotted lines graph the OLS time series estimates for each individual sector, \u2026",
+      "search_term": "Phillips Curve structural breaks time series"
+    },
+    {
+      "title": "Examining the relationship among unemployment, inflation, and economic growth",
+      "authors": [],
+      "year": null,
+      "journal": "AA Muhammad - Journal of Business and Economic Options, 2023 - resdojournals.com",
+      "citations": 30,
+      "link": "http://resdojournals.com/index.php/jbeo/article/view/237",
+      "snippet": "\u2026 the impact of unemployment and inflation on economic growth\u2026 findings regarding the relationship between these key \u2026 empirically examine the significant impact of unemployment \u2026",
+      "search_term": "inflation unemployment relationship empirical"
+    },
+    {
+      "title": "Responsiveness of unemployment to inflation: Empirical evidence from Nigeria",
+      "authors": [
+        {
+          "name": "EH Chijindu",
+          "link": "https://scholar.google.com/citations?user=7x3TeqUAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=7x3TeqUAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "7x3TeqUAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "IG Okafor, EH Chijindu\u2026 - International Journal of \u2026, 2016 - academia.edu",
+      "citations": 21,
+      "link": "https://www.academia.edu/download/49082616/Responsivenss_of_unemployment_to_inflation._Empirical_evidence_from_Nigeria..pdf",
+      "snippet": "\u2026 the long-run relationship between inflation and unemployment, and \u2026 relationship running from inflation to unemployment, which points to the fact that inflation influenced unemployment. \u2026",
+      "search_term": "inflation unemployment relationship empirical"
+    },
+    {
+      "title": "Empirical evidence on inflation and unemployment in the long run",
+      "authors": [
+        {
+          "name": "AA Haug",
+          "link": "https://scholar.google.com/citations?user=oXDOyocAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=oXDOyocAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "oXDOyocAAAAJ"
+        },
+        {
+          "name": "IP King",
+          "link": "https://scholar.google.com/citations?user=a0EF78oAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=a0EF78oAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "a0EF78oAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "AA Haug, IP King - 2011 - mpra.ub.uni-muenchen.de",
+      "citations": 21,
+      "link": "https://mpra.ub.uni-muenchen.de/id/eprint/33409",
+      "snippet": "\u2026 Abstract We examine the relationship between inflation and unemployment in the long run, using \u2026 that a positive relationship exists, where inflation leads unemployment by some 3 to 31 \u2026",
+      "search_term": "inflation unemployment relationship empirical"
+    },
+    {
+      "title": "The Phillips curve from the perspective of the history of econometrics",
+      "authors": [],
+      "year": null,
+      "journal": "D Qin - History of Political Economy, 2011 - read.dukeupress.edu",
+      "citations": 16,
+      "link": "https://read.dukeupress.edu/hope/article-abstract/43/suppl_1/283/38587",
+      "snippet": "\u2026 of econometrics through a case study of the Phillips curve, that is, econometric modeling of \u2026 It focuses on a number of questions: What econometric tools did modelers choose to use in \u2026",
+      "search_term": "Phillips Curve residual analysis econometrics"
+    },
+    {
+      "title": "A multiple break panel approach to estimating United States Phillips curves",
+      "authors": [
+        {
+          "name": "B Russell",
+          "link": "https://scholar.google.com/citations?user=qBk1kIwAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=qBk1kIwAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "qBk1kIwAAAAJ"
+        },
+        {
+          "name": "I Malki",
+          "link": "https://scholar.google.com/citations?user=vD6GWQoAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=vD6GWQoAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "vD6GWQoAAAAJ"
+        },
+        {
+          "name": "N Ponomareva",
+          "link": "https://scholar.google.com/citations?user=whUf5AEAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=whUf5AEAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "whUf5AEAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "B Russell, A Banerjee, I Malki, N Ponomareva - 2010 - discovery.dundee.ac.uk",
+      "citations": 13,
+      "link": "https://discovery.dundee.ac.uk/ws/files/108383/DDPE_232.pdf",
+      "snippet": "\u2026 Phillips curve models using standard, and well understood, fixed effects time series panel \u2026 estimation and inference that arise when structural breaks in the series being modelled are not \u2026",
+      "search_term": "Phillips Curve structural breaks time series"
+    },
+    {
+      "title": "Strain and the inflation-unemployment relationship: a conceptual and empirical investigation",
+      "authors": [
+        {
+          "name": "D Daianu",
+          "link": "https://scholar.google.com/citations?user=cRTlpa0AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=cRTlpa0AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "cRTlpa0AAAAJ"
+        },
+        {
+          "name": "LL Albu",
+          "link": "https://scholar.google.com/citations?user=kOCIADcAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=kOCIADcAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "kOCIADcAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "D Daianu, LL Albu - 1996 - mpra.ub.uni-muenchen.de",
+      "citations": 13,
+      "link": "https://mpra.ub.uni-muenchen.de/id/eprint/14017",
+      "snippet": "\u2026 Considering empirical data we can also draw generically the main trends within the \u2026 is unemployment-inflation plan; yp is production-inflation plan; and uy represents the unemployment-\u2026",
+      "search_term": "inflation unemployment relationship empirical"
+    },
+    {
+      "title": "Understanding the interplay of poverty, inflation, and unemployment: An empirical analysis",
+      "authors": [
+        {
+          "name": "MW Khalid",
+          "link": "https://scholar.google.com/citations?user=RiGg9YIAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=RiGg9YIAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "RiGg9YIAAAAJ"
+        },
+        {
+          "name": "M Sultan",
+          "link": "https://scholar.google.com/citations?user=mx83dW8AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=mx83dW8AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "mx83dW8AAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "MW Khalid, M Sultan - Journal of Business and Economic \u2026, 2019 - resdojournals.com",
+      "citations": 13,
+      "link": "http://resdojournals.com/index.php/jbeo/article/view/103",
+      "snippet": "\u2026 long-term relationships among poverty, inflation, and unemployment. To achieve this goal, the study utilizes the Autoregressive Distributed Lag (ARDL) approach for empirical analysis. \u2026",
+      "search_term": "inflation unemployment relationship empirical"
+    },
+    {
+      "title": "Strain and inflation-unemployment relationship in transitional economies: a theoretical and empirical investigation",
+      "authors": [
+        {
+          "name": "LL Albu",
+          "link": "https://scholar.google.com/citations?user=kOCIADcAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=kOCIADcAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "kOCIADcAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "LL Albu - Available at SSRN 1566471, 1997 - papers.ssrn.com",
+      "citations": 12,
+      "link": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1566471",
+      "snippet": "\u2026 a simple model that can give us a measure of the stability-degree of inflationunemployment relationship in European economies. Let S being the sum S of unemployment and inflation: \u2026",
+      "search_term": "inflation unemployment relationship empirical"
+    },
+    {
+      "title": "Cost-based Phillips Curve forecasts of inflation",
+      "authors": [
+        {
+          "name": "S Mazumder",
+          "link": "https://scholar.google.com/citations?user=3vmdf5wAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=3vmdf5wAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "3vmdf5wAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "S Mazumder - Journal of Macroeconomics, 2011 - Elsevier",
+      "citations": 9,
+      "link": "https://www.sciencedirect.com/science/article/pii/S0164070411000425",
+      "snippet": "\u2026 Stock and Watson (1999) use the Phillips Curve to forecast inflation for a variety of existing \u2026 We then use the Phillips Curve to conduct pseudo out-of-sample inflation forecasts for the \u2026",
+      "search_term": "out-of-sample validation Phillips Curve"
+    },
+    {
+      "title": "The Phillips curve: A case study of theory and practice",
+      "authors": [],
+      "year": null,
+      "journal": "K Lawler, I Pavlenko - \u0412\u0456\u0441\u043d\u0438\u043a \u041a\u0438i\u0432\u0441\u044c\u043a\u043e\u0433\u043e \u043d\u0430\u0446i\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u2026, 2020 - cyberleninka.ru",
+      "citations": 6,
+      "link": "https://cyberleninka.ru/article/n/the-phillips-curve-a-case-study-of-theory-and-practice",
+      "snippet": "\u2026 , YT is the target level of output which is higher than the natural level ye, this would correspond to a higher inflation level and short run Philips curve shifts upwards , and the process \u2026",
+      "search_term": "Phillips Curve model enhancement methodology"
+    },
+    {
+      "title": "Advances in estimating the Phillips curve",
+      "authors": [
+        {
+          "name": "H Guirguis",
+          "link": "https://scholar.google.com/citations?user=dHn8PEwAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=dHn8PEwAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "dHn8PEwAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "H Guirguis, TS Suen - Journal of Applied Economics, 2022 - Taylor & Francis",
+      "citations": 4,
+      "link": "https://www.tandfonline.com/doi/abs/10.1080/15140326.2022.2045469",
+      "snippet": "\u2026 of the in-sample and out-of-sample forecasts of the Phillips curve with the Core PCE, UIG, and \u2026 Table 8 reports the number of breaks by repeatedly testing the null of no breaks against k \u2026",
+      "search_term": "out-of-sample validation Phillips Curve"
+    },
+    {
+      "title": "Validity of Augmented Philips Curve Hypothesis in Sub Saharan African Countries: Evidence from Rational Expectations of inflation rate",
+      "authors": [
+        {
+          "name": "OI Ojonta",
+          "link": "https://scholar.google.com/citations?user=GLWrf1kAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=GLWrf1kAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "GLWrf1kAAAAJ"
+        },
+        {
+          "name": "OE Ogbonna",
+          "link": "https://scholar.google.com/citations?user=w0kPP50AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=w0kPP50AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "w0kPP50AAAAJ"
+        },
+        {
+          "name": "ER Ukwueze",
+          "link": "https://scholar.google.com/citations?user=O-45OX4AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=O-45OX4AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "O-45OX4AAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "OI Ojonta, OE Ogbonna, ER Ukwueze - International Journal of \u2026, 2022 - utisgad.org",
+      "citations": 2,
+      "link": "https://utisgad.org/wp-content/uploads/tainacan-items/1854/2690/UTISGAD-2022-2-1-109.pdf",
+      "snippet": "\u2026 : first to examine the validity of augmented Philips curve hypothesis. The second to examine \u2026 panel estimation approach. A representation of the expectations augmented Philips curve is \u2026",
+      "search_term": "Phillips Curve model enhancement methodology"
+    },
+    {
+      "title": "An empirical analysis of regional phillips curve with spatial dependence",
+      "authors": [
+        {
+          "name": "E Lasarte-Navamuel",
+          "link": "https://scholar.google.com/citations?user=2X7JB2cAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=2X7JB2cAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "2X7JB2cAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "E Lasarte-Navamuel, JL P\u00e9rez-Rivero\u2026 - Regional Science Policy & \u2026, 2025 - Elsevier",
+      "citations": 1,
+      "link": "https://www.sciencedirect.com/science/article/pii/S1757780224003731",
+      "snippet": "\u2026 Phillips Curve. The analysis is carried out through spatial econometric techniques and through a regional approach\u2026 The conclusions are that Spanish Phillips Curve is alive but flattened \u2026",
+      "search_term": "Phillips Curve model enhancement methodology"
+    },
+    {
+      "title": "Identifying Structural Break in the Phillips Curve for the Selected Countries: a Dummy Variable Approach",
+      "authors": [
+        {
+          "name": "R Mustafa",
+          "link": "https://scholar.google.com/citations?user=F1UPVyoAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=F1UPVyoAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "F1UPVyoAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "R Mustafa, MS Islam - International journal of Economics, Business \u2026, 2022 - academia.edu",
+      "citations": 1,
+      "link": "https://www.academia.edu/download/95925029/IJEBMR_1050.pdf",
+      "snippet": "\u2026 Time series basically observe or studies variables for a long \u2026 examine the Phillips curve for selected countries. The simple Phillips curve could be estimated by using following equation: \u2026",
+      "search_term": "Phillips Curve structural breaks time series"
+    },
+    {
+      "title": "The relationship between inflation and unemployment: an empirical approach for the European Union countries",
+      "authors": [
+        {
+          "name": "K Ulmann",
+          "link": "https://scholar.google.com/citations?user=Ht23mcMAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Ht23mcMAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "Ht23mcMAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "K Ulmann - Zeszyty Studenckie Wydzia\u0142u \u2026, 2021 - repozytorium.bg.ug.edu.pl",
+      "citations": 1,
+      "link": "https://repozytorium.bg.ug.edu.pl/info/article/UOG2d3caccd313e445481ae9cfe4e8779c3/",
+      "snippet": "The aim of the article was to prove the existence of an inverse relationship between the variables: unemployment and rate of wage growth. For this purpose, the Eurostat database and \u2026",
+      "search_term": "inflation unemployment relationship empirical"
+    },
+    {
+      "title": "The Existence of Phillips Curve theory in Ethiopia; Depend on Augmented Phillips curve theory Analysis",
+      "authors": [
+        {
+          "name": "E Sisay",
+          "link": "https://scholar.google.com/citations?user=DbyxnNkAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=DbyxnNkAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "DbyxnNkAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "E Sisay - American Journal of Design, 2020 - researchgate.net",
+      "citations": 1,
+      "link": "https://www.researchgate.net/profile/Endashaw-Sirah-2/publication/345764036_Endashaw_Sisay_Sirah/links/5fad0ebe299bf18c5b6a16fe/Endashaw-Sisay-Sirah.pdf",
+      "snippet": "\u2026 of our society welfare enhancement, especially from 2008 \u2026 approach to co-integration cre-ated by [9] in arrange to fulfill the objective of the study. The analyst utilized this approach \u2026",
+      "search_term": "Phillips Curve model enhancement methodology"
+    },
+    {
+      "title": "THE PHILLIPS CURVE IN DEVELOPING ECONOMIES: A CASE STUDY OF UZBEKISTAN",
+      "authors": [
+        {
+          "name": "U Yakubjanova",
+          "link": "https://scholar.google.com/citations?user=g5gMMzgAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=g5gMMzgAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "g5gMMzgAAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "U Yakubjanova - Journal of Modern Educational \u2026, 2024 - scopusacademia.org",
+      "citations": 0,
+      "link": "https://www.scopusacademia.org/index.php/jmea/article/view/1150",
+      "snippet": "\u2026 This enhanced version of the model is widely used by many developed and developing \u2026 , the Phillips curve model also has a New Keynesian Phillips Curve (NKPC) approach, which \u2026",
+      "search_term": "Phillips Curve model enhancement methodology"
+    },
+    {
+      "title": "REVISITING THE PHILLIPS CURVE: UNDERSTANDING THE UPWARD CURVE IN THE BANGLADESH CONTEXT",
+      "authors": [],
+      "year": null,
+      "journal": "S Dey - Journal of SUB, 2024 - sub.edu.bd",
+      "citations": 0,
+      "link": "https://sub.edu.bd/journal/index.php/jsub/article/view/1",
+      "snippet": "\u2026 Phillips curve observed instead. The study utilizes a variety of statistical and econometric methodologies to \u2026 system to support entrepreneurship, and enhancing both public and private \u2026",
+      "search_term": "Phillips Curve model enhancement methodology"
+    },
+    {
+      "title": "Non-linear Phillips Curve for India: Evidence from Explainable Machine Learning",
+      "authors": [
+        {
+          "name": "B Pratap",
+          "link": "https://scholar.google.com/citations?user=GH4PpzEAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=GH4PpzEAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "GH4PpzEAAAAJ"
+        },
+        {
+          "name": "A Pawar",
+          "link": "https://scholar.google.com/citations?user=wkWyZdMAAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=wkWyZdMAAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "wkWyZdMAAAAJ"
+        },
+        {
+          "name": "S Sengupta",
+          "link": "https://scholar.google.com/citations?user=v7aqaH8AAAAJ&hl=en&oi=sra",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=v7aqaH8AAAAJ&engine=google_scholar_author&hl=en",
+          "author_id": "v7aqaH8AAAAJ"
+        }
+      ],
+      "year": null,
+      "journal": "B Pratap, A Pawar, S Sengupta - Computational Economics, 2025 - Springer",
+      "citations": 0,
+      "link": "https://link.springer.com/article/10.1007/s10614-025-10942-z",
+      "snippet": "\u2026 of the Phillips curve for India. We then undertake a pseudo out-of-sample forecasting \u2026 Empirical validity of the Phillips curve, however, has been debated. Influential studies such \u2026",
+      "search_term": "out-of-sample validation Phillips Curve"
+    }
+  ],
+  "output_gap_estimation": []
+}

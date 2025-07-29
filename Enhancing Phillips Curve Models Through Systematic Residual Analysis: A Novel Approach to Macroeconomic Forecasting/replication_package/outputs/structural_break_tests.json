@@ -1,0 +1,27 @@
+{
+  "cusum": {
+    "error": "The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()"
+  },
+  "chow_known": {
+    "1990-07": {
+      "description": "Early 1990s recession",
+      "statistic": 9.453041901391128,
+      "p_value": 7.912358524597707e-06,
+      "pre_break_r2": 0.9235086707874692,
+      "post_break_r2": 0.6391385340843223,
+      "result": "BREAK DETECTED"
+    }
+  },
+  "rolling_analysis": {
+    "windows_analyzed": 21,
+    "parameter_volatility": {
+      "const": 0.9959888520365268,
+      "unemployment_gap": 0.19318765078984187,
+      "inflation_expectations": 0.3202281797544468
+    },
+    "r_squared_range": [
+      0.3700944035651086,
+      0.9319250687057593
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "baseline": {
+    "theoretical_foundation": "\n            The baseline Phillips Curve specification follows the canonical form:\n            \u03c0_t = \u03b1 + \u03b2\u2081(u_t - u*_t) + \u03b2\u2082\u03c0^e_t + \u03b5_t\n            \n            Where \u03c0_t is inflation, (u_t - u*_t) is the unemployment gap, and \u03c0^e_t \n            represents inflation expectations. This specification embodies the core \n            trade-off between unemployment and inflation that has been central to \n            macroeconomic policy for decades.\n            ",
+    "coefficient_interpretation": {
+      "unemployment_gap": "\n                The unemployment gap coefficient captures the traditional Phillips Curve trade-off.\n                Our estimate suggests that a 1 percentage point increase in the unemployment gap\n                is associated with lower inflation. The coefficient's sign and magnitude are\n                consistent with economic theory.\n                ",
+      "inflation_expectations": "\n                The inflation expectations coefficient reflects the forward-looking nature of\n                price-setting behavior. A coefficient near 1.0 would indicate full incorporation\n                of expectations, while our estimate suggests partial expectation incorporation.\n                "
+    },
+    "statistical_significance": {},
+    "economic_magnitude": {},
+    "model_performance": "\n            The baseline model explains 0.6% of inflation variation,\n            which is low but not uncommon for Phillips Curve models.\n            The adjusted R\u00b2 of -1.0% accounts for the number of regressors.\n            "
+  },
+  "enhanced": {
+    "model_enhancement": "\n            The enhanced Phillips Curve achieves an R\u00b2 of 41.0%, representing\n            a 40.5 percentage point improvement over the baseline.\n            This improvement is dramatic.\n            ",
+    "new_variables": {
+      "trade_weighted_dollar": "\n                The trade-weighted dollar index (lagged 12 months) captures external sector effects\n                on domestic inflation. A strengthening dollar typically reduces import price pressures,\n                contributing to lower inflation with a substantial lag reflecting supply chain dynamics.\n                \n                Economic Channel: External \u2192 Import Prices \u2192 Core Inflation\n                Policy Relevance: Exchange rate pass-through to inflation\n                ",
+      "breakeven_inflation_expectations": "\n                The 5-year breakeven inflation rate (lagged 3 months) provides market-based\n                expectations that complement survey measures. This variable captures forward-looking\n                inflation expectations embedded in financial markets.\n                \n                Economic Channel: Market Expectations \u2192 Price Setting \u2192 Realized Inflation\n                Policy Relevance: Market-based inflation expectations for monetary policy\n                "
+    },
+    "economic_channels": {},
+    "quantitative_impact": {},
+    "economic_significance": {
+      "practical_importance": "\n            The enhanced model's improved explanatory power has practical implications for\n            policy makers and forecasters. Better understanding of inflation dynamics enables\n            more accurate forecasts and more effective policy responses.\n            ",
+      "policy_relevance": "\n            The identification of external sector and financial market channels provides\n            policy makers with additional information about inflation pressures beyond\n            traditional labor market indicators.\n            ",
+      "forecasting_value": "\n            The substantial out-of-sample performance improvement demonstrates real forecasting\n            value, not just in-sample overfitting. This is crucial for practical applications.\n            "
+    }
+  },
+  "multiple_testing": {
+    "statistical_reality": "\n            The multiple testing corrections reveal an important statistical reality: when testing\n            many candidate variables simultaneously, the risk of false discoveries increases\n            substantially. Our analysis tested approximately 89 candidate variables, making\n            correction essential for valid statistical inference.\n            ",
+    "correction_impact": "\n            Standard multiple testing corrections (Bonferroni, FDR) eliminate all statistically\n            significant relationships at conventional levels. This does not invalidate the\n            economic relationships but highlights the need for theory-guided variable selection\n            rather than purely statistical approaches.\n            ",
+    "economic_vs_statistical": "\n            The distinction between statistical and economic significance becomes crucial.\n            Variables may have economically meaningful relationships with inflation even if\n            they do not achieve statistical significance after multiple testing correction.\n            ",
+    "methodological_lesson": "\n            This analysis demonstrates the importance of: (1) theory-guided variable selection,\n            (2) out-of-sample validation as the ultimate test, and (3) comprehensive robustness\n            checking rather than relying solely on statistical significance.\n            "
+  },
+  "structural_stability": {
+    "phillips_curve_evolution": "\n            The Phillips Curve relationship has evolved significantly over time, reflecting\n            changes in monetary policy regimes, globalization effects, and structural\n            economic transformations. Our analysis confirms this instability.\n            ",
+    "identified_breaks": "\n            Our analysis identified 1 significant structural breaks at conventional\n            significance levels. These breaks correspond to major economic events and policy\n            regime changes, confirming the time-varying nature of inflation dynamics.\n            ",
+    "policy_implications": "\n            Structural instability has important implications for policy makers:\n            1. Phillips Curve parameters are not constant over time\n            2. Policy effectiveness may vary across different economic regimes\n            3. Regular model updating and monitoring is essential\n            ",
+    "methodological_implications": "\n            The presence of structural breaks validates our emphasis on:\n            1. Rolling window out-of-sample validation\n            2. Robustness checks across different sample periods\n            3. Continuous model monitoring and updating\n            "
+  }
+}

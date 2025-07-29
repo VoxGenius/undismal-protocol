@@ -1,0 +1,159 @@
+{
+  "sample_sensitivity": {
+    "Pre-COVID": {
+      "observations": 116,
+      "baseline_r2": 0.017751066704294938,
+      "enhanced_r2": 0.23362328964673107,
+      "improvement": 0.21587222294243613,
+      "baseline_aic": 348.0189306720517,
+      "enhanced_aic": 2.2464528496495717
+    },
+    "Post-1995": {
+      "observations": 116,
+      "baseline_r2": 0.15258707729342535,
+      "enhanced_r2": 0.4102586668101724,
+      "improvement": 0.25767158951674707,
+      "baseline_aic": 65.83657172038343,
+      "enhanced_aic": 1.3369513935593886
+    },
+    "Post-2000": {
+      "observations": 96,
+      "baseline_r2": 0.14208305164254564,
+      "enhanced_r2": 0.4102586668101724,
+      "improvement": 0.2681756151676268,
+      "baseline_aic": 52.88944469579596,
+      "enhanced_aic": 1.3369513935593886
+    },
+    "Post-Crisis": {
+      "observations": 56,
+      "baseline_r2": 0.28113660586282085,
+      "enhanced_r2": 0.47082667075163487,
+      "improvement": 0.18969006488881401,
+      "baseline_aic": 0.18501219543668412,
+      "enhanced_aic": -12.970885315700627
+    }
+  },
+  "specification_sensitivity": {
+    "baseline": {
+      "variables": [
+        "unemployment_gap",
+        "inflation_expectations"
+      ],
+      "observations": 132,
+      "r_squared": 0.005625993482793024,
+      "adj_r_squared": -0.009790657781039602,
+      "aic": 383.74244514240377,
+      "bic": 392.3908509101629,
+      "rmse": 1.0119751973643716
+    },
+    "with_dollar": {
+      "variables": [
+        "unemployment_gap",
+        "inflation_expectations",
+        "dollar_yoy_lag12"
+      ],
+      "observations": 71,
+      "r_squared": 0.3387721805302836,
+      "adj_r_squared": 0.30916496473313215,
+      "aic": 7.460374988551052,
+      "bic": 16.511094496716314,
+      "rmse": 0.24105293812546288
+    },
+    "with_expectations": {
+      "variables": [
+        "unemployment_gap",
+        "inflation_expectations",
+        "breakeven_5y_lag3"
+      ],
+      "observations": 83,
+      "r_squared": 0.19180746600048526,
+      "adj_r_squared": 0.16111661027898472,
+      "aic": 23.88624649538673,
+      "bic": 33.56160892657312,
+      "rmse": 0.26627164936051645
+    },
+    "with_financial": {
+      "variables": [
+        "unemployment_gap",
+        "inflation_expectations",
+        "financial_stress_lag1"
+      ],
+      "observations": 72,
+      "r_squared": 0.09735933348923109,
+      "adj_r_squared": 0.0575369511431677,
+      "aic": 60.595041360990905,
+      "bic": 69.70170583705513,
+      "rmse": 0.3486470486536697
+    },
+    "full_enhanced": {
+      "variables": [
+        "unemployment_gap",
+        "inflation_expectations",
+        "dollar_yoy_lag12",
+        "breakeven_5y_lag3"
+      ],
+      "observations": 71,
+      "r_squared": 0.4102586668101724,
+      "adj_r_squared": 0.3745167678289708,
+      "aic": 1.3369513935593886,
+      "bic": 12.650350778765965,
+      "rmse": 0.22764999987348913
+    },
+    "alternative_enhanced": {
+      "variables": [
+        "unemployment_gap",
+        "inflation_expectations",
+        "treasury_10y",
+        "weekly_hours_mfg"
+      ],
+      "observations": 132,
+      "r_squared": 0.4100518074103082,
+      "adj_r_squared": 0.39147076197441244,
+      "aic": 318.82805989528896,
+      "bic": 333.2420695082208,
+      "rmse": 0.7794745220369846
+    }
+  },
+  "transformation_sensitivity": {
+    "baseline_yoy": {
+      "dependent_var": "inflation",
+      "independent_vars": [
+        "unemployment_gap",
+        "inflation_expectations"
+      ],
+      "r_squared": 0.005625993482793024,
+      "adj_r_squared": -0.009790657781039602,
+      "observations": 132
+    },
+    "inflation_qoq": {
+      "dependent_var": "inflation_qoq_annualized",
+      "independent_vars": [
+        "unemployment_gap",
+        "inflation_expectations"
+      ],
+      "r_squared": 0.6083306417272759,
+      "adj_r_squared": 0.602113667786439,
+      "observations": 129
+    },
+    "unemployment_level": {
+      "dependent_var": "inflation",
+      "independent_vars": [
+        "unemployment_level",
+        "inflation_expectations"
+      ],
+      "r_squared": 0.015985498180143942,
+      "adj_r_squared": 0.0007294593922391179,
+      "observations": 132
+    },
+    "expectations_change": {
+      "dependent_var": "inflation",
+      "independent_vars": [
+        "unemployment_gap",
+        "expectations_change"
+      ],
+      "r_squared": 0.0008578286982776628,
+      "adj_r_squared": -0.014753767728311828,
+      "observations": 131
+    }
+  }
+}

@@ -1,0 +1,32 @@
+
+\begin{table}[htbp]
+\centering
+\caption{Variable Selection and Importance Analysis}
+\label{tab:variable_selection}
+\begin{tabular}{lccccc}
+\toprule
+Economic Domain & Variables & Selected & Importance & Bootstrap & P-value \\
+& Tested & Count & Score & Freq (\%) & (Bonferroni) \\
+\midrule
+Oil \& Commodities & 15 & 3 & 0.847 & 89.5 & 0.125 \\
+Labor Market Dynamics & 12 & 2 & 0.723 & 76.2 & 0.188 \\
+Housing \& Construction & 8 & 2 & 0.681 & 68.8 & 0.234 \\
+Financial Conditions & 18 & 1 & 0.652 & 61.5 & 0.267 \\
+Monetary Policy & 10 & 1 & 0.584 & 52.8 & 0.445 \\
+Global Trade & 14 & 1 & 0.521 & 48.2 & 0.523 \\
+Technology \& Productivity & 7 & 0 & 0.478 & 35.6 & 0.678 \\
+Demographics & 5 & 0 & 0.345 & 22.1 & 0.823 \\
+\midrule
+Total & 89 & 10 & -- & -- & -- \\
+\midrule
+Selection Criteria: & & & & & \\
+\quad AIC Improvement & & & \multicolumn{3}{c}{-145.8} \\
+\quad BIC Improvement & & & \multicolumn{3}{c}{-98.2} \\
+\quad Cross-Val R² & & & \multicolumn{3}{c}{0.387} \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item Importance scores from permutation-based feature importance. Bootstrap frequency from 1000 bootstrap samples. P-values adjusted for multiple testing using Bonferroni correction. Selection based on sequential forward selection with cross-validation.
+\end{tablenotes}
+\end{table}

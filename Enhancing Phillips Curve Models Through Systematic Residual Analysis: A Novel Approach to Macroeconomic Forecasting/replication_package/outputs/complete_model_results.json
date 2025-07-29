@@ -1,0 +1,33 @@
+{
+  "baseline_model": {
+    "r_squared": 0.005625993482793024,
+    "adj_r_squared": -0.009790657781039602,
+    "aic": 383.74244514240377,
+    "bic": 392.3908509101629,
+    "observations": 132,
+    "variables": [
+      "const",
+      "unemployment_gap",
+      "inflation_expectations"
+    ]
+  },
+  "enhanced_model": {
+    "r_squared": 0.4102586668101724,
+    "adj_r_squared": 0.3745167678289708,
+    "aic": 1.3369513935593886,
+    "bic": 12.650350778765965,
+    "observations": 71,
+    "variables": [
+      "const",
+      "unemployment_gap",
+      "inflation_expectations",
+      "dollar_yoy_lag12",
+      "breakeven_5y_lag3"
+    ]
+  },
+  "improvement": {
+    "r_squared_gain": 0.4046326733273794,
+    "aic_improvement": 382.4054937488444,
+    "bic_improvement": 379.7405001313969
+  }
+}

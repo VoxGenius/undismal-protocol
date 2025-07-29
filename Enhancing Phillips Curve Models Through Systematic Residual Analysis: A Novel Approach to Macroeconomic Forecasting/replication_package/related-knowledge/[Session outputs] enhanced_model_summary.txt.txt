@@ -1,0 +1,28 @@
+ENHANCED PHILLIPS CURVE MODEL\n========================================\n\n                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              inflation   R-squared:                       0.410
+Model:                            OLS   Adj. R-squared:                  0.375
+Method:                 Least Squares   F-statistic:                     11.48
+Date:                Tue, 29 Jul 2025   Prob (F-statistic):           3.93e-07
+Time:                        14:50:13   Log-Likelihood:                 4.3315
+No. Observations:                  71   AIC:                             1.337
+Df Residuals:                      66   BIC:                             12.65
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+==========================================================================================
+                             coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------
+const                     -0.4402      0.137     -3.215      0.002      -0.714      -0.167
+unemployment_gap          -0.0044      0.015     -0.306      0.761      -0.033       0.025
+inflation_expectations     0.0710      0.051      1.386      0.170      -0.031       0.173
+dollar_yoy_lag12          -0.1163      0.025     -4.583      0.000      -0.167      -0.066
+breakeven_5y_lag3          0.2239      0.079      2.828      0.006       0.066       0.382
+==============================================================================
+Omnibus:                        8.119   Durbin-Watson:                   2.330
+Prob(Omnibus):                  0.017   Jarque-Bera (JB):                8.124
+Skew:                          -0.607   Prob(JB):                       0.0172
+Kurtosis:                       4.128   Cond. No.                         21.2
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
