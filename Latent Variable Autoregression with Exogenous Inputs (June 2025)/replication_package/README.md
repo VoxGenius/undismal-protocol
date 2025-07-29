@@ -16,7 +16,7 @@ This repository documents an extraordinary journey in academic research:
 ## The Complete Story
 
 ### 1️⃣ Initial Discovery Phase
-While analyzing the Silva et al. (2025) response paper, we discovered:
+While implementing our response to the Bargman (2025) paper, we discovered:
 - Performance comparisons were incorrectly generated using `np.random.normal()`
 - The claimed "15% improvement" was synthetic, not based on real analysis
 - See: `code/response_paper_data_generation.py` (lines 47-52) for evidence

@@ -8,7 +8,7 @@
 ## The Complete Journey
 
 ### 🚨 What We Discovered
-This replication package originally contained **incorrect empirical results**. The Silva et al. (2025) response paper mistakenly used synthetic random numbers for performance comparisons.
+This replication package originally contained **incorrect empirical results**. Our initial response to Bargman (2025) mistakenly used synthetic random numbers for performance comparisons.
 
 ### 🔬 What We Did About It
 Instead of giving up, we:
