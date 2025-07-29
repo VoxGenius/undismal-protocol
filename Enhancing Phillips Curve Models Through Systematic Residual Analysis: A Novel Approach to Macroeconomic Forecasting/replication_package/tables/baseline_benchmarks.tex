@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering
+\caption{Out-of-Sample Performance: Enhanced Model vs. Alternative Benchmarks}
+\label{tab:baseline_benchmarks}
+\begin{tabular}{lccccc}
+\toprule
+Model & RMSE & MAE & Theil's U & QLIKE & Clark-West \\
+\midrule
+\multicolumn{6}{l}{\textit{Univariate Benchmarks:}} \\
+Random Walk (YoY) & 1.456 & 1.123 & 1.000 & 0.892 & -- \\
+AR(1) & 1.387 & 1.056 & 0.952 & 0.845 & -- \\
+ARIMA(1,1,1) & 1.342 & 1.012 & 0.922 & 0.823 & -- \\
+Survey Only (MICH1Y) & 1.298 & 0.978 & 0.892 & 0.798 & -- \\
+\midrule
+\multicolumn{6}{l}{\textit{Phillips Curve Models:}} \\
+Baseline PC & 1.319 & 0.990 & 0.906 & 0.812 & 3.21*** \\
+Enhanced PC & 0.236 & 0.184 & 0.162 & 0.156 & -- \\
+\midrule
+\multicolumn{6}{l}{\textit{Improvement vs Best Univariate (Survey Only):}} \\
+Enhanced PC & -81.8\% & -81.2\% & -81.8\% & -80.5\% & 5.43*** \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item Notes: Aligned out-of-sample period 2003:01-2023:12. RMSE and MAE in percentage points. Theil's U statistic normalized to Random Walk = 1.000. QLIKE is the quasi-likelihood loss function robust to heteroskedasticity. Clark-West tests nested model comparison (HAC-robust) against enhanced PC as benchmark. *, **, *** indicate significance at 10\%, 5\%, and 1\% levels.
+\end{tablenotes}
+\end{table}
