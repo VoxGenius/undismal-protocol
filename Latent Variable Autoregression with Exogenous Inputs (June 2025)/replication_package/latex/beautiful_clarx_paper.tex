@@ -22,6 +22,9 @@
 \usepackage[table]{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{patterns,decorations.pathreplacing,calc}
+\usepackage{threeparttable}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
 
 % Bibliography and citations
 \usepackage{natbib}
@@ -81,7 +84,7 @@ Matthew Busigin\thanks{VoxGenius Inc., San Francisco, CA. Email: \href{mailto:ma
 \maketitle
 
 \begin{abstract}
-\noindent We develop a streamlined implementation of latent variable regression for economic forecasting, building on the theoretical framework of \citet{bargman2025}. By combining principal component analysis with Ridge regularization and exponential weighting, we achieve remarkable out-of-sample forecasting performance for U.S. GDP growth. Using 157 quarterly observations from 1985--2025, our approach achieves a 98.3\% reduction in mean squared prediction error relative to a naive benchmark, substantially exceeding the 79.9\% improvement reported in the original constrained optimization framework. Surprisingly, we find that economic fundamentals (GDP components) provide superior predictive power compared to financial market indicators. Our results demonstrate that well-regularized simple methods can outperform complex optimization procedures in high-dimensional settings, with important implications for empirical macroeconomic forecasting.
+\noindent We develop a streamlined implementation of latent variable regression for economic forecasting, building on the theoretical framework of Bargman (2025). By combining principal component analysis with Ridge regularization and exponential weighting, we achieve remarkable out-of-sample forecasting performance for U.S. GDP growth. Using 157 quarterly observations from 1985--2025, our approach achieves a 98.3\% reduction in mean squared prediction error relative to a naive benchmark, substantially exceeding the 79.9\% improvement reported in the original constrained optimization framework. Surprisingly, we find that economic fundamentals (GDP components) provide superior predictive power compared to financial market indicators. Our results demonstrate that well-regularized simple methods can outperform complex optimization procedures in high-dimensional settings, with important implications for empirical macroeconomic forecasting.
 
 \vspace{1em}
 \noindent \textbf{JEL Classification:} C22, C53, E27, E37 \\
@@ -92,7 +95,7 @@ Matthew Busigin\thanks{VoxGenius Inc., San Francisco, CA. Email: \href{mailto:ma
 
 \section{Introduction}
 
-The challenge of extracting predictive signals from high-dimensional economic data has become increasingly central to macroeconomic forecasting. While financial markets are often viewed as forward-looking indicators of economic activity, the relationship between asset prices and real economic outcomes remains complex and time-varying. Recent advances in latent variable modeling offer promising approaches to this challenge, with \citet{bargman2025} introducing a sophisticated Constrained Latent Variable Autoregression with Exogenous Inputs (CLARX) framework that reports substantial forecasting improvements.
+The challenge of extracting predictive signals from high-dimensional economic data has become increasingly central to macroeconomic forecasting. While financial markets are often viewed as forward-looking indicators of economic activity, the relationship between asset prices and real economic outcomes remains complex and time-varying. Recent advances in latent variable modeling offer promising approaches to this challenge, with Bargman (2025) introducing a sophisticated Constrained Latent Variable Autoregression with Exogenous Inputs (CLARX) framework that reports substantial forecasting improvements.
 
 The CLARX methodology represents latent economic states as linear combinations of observed variables, estimated through a complex constrained optimization problem involving Kronecker products and block-wise restrictions. While theoretically elegant, such complexity raises practical questions: Can simpler implementations achieve comparable or superior performance? What is the relative importance of methodological sophistication versus careful implementation of established techniques?
 
@@ -102,9 +105,9 @@ Our analysis yields several surprising findings. First, economic fundamentals (G
 
 \subsection{Related Literature}
 
-Our work connects several strands of the econometric forecasting literature. The use of latent factors for macroeconomic prediction builds on the dynamic factor model tradition of \citet{stock2002forecasting} and \citet{stock2002macroeconomic}. The specific focus on stock-GDP relationships follows \citet{ball2021} and the extensive literature on financial markets as economic indicators.
+Our work connects several strands of the econometric forecasting literature. The use of latent factors for macroeconomic prediction builds on the dynamic factor model tradition of Stock and Watson (2002a, 2002b). The specific focus on stock-GDP relationships follows Ball and French (2021) and the extensive literature on financial markets as economic indicators.
 
-Methodologically, our emphasis on regularization in high-dimensional settings relates to the econometric machine learning literature surveyed by \citet{mullainathan2017}, while our use of PCA connects to the long tradition of factor-based forecasting in macroeconomics \citep{bai2003}. The finding that simple methods can outperform complex alternatives echoes results in the forecasting combination literature \citep{timmermann2006}.
+Methodologically, our emphasis on regularization in high-dimensional settings relates to the econometric machine learning literature surveyed by Mullainathan and Spiess (2017), while our use of PCA connects to the long tradition of factor-based forecasting in macroeconomics (Bai and Ng, 2003). The finding that simple methods can outperform complex alternatives echoes results in the forecasting combination literature (Timmermann, 2006).
 
 \subsection{Contributions and Roadmap}
 
@@ -146,7 +149,7 @@ where $\bm{x}_t \in \R^d$ contains observed variables (e.g., stock returns, econ
 
 \subsection{The CLARX Approach}
 
-\citet{bargman2025} proposes estimating $\bm{W}$ and $\bm{\beta}$ jointly through constrained optimization:
+Bargman (2025) proposes estimating $\bm{W}$ and $\bm{\beta}$ jointly through constrained optimization:
 
 \begin{align}
 \min_{\bm{W}, \bm{\beta}, \bm{\phi}} \quad & \E\left[(g_t - \bm{\phi}'\bm{g}_{t-1:t-p} - \bm{x}_t'\bm{W}\bm{\beta})^2\right] \\
@@ -315,6 +318,7 @@ Table \ref{tab:main_results} presents our core findings from rolling-window out-
 \centering
 \caption{Out-of-Sample Forecasting Performance}
 \label{tab:main_results}
+\begin{threeparttable}
 \begin{tabular}{lccccc}
 \toprule
 Model & Features & MSPE & Ratio (\%) & Improvement (\%) & $R^2_{\text{OOS}}$ \\
@@ -339,6 +343,7 @@ PCA(10) + Ridge & GDP Components & \textbf{0.027} & \textbf{1.7} & \textbf{98.3}
 \small
 \item Notes: MSPE denotes mean squared prediction error. Ratio is MSPE relative to historical mean benchmark (in \%). Improvement is $100 - \text{Ratio}$. $R^2_{\text{OOS}}$ is out-of-sample R-squared: $1 - \text{MSPE}/\text{Var}(g_t)$. Evaluation period uses expanding windows with minimum 40 observations for training. Combined features include all variables; GDP Components exclude equity returns.
 \end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 The results reveal several striking patterns:
