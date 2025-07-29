@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  29 JUL 2025 17:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  29 JUL 2025 17:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -415,11 +415,6 @@ Package pdftex.def Info: figures/time_series_overview.pdf  used on input line 1
 
 [10]
 
-LaTeX Warning: Reference `tab:variable_selection' on page 11 undefined on input
- line 213.
-
-
-
 [11]
 
 [12]
@@ -441,14 +436,6 @@ Package pdftex.def Info: figures/structural_breaks.pdf  used on input line 312.
 
 
 [14]
-
-LaTeX Warning: Reference `tab:structural_breaks' on page 15 undefined on input 
-line 317.
-
-
-LaTeX Warning: Reference `tab:structural_breaks' on page 15 undefined on input 
-line 321.
-
 <figures/variable_selection.pdf, id=203, 1004.45386pt x 714.15465pt>
 File: figures/variable_selection.pdf Graphic file (type pdf)
 <use figures/variable_selection.pdf>
@@ -458,15 +445,6 @@ Package pdftex.def Info: figures/variable_selection.pdf  used on input line 329
 
 
 [15 <./figures/structural_breaks.pdf>]
-
-LaTeX Warning: Reference `tab:robustness' on page 16 undefined on input line 33
-6.
-
-
-LaTeX Warning: Reference `tab:robustness' on page 16 undefined on input line 34
-0.
-
-
 
 [16 <./figures/variable_selection.pdf>]
 
@@ -502,16 +480,12 @@ No file phillips_curve_paper.bbl.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 5485 strings out of 473190
- 90406 string characters out of 5704335
+ 5482 strings out of 473190
+ 90343 string characters out of 5704335
  488763 words of memory out of 5000000
- 28677 multiletter control sequences out of 15000+600000
+ 28674 multiletter control sequences out of 15000+600000
  569874 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,9n,77p,1354b,309s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -534,7 +508,7 @@ i12.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmtt10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></opt/homebrew/Cellar/texlive
 /20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on phillips_curve_paper.pdf (23 pages, 481639 bytes).
+Output written on phillips_curve_paper.pdf (23 pages, 481411 bytes).
 PDF statistics:
  488 PDF objects out of 1000 (max. 8388607)
  129 compressed objects within 2 object streams
