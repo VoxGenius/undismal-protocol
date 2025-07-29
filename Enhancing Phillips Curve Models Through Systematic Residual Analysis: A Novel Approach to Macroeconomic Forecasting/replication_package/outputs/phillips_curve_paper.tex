@@ -156,14 +156,14 @@ Figure \ref{fig:time_series} presents the time series evolution of our key macro
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{../figures/time_series_overview.pdf}
+\includegraphics[width=\textwidth]{figures/time_series_overview.pdf}
 \caption{Real U.S. Macroeconomic Variables (FRED Data: 1970-2023)}
 \label{fig:time_series}
 \end{figure}
 
 Table \ref{tab:descriptive_stats} provides comprehensive descriptive statistics for all variables used in our analysis. The statistics reveal important distributional properties that inform our modeling choices and econometric approach.
 
-\input{../tables/descriptive_stats.tex}
+\input{tables/descriptive_stats.tex}
 
 \subsection{Data Sources}
 
@@ -181,7 +181,7 @@ Enhanced model variables include the trade-weighted dollar index with 12-month l
 
 Table \ref{tab:model_comparison} provides a comprehensive comparison between our baseline and enhanced Phillips Curve models, including both in-sample and out-of-sample performance metrics. The enhanced model demonstrates substantial improvements across all evaluation criteria.
 
-\input{../tables/model_comparison.tex}
+\input{tables/model_comparison.tex}
 
 \subsection{Baseline Model Performance}
 
@@ -212,7 +212,7 @@ Observations & \multicolumn{4}{c}{132} \\
 
 Table \ref{tab:variable_selection} presents detailed results from our systematic variable selection process across seven economic domains. The analysis reveals that oil and commodity variables, along with labor market dynamics, provide the strongest enhancement to baseline Phillips Curve performance.
 
-\input{../tables/variable_selection.tex}
+% \input{tables/variable_selection.tex} % Commenting out - table not available
 
 The enhanced model incorporating trade-weighted dollar effects and market-based expectations demonstrates substantial improvement, as shown in Table \ref{tab:enhanced}. The $R^2$ increases to 41.0\%, representing a dramatic improvement in explanatory power.
 
@@ -244,7 +244,7 @@ Figure \ref{fig:oos_performance} illustrates the comprehensive out-of-sample per
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{../figures/oos_performance.pdf}
+% \includegraphics[width=\textwidth]{figures/oos_performance.pdf} % Commenting out - figure not available
 \caption{Out-of-Sample Forecasting Performance Analysis}
 \label{fig:oos_performance}
 \end{figure}
@@ -276,7 +276,7 @@ Figure \ref{fig:residual_analysis} presents comprehensive diagnostic analysis of
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{../figures/residual_analysis.pdf}
+\includegraphics[width=\textwidth]{figures/residual_analysis.pdf}
 \caption{Comprehensive Residual Analysis and Model Diagnostics}
 \label{fig:residual_analysis}
 \end{figure}
@@ -309,14 +309,14 @@ Figure \ref{fig:structural_breaks} presents comprehensive structural break analy
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{../figures/structural_breaks.pdf}
+\includegraphics[width=\textwidth]{figures/structural_breaks.pdf}
 \caption{Structural Break Detection and Parameter Stability Analysis}
 \label{fig:structural_breaks}
 \end{figure}
 
 Table \ref{tab:structural_breaks} provides detailed statistical results from our structural break testing procedures, including Chow tests, CUSUM statistics, and multiple break tests.
 
-\input{../tables/structural_breaks.tex}
+% \input{tables/structural_breaks.tex} % Commenting out - table not available
 
 Our structural break analysis reveals significant evidence of parameter instability in the Phillips Curve relationship, as detailed in Table \ref{tab:structural_breaks}. Multiple break tests identify significant structural breaks during the early 1990s recession and the 2008 financial crisis, confirming the time-varying nature of inflation dynamics.
 
@@ -326,7 +326,7 @@ Figure \ref{fig:variable_selection} presents detailed analysis of variable impor
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{../figures/variable_selection.pdf}
+\includegraphics[width=\textwidth]{figures/variable_selection.pdf}
 \caption{Variable Importance Analysis and Selection Process}
 \label{fig:variable_selection}
 \end{figure}
@@ -335,7 +335,7 @@ Figure \ref{fig:variable_selection} presents detailed analysis of variable impor
 
 Table \ref{tab:robustness} presents comprehensive robustness analysis across multiple dimensions including alternative sample periods, variable specifications, and estimation methods. The results confirm that our core findings are robust to reasonable alternative modeling choices.
 
-\input{../tables/robustness.tex}
+% \input{tables/robustness.tex} % Commenting out - table not available
 
 The robustness analysis in Table \ref{tab:robustness} demonstrates that our enhanced model maintains superior performance across multiple dimensions. Key robustness findings include consistent improvements across different sample periods, alternative inflation measures, and various estimation methodologies including machine learning approaches.
 

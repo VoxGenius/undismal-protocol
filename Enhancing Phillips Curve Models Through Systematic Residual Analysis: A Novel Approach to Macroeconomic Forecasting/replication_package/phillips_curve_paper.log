@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  29 JUL 2025 17:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  29 JUL 2025 17:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -409,24 +409,9 @@ Package pdftex.def Info: figures/time_series_overview.pdf  used on input line 1
 (pdftex.def)             Requested size: 469.75502pt x 402.08376pt.
 
 
-[8]
+[8] (./tables/descriptive_stats.tex)
 
-LaTeX Warning: Reference `tab:descriptive_stats' on page 9 undefined on input l
-ine 164.
-
-(./tables/descriptive_stats.tex)
-
-[9 <./figures/time_series_overview.pdf>]
-
-LaTeX Warning: Reference `tab:model_comparison' on page 10 undefined on input l
-ine 182.
-
-(./tables/model_comparison.tex)
-
-LaTeX Warning: Reference `tab:baseline' on page 10 undefined on input line 188.
-
-
-
+[9 <./figures/time_series_overview.pdf>] (./tables/model_comparison.tex)
 
 [10]
 
@@ -437,23 +422,7 @@ LaTeX Warning: Reference `tab:variable_selection' on page 11 undefined on input
 
 [11]
 
-LaTeX Warning: Reference `tab:enhanced' on page 12 undefined on input line 217.
-
-
-
-LaTeX Warning: Reference `fig:oos_performance' on page 12 undefined on input li
-ne 243.
-
-
-LaTeX Warning: Reference `tab:oos' on page 12 undefined on input line 252.
-
-
-
 [12]
-
-LaTeX Warning: Reference `fig:residual_analysis' on page 13 undefined on input 
-line 275.
-
 <figures/residual_analysis.pdf, id=140, 1004.41435pt x 715.2177pt>
 File: figures/residual_analysis.pdf Graphic file (type pdf)
 <use figures/residual_analysis.pdf>
@@ -461,16 +430,8 @@ Package pdftex.def Info: figures/residual_analysis.pdf  used on input line 279.
 
 (pdftex.def)             Requested size: 469.75502pt x 334.49353pt.
 
-LaTeX Warning: Reference `tab:multiple' on page 13 undefined on input line 286.
-
-
-
 
 [13 <./figures/residual_analysis.pdf>]
-
-LaTeX Warning: Reference `fig:structural_breaks' on page 14 undefined on input 
-line 308.
-
 <figures/structural_breaks.pdf, id=199, 1004.21487pt x 713.6951pt>
 File: figures/structural_breaks.pdf Graphic file (type pdf)
 <use figures/structural_breaks.pdf>
@@ -487,10 +448,6 @@ line 317.
 
 LaTeX Warning: Reference `tab:structural_breaks' on page 15 undefined on input 
 line 321.
-
-
-LaTeX Warning: Reference `fig:variable_selection' on page 15 undefined on input
- line 325.
 
 <figures/variable_selection.pdf, id=203, 1004.45386pt x 714.15465pt>
 File: figures/variable_selection.pdf Graphic file (type pdf)
@@ -525,11 +482,6 @@ ut line 417.
 
 
 [19]
-
-LaTeX Warning: Reference `tab:recession_results' on page 20 undefined on input 
-line 422.
-
-
 Overfull \hbox (1.91855pt too wide) in paragraph at lines 446--447
 []\OT1/cmr/bx/n/12 Systematic pre-recession pat-terns\OT1/cmr/m/n/12 : Phillips
  Curve resid-u-als show in-creas-ing volatil-
@@ -544,10 +496,6 @@ Overfull \hbox (1.91855pt too wide) in paragraph at lines 446--447
 [22]
 No file phillips_curve_paper.bbl.
 
-LaTeX Warning: Reference `tab:variables' on page 23 undefined on input line 490
-.
-
-
 
 [23] (./phillips_curve_paper.aux)
  ***********
@@ -558,15 +506,12 @@ L3 programming layer <2025-01-18>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 5484 strings out of 473190
- 90394 string characters out of 5704335
- 488479 words of memory out of 5000000
- 28676 multiletter control sequences out of 15000+600000
+ 5485 strings out of 473190
+ 90406 string characters out of 5704335
+ 488763 words of memory out of 5000000
+ 28677 multiletter control sequences out of 15000+600000
  569874 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,9n,77p,1354b,309s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -589,7 +534,7 @@ i12.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmtt10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></opt/homebrew/Cellar/texlive
 /20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on phillips_curve_paper.pdf (23 pages, 481712 bytes).
+Output written on phillips_curve_paper.pdf (23 pages, 481639 bytes).
 PDF statistics:
  488 PDF objects out of 1000 (max. 8388607)
  129 compressed objects within 2 object streams
