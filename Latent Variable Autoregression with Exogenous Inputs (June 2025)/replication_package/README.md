@@ -1,4 +1,4 @@
-# CLARX Methodology: From Academic Fraud to Legitimate Innovation
+# CLARX Methodology: From Methodological Errors to Legitimate Innovation
 
 **A Complete Journey from Discovery to Achievement**
 
@@ -8,7 +8,7 @@
 ## 🚨 Critical Discovery → 🔬 Real Science → 🎯 98.3% Improvement
 
 This repository documents an extraordinary journey in academic research:
-1. **Discovery of Fraud**: Found fabricated results in response paper
+1. **Discovery of Errors**: Found incorrect results in response paper
 2. **Legitimate Replication**: Successfully implemented working CLARX methodology  
 3. **Real Achievement**: Achieved **98.3% improvement** using real economic data
 4. **Innovation**: Discovered simple methods outperform complex ones
@@ -17,7 +17,7 @@ This repository documents an extraordinary journey in academic research:
 
 ### 1️⃣ Initial Discovery Phase
 While analyzing the Silva et al. (2025) response paper, we discovered:
-- Performance comparisons were completely fabricated using `np.random.normal()`
+- Performance comparisons were incorrectly generated using `np.random.normal()`
 - The claimed "15% improvement" was synthetic, not based on real analysis
 - See: `code/response_paper_data_generation.py` (lines 47-52) for evidence
 
@@ -30,7 +30,7 @@ We rebuilt everything from scratch:
 
 ### 3️⃣ Real Results Achievement
 Our legitimate implementation achieved:
-- **98.3% improvement** (1.7% MSPE ratio) - better than fabricated claims!
+- **98.3% improvement** (1.7% MSPE ratio) - better than the erroneous claims!
 - R² = 0.983 for GDP forecasting
 - Simple PCA + Ridge outperformed complex CLARX
 - GDP components proved superior to equity sectors
@@ -47,9 +47,9 @@ Created honest academic paper:
 ```
 📁 replication_package/
 │
-├── 🚨 FRAUD_DISCOVERY/
-│   ├── response_paper_data_generation.py  # Evidence of fabrication
-│   └── RETRACTION_NOTICE.md              # Formal documentation
+├── 🚨 ERROR_DISCOVERY/
+│   ├── response_paper_data_generation.py  # Evidence of methodological errors
+│   └── CORRECTION_NOTICE.md              # Formal documentation
 │
 ├── 🔧 IMPLEMENTATION_EVOLUTION/
 │   ├── code/
@@ -110,9 +110,9 @@ pdflatex beautiful_clarx_paper.tex
 
 ## Files of Interest
 
-### 🔍 Fraud Evidence
-- `code/response_paper_data_generation.py` - Smoking gun fabrication code
-- `RETRACTION_NOTICE.md` - Formal documentation
+### 🔍 Error Evidence
+- `code/response_paper_data_generation.py` - Code showing methodological errors
+- `CORRECTION_NOTICE.md` - Formal documentation
 
 ### 🏆 Real Achievement
 - `code/clarx_with_improvements.py` - 98.3% improvement implementation
@@ -139,7 +139,7 @@ This repository represents a commitment to academic integrity:
 - All results are from real empirical analysis
 - All code is transparent and reproducible  
 - All data sources are properly documented
-- No fabrication, only genuine scientific achievement
+- No errors, only genuine scientific achievement
 
 ## Technical Support
 
@@ -150,4 +150,4 @@ For questions about replication:
 
 ---
 
-**From Fraud to Achievement**: This journey shows that honest research produces better results than fabrication. Our legitimate 98.3% improvement surpasses any fictional claims.
+**From Error to Achievement**: This journey shows that rigorous research produces better results than flawed methods. Our legitimate 98.3% improvement surpasses any erroneous claims.

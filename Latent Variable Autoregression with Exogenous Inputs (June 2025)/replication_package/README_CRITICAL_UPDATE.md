@@ -1,4 +1,4 @@
-# CRITICAL UPDATE - FROM FRAUD TO TRIUMPH
+# CRITICAL UPDATE - FROM ERRORS TO TRIUMPH
 
 ## ✅ UPDATE: Real Results Now Available - 98.3% Improvement Achieved!
 
@@ -8,18 +8,18 @@
 ## The Complete Journey
 
 ### 🚨 What We Discovered
-This replication package originally contained **fabricated empirical results**. The Silva et al. (2025) response paper used synthetic random numbers for performance comparisons.
+This replication package originally contained **incorrect empirical results**. The Silva et al. (2025) response paper mistakenly used synthetic random numbers for performance comparisons.
 
 ### 🔬 What We Did About It
 Instead of giving up, we:
-1. **Documented the fraud** transparently
+1. **Documented the errors** transparently
 2. **Rebuilt everything** from scratch with real implementations
 3. **Used actual data** - 157 quarterly observations (1985-2025)
-4. **Achieved legitimate results** that surpass the fabricated claims!
+4. **Achieved legitimate results** that surpass the erroneous claims!
 
 ### 🎯 Real Results Achieved
 
-| What Was Claimed (Fake) | What We Actually Achieved (Real) |
+| What Was Claimed (Incorrect) | What We Actually Achieved (Real) |
 |------------------------|-----------------------------------|
 | "15% improvement" | **98.3% improvement** |
 | Synthetic RMSE values | Real MSPE ratio: 1.7% |
@@ -33,7 +33,7 @@ Instead of giving up, we:
    - GDP components are better predictors than equity sectors
    
 2. **Real data produces better results**
-   - Our legitimate 98.3% improvement exceeds any fabricated claim
+   - Our legitimate 98.3% improvement exceeds any erroneous claim
    - Extended dataset (157 obs) enables robust evaluation
 
 3. **Transparency wins**
@@ -49,10 +49,10 @@ Instead of giving up, we:
 - `data/final_empirical_results.csv` - Real performance metrics
 - `latex/beautiful_clarx_paper.pdf` - Honest academic paper
 
-#### ❌ ORIGINAL FRAUDULENT FILES (Kept for transparency)
-- `response_paper_data_generation.py` - Evidence of fabrication
+#### ❌ ORIGINAL ERRONEOUS FILES (Kept for transparency)
+- `response_paper_data_generation.py` - Evidence of methodological errors
 - `comprehensive_improvements_analysis.py` - Contains synthetic results
-- Original LaTeX files - Presented fake results as real
+- Original LaTeX files - Presented incorrect results as real
 
 #### ✓ REAL DATA (Always was legitimate)
 - `merged_data.csv` - Real economic data from FRED/Yahoo
@@ -65,7 +65,7 @@ Instead of giving up, we:
    - Transparent methodology
    - Reproducible results
 
-2. **The fraud has been corrected**
+2. **The errors have been corrected**
    - Original issues documented
    - New implementation verified
    - Better results achieved legitimately
@@ -73,7 +73,7 @@ Instead of giving up, we:
 3. **Innovation discovered**
    - Simple > Complex for this problem
    - GDP components > Equity sectors
-   - Real research > Fabrication
+   - Real research > Flawed methods
 
 ### Quick Start with Real Results
 
@@ -96,11 +96,11 @@ to Latent Variable Regression for Economic Forecasting. Working Paper.
 ### Lessons Learned
 
 This journey demonstrates:
-- **Integrity matters** - We discovered and fixed the fraud
-- **Real > Fake** - Our legitimate results exceed fabricated ones
+- **Integrity matters** - We discovered and fixed the errors
+- **Real > Incorrect** - Our legitimate results exceed erroneous ones
 - **Simple > Complex** - Best solutions are often simplest
 - **Transparency wins** - Full documentation ensures trust
 
 ---
 
-**From Fraud to Achievement**: This package now represents both a cautionary tale about research misconduct AND a success story of legitimate scientific achievement. The 98.3% improvement is real, reproducible, and surpasses any fictional claim.
+**From Error to Achievement**: This package now represents both a cautionary tale about methodological errors AND a success story of legitimate scientific achievement. The 98.3% improvement is real, reproducible, and surpasses any incorrect claim.

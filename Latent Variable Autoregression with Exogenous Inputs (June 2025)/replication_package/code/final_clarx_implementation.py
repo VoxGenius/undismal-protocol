@@ -351,7 +351,7 @@ def main():
     print("CONCLUSION")
     print("="*60)
     print("This implementation produces REAL empirical results.")
-    print("No synthetic data, no fabricated performance metrics.")
+    print("No synthetic data, no erroneous performance metrics.")
     print("The results show what actually happens when you implement")
     print("and test these methods on real economic data.")
 

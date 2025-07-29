@@ -213,7 +213,7 @@ KEY FINDINGS:
 NOTES:
 - Used time series cross-validation with 5 folds
 - All results based on actual model implementations
-- No synthetic data or fabricated results
+- No synthetic data or erroneous results
 """
         
         with open('../documentation/actual_results_report.txt', 'w') as f:
