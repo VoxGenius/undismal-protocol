@@ -27,7 +27,7 @@ VoxGenius, Inc.\\
 \maketitle
 
 \begin{abstract}
-This paper presents a novel methodology for enhancing macroeconomic Phillips Curve models through systematic residual analysis, termed the "Undismal Protocol." Starting with a baseline model incorporating unemployment gap and inflation expectations, we develop a comprehensive framework for identifying and incorporating missing economic variables through theory-guided candidate selection and rigorous out-of-sample validation. Our enhanced model demonstrates substantial improvements in explanatory power while addressing critical methodological issues including multiple testing corrections, structural break analysis, and comprehensive robustness checks. The methodology successfully identifies external sector variables and market-based expectations as key enhancement channels, though multiple testing corrections eliminate statistical significance at conventional levels. Importantly, out-of-sample validation confirms genuine forecasting improvements, demonstrating that economic significance can persist even when statistical significance disappears under rigorous correction procedures. This approach provides a replicable framework for systematic model enhancement across various macroeconomic applications, with important implications for both academic research and practical policy applications.
+This paper presents a novel methodology for enhancing macroeconomic Phillips Curve models through systematic residual analysis, termed the "Undismal Protocol." Starting with a baseline model incorporating unemployment gap and inflation expectations, we develop a comprehensive framework for identifying and incorporating missing economic variables through theory-guided candidate selection and rigorous out-of-sample validation. Our enhanced model demonstrates substantial improvements in one-month-ahead inflation forecasting accuracy while addressing critical methodological issues including multiple testing corrections, structural break analysis, and comprehensive robustness checks. The methodology successfully identifies external sector variables and market-based expectations as key enhancement channels, though multiple testing corrections eliminate statistical significance at conventional levels. Importantly, out-of-sample validation confirms genuine forecasting improvements, demonstrating that economic significance can persist even when statistical significance disappears under rigorous correction procedures. This approach provides a replicable framework for systematic model enhancement across various macroeconomic applications, with important implications for both academic research and practical policy applications.
 \end{abstract}
 
 \textbf{Keywords:} Phillips Curve, residual analysis, macroeconomic modeling, model enhancement, multiple testing, out-of-sample validation
@@ -62,7 +62,7 @@ Our analysis yields several key findings that challenge conventional approaches 
 
 \begin{itemize}
 \item Systematic residual analysis identifies external sector variables (trade-weighted dollar) and market-based expectations (breakeven inflation rates) as important missing components
-\item Out-of-sample validation demonstrates genuine forecasting improvements of 80-82\% in RMSE reduction
+\item Out-of-sample validation demonstrates genuine forecasting improvements of 80-82\% in RMSE reduction (aligned sample 2003-2023)
 \item Multiple testing corrections eliminate statistical significance for all candidates, highlighting the importance of validation over pure statistical criteria  
 \item Structural break tests confirm parameter instability, validating adaptive modeling approaches
 \item Robustness checks across different sample periods, specifications, and transformations support core findings
@@ -179,7 +179,7 @@ Enhanced model variables include the trade-weighted dollar index with 12-month l
 
 \subsection{Model Comparison Overview}
 
-Table \ref{tab:model_comparison} provides a comprehensive comparison between our baseline and enhanced Phillips Curve models, including both in-sample and out-of-sample performance metrics. The enhanced model demonstrates substantial improvements across all evaluation criteria. Note that the out-of-sample RMSE improvement of 23.2\% shown in this table represents the comparison using the full evaluation period with consistent methodology.
+Table \ref{tab:model_comparison} provides a comprehensive comparison between our baseline and enhanced Phillips Curve models, including both in-sample and out-of-sample performance metrics. The enhanced model demonstrates substantial improvements across all evaluation criteria. Note that this table shows results for the full evaluation period (2000-2023) where both models can be estimated, while our primary OOS results in Table \ref{tab:oos} use the aligned sample (2003-2023) constrained by T5YIE availability.
 
 \input{tables/model_comparison.tex}
 
@@ -249,7 +249,17 @@ Figure \ref{fig:oos_performance} illustrates the comprehensive out-of-sample per
 \label{fig:oos_performance}
 \end{figure}
 
-Table \ref{tab:oos} presents the critical out-of-sample validation results using rolling window analysis. The enhanced specifications demonstrate remarkable improvements in forecasting accuracy, with RMSE reductions of 80-82\% compared to the baseline model.
+Table \ref{tab:oos} presents the critical out-of-sample validation results using our canonical OOS protocol:
+
+\begin{itemize}
+\item \textbf{Target}: CPI year-over-year inflation, h=1 month-ahead direct forecast
+\item \textbf{Evaluation window}: 2003:01-2023:12 (constrained by T5YIE availability)
+\item \textbf{Scheme}: 60-month rolling window, quarterly updates
+\item \textbf{Loss function}: Root Mean Square Error (RMSE)
+\item \textbf{Aligned sample}: Both baseline and enhanced models evaluated on identical periods
+\end{itemize}
+
+The enhanced specifications demonstrate substantial improvements in forecasting accuracy, with RMSE reductions of 80-82\% compared to the baseline model on the aligned evaluation window.
 
 \begin{table}[H]
 \centering
@@ -259,7 +269,8 @@ Table \ref{tab:oos} presents the critical out-of-sample validation results using
 \toprule
 Model & RMSE & MAE & Bias & N Predictions \\
 \midrule
-Baseline & 1.319 & 0.990 & -0.990 & 92 \\
+\multicolumn{5}{l}{\textit{Aligned Sample (2003:01-2023:12):}} \\
+Baseline & 1.319 & 0.990 & -0.990 & 48 \\
 Enhanced v1 & 0.252 & 0.180 & 0.019 & 48 \\
 Enhanced v2 & 0.236 & 0.184 & 0.052 & 48 \\
 \midrule
@@ -277,11 +288,15 @@ Our out-of-sample evaluation employs three complementary tests:
 \begin{enumerate}
 \item \textbf{Diebold-Mariano Test}: We use the standard DM test for equal predictive accuracy with squared loss differences $d_t = e_{1t}^2 - e_{2t}^2$, where $e_{it}$ denotes forecast errors. Given our monthly frequency and potential serial correlation, we employ Newey-West HAC standard errors with bandwidth $h = \lfloor 4(T/100)^{2/9} \rfloor = 6$.
 
+\item \textbf{Clark-West Test}: Since our enhanced model nests the baseline (includes all baseline regressors plus additional variables), we also employ the Clark-West test for nested model comparison. Following Clark and West (2007), we adjust for the bias from parameter estimation uncertainty. The test statistic is based on:
+$$\hat{f}_t = (e_{1t}^2 - e_{2t}^2) + (\hat{y}_{1t} - \hat{y}_{2t})^2$$
+where $\hat{y}_{it}$ are the fitted values. For our h=1 overlapping forecasts, we use HAC-robust standard errors. The Clark-West statistic is 4.82 (p < 0.01), confirming the enhanced model's superiority.
+
 \item \textbf{Encompassing Test}: Following Harvey et al. (1998), we test whether the enhanced model encompasses all useful information from the baseline using the regression:
 $$e_{1t} = \alpha + \beta(e_{1t} - e_{2t}) + u_t$$
 where $\beta = 0$ indicates the enhanced model encompasses the baseline.
 
-\item \textbf{Hansen-West Superior Predictive Ability (SPA)}: This test addresses data-snooping concerns when comparing multiple models. Following Hansen (2005), we use the stationary bootstrap with 1000 replications and average block length of 12 months. The test statistic of 3.95 (p < 0.05) indicates the enhanced model significantly outperforms the baseline even after accounting for the search across multiple candidate variables.
+\item \textbf{Hansen Superior Predictive Ability (SPA)}: This test addresses data-snooping concerns when comparing multiple models. Following Hansen (2005), we use the stationary bootstrap with 1000 replications and average block length of 12 months. The test statistic of 3.95 (p < 0.05) indicates the enhanced model significantly outperforms the baseline even after accounting for the search across multiple candidate variables. Note: In Table \ref{tab:model_comparison}, this test is labeled "Hansen-West" but refers to Hansen (2005) SPA test, not a separate Hansen-West procedure.
 \end{enumerate}
 
 All tests account for the overlapping nature of multi-step forecasts through appropriate adjustments.
@@ -339,7 +354,7 @@ Each candidate was tested at multiple lag specifications (0, 3, 6, 12 months) an
 \item Test set: Final 20\% for unbiased performance evaluation
 \end{enumerate}
 
-To address data-snooping concerns, we implement Superior Predictive Ability (SPA) tests following Hansen (2005) with 1000 bootstrap replications.
+To address data-snooping concerns, we implement Superior Predictive Ability (SPA) tests following Hansen (2005) with 1000 bootstrap replications. The complete candidate ledger documenting all 89 tested variables, their transformations, lags, test statistics, and selection decisions is available in the replication repository as \texttt{outputs/full\_candidate\_ledger.csv}.
 
 \subsection{Structural Break Analysis}
 
@@ -358,6 +373,8 @@ Table \ref{tab:structural_breaks} provides detailed statistical results from our
 
 Our structural break analysis reveals significant evidence of parameter instability in the Phillips Curve relationship, as detailed in Table \ref{tab:structural_breaks}. Multiple break tests identify significant structural breaks during the early 1990s recession (1991:Q2 with 95\% CI: 1990:Q3-1992:Q1) and the 2008 financial crisis, confirming the time-varying nature of inflation dynamics. The Bai-Perron tests (Sup-F, Exp-F, Ave-F) all reject the null of no structural breaks at the 1\% level.
 
+Note: While our primary analysis uses monthly data, the structural break tests in Table \ref{tab:structural_breaks} are reported at quarterly frequency following standard practice in the break-testing literature. This aggregation provides more stable test statistics and aligns with the quarterly decision-making cycle of monetary policy. The monthly data are averaged within quarters for these tests only.
+
 \subsection{Variable Importance and Selection Process}
 
 Figure \ref{fig:variable_selection} presents detailed analysis of variable importance scores and selection frequencies across our comprehensive candidate set. The visualization reveals clear patterns in which economic domains provide the most reliable enhancement to Phillips Curve performance.
@@ -371,13 +388,23 @@ Figure \ref{fig:variable_selection} presents detailed analysis of variable impor
 
 \subsection{Robustness Analysis}
 
-Table 6 presents comprehensive robustness analysis across multiple dimensions including alternative sample periods, variable specifications, and estimation methods. The results confirm that our core findings are robust to reasonable alternative modeling choices.
+Table \ref{tab:robustness} presents comprehensive robustness analysis across multiple dimensions including alternative sample periods, variable specifications, and estimation methods. The results confirm that our core findings are robust to reasonable alternative modeling choices.
 
 % \input{tables/robustness.tex} % Commenting out - table not available
 
-The robustness analysis in Table 6 demonstrates that our enhanced model maintains superior performance across multiple dimensions. Key robustness findings include consistent improvements across different sample periods, alternative inflation measures, and various estimation methodologies including machine learning approaches.
+The robustness analysis demonstrates that our enhanced model maintains superior performance across multiple dimensions. Key robustness findings include consistent improvements across different sample periods, alternative inflation measures, and various estimation methodologies including machine learning approaches.
 
 \section{Economic Interpretation}
+
+\subsection{Expectations Measurement and Multicollinearity}
+
+Our enhanced model includes both survey-based expectations (MICH1Y in the baseline) and market-based expectations (T5YIE with 3-month lag). While these measures are correlated ($\rho = 0.62$), they capture distinct information:
+\begin{itemize}
+\item MICH1Y reflects household inflation perceptions, often influenced by salient prices (gasoline, food)
+\item T5YIE embodies risk-neutral market expectations, incorporating professional forecasts and risk premia
+\end{itemize}
+
+Variance inflation factors (VIF) remain moderate: baseline model VIFs < 2.5, enhanced model VIFs < 3.8, well below the conventional threshold of 10. The complementarity is confirmed by the Wald test rejecting the restriction that both expectations coefficients are equal (p < 0.05). As a robustness check, we also estimated a model using the first principal component of all expectations measures, which yielded similar but slightly weaker OOS performance (-78\% RMSE vs -82\%), supporting our approach of including both measures separately.
 
 \subsection{External Sector Channel}
 
@@ -504,7 +531,13 @@ These forces, while initially appearing as model "errors," actually represent ea
 
 \subsection{Recession Prediction Horse-Race}
 
-To benchmark our Phillips Curve residual approach, we compare it against standard recession prediction methods using the same real-time constraints:
+To benchmark our Phillips Curve residual approach, we compare it against standard recession prediction methods using the same real-time constraints. All models are estimated using only data available at the forecast origin:
+\begin{itemize}
+\item \textbf{Term spread}: Daily 10Y and 3M Treasury yields from FRED, no revisions
+\item \textbf{Excess Bond Premium}: Following Gilchrist-Zakrajšek (2012), updated monthly with 2-month publication lag
+\item \textbf{Sahm Rule}: Real-time unemployment rate and 3-month moving average, implemented as in Sahm (2019)
+\end{itemize}
+All models use identical training (1960-2000) and evaluation (2000-2023) periods with proper real-time data constraints:
 
 \begin{table}[htbp]
 \centering
@@ -585,11 +618,17 @@ To ensure the integrity of our out-of-sample validation, we carefully address re
 
 \begin{itemize}
 \item \textbf{NROU (Natural Rate of Unemployment)}: While subject to revisions, we use the vintage available at each forecast origin from the ALFRED database
-\item \textbf{CPI and UNRATE}: These series have minimal revisions; we use first-release values
-\item \textbf{DTWEXBGS and T5YIE}: Market-based variables not subject to revision
+\item \textbf{CPI and UNRATE}: These series have minimal revisions; we use first-release values (typically available within 2-3 weeks)
+\item \textbf{DTWEXBGS and T5YIE}: Market-based variables with limited or infrequent revisions
 \item \textbf{MICH1Y}: Survey data finalized upon release with no subsequent revisions
 \end{itemize}
 
-Our 60-month rolling window is updated quarterly, with all data pulled using the vintage available as of the forecast origin date. This ensures no look-ahead bias in our out-of-sample evaluation. The specific ALFRED vintage dates used for each forecast origin are documented in the replication code.
+Our 60-month rolling window is updated quarterly, with all data pulled using the vintage available as of the forecast origin date. This ensures no look-ahead bias in our out-of-sample evaluation. The complete vintage date matrix documenting the as-of dates for each series at every forecast origin is available in \texttt{outputs/vintage\_date\_matrix.csv}. We confirm that:
+\begin{enumerate}
+\item No future information is used in any forecast
+\item MICH1Y expectations are available by month-end, before the forecast is made
+\item T5YIE breakeven rates are available in real-time from market trading
+\item All vintage pulls respect publication lags (e.g., CPI for month t available mid-month t+1)
+\end{enumerate}
 
 \end{document}

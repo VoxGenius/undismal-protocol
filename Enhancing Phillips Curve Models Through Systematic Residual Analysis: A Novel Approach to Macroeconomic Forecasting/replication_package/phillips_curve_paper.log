@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  29 JUL 2025 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  29 JUL 2025 18:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -425,20 +425,15 @@ LaTeX Warning: Reference `tab:variable_selection' on page 12 undefined on input
 [12]
 
 [13]
-Overfull \hbox (12.7915pt too wide) in paragraph at lines 284--285
-[]\OT1/cmr/bx/n/12 Hansen-West Su-pe-rior Pre-dic-tive Abil-ity (SPA)\OT1/cmr/m
-/n/12 : This test ad-dresses data-snooping
- []
 
-<figures/residual_analysis.pdf, id=145, 1004.41435pt x 715.2177pt>
+[14]
+<figures/residual_analysis.pdf, id=148, 1004.41435pt x 715.2177pt>
 File: figures/residual_analysis.pdf Graphic file (type pdf)
 <use figures/residual_analysis.pdf>
-Package pdftex.def Info: figures/residual_analysis.pdf  used on input line 295.
+Package pdftex.def Info: figures/residual_analysis.pdf  used on input line 310.
 
 (pdftex.def)             Requested size: 469.75502pt x 334.49353pt.
 
-
-[14]
 
 [15 <./figures/residual_analysis.pdf>]
 
@@ -446,61 +441,70 @@ Package pdftex.def Info: figures/residual_analysis.pdf  used on input line 295.
 <figures/structural_breaks.pdf, id=208, 1004.21487pt x 713.6951pt>
 File: figures/structural_breaks.pdf Graphic file (type pdf)
 <use figures/structural_breaks.pdf>
-Package pdftex.def Info: figures/structural_breaks.pdf  used on input line 350.
+Package pdftex.def Info: figures/structural_breaks.pdf  used on input line 365.
 
 (pdftex.def)             Requested size: 469.75502pt x 333.85767pt.
- (./tables/structural_breaks.tex)
 
-[17 <./figures/structural_breaks.pdf>]
 
-[18]
-<figures/variable_selection.pdf, id=276, 1004.45386pt x 714.15465pt>
+[17] (./tables/structural_breaks.tex)
+
+[18 <./figures/structural_breaks.pdf>]
+
+[19]
+<figures/variable_selection.pdf, id=280, 1004.45386pt x 714.15465pt>
 File: figures/variable_selection.pdf Graphic file (type pdf)
 <use figures/variable_selection.pdf>
-Package pdftex.def Info: figures/variable_selection.pdf  used on input line 367
+Package pdftex.def Info: figures/variable_selection.pdf  used on input line 384
 .
 (pdftex.def)             Requested size: 469.75502pt x 333.98547pt.
 
 
-[19 <./figures/variable_selection.pdf>]
+LaTeX Warning: Reference `tab:robustness' on page 20 undefined on input line 39
+1.
 
-[20]
+
+
+[20 <./figures/variable_selection.pdf>]
 
 [21]
 
 [22]
-<figures/recession_prediction_analysis.pdf, id=357, 1076.5166pt x 859.66734pt>
+
+[23]
+<figures/recession_prediction_analysis.pdf, id=360, 1076.5166pt x 859.66734pt>
 File: figures/recession_prediction_analysis.pdf Graphic file (type pdf)
 <use figures/recession_prediction_analysis.pdf>
 Package pdftex.def Info: figures/recession_prediction_analysis.pdf  used on inp
-ut line 455.
+ut line 482.
 (pdftex.def)             Requested size: 469.75502pt x 375.13284pt.
 
 
-[23 <./figures/recession_prediction_analysis.pdf>]
-Overfull \hbox (1.91855pt too wide) in paragraph at lines 484--485
+[24]
+Overfull \hbox (1.91855pt too wide) in paragraph at lines 511--512
 []\OT1/cmr/bx/n/12 Systematic pre-recession pat-terns\OT1/cmr/m/n/12 : Phillips
  Curve resid-u-als show in-creas-ing volatil-
  []
 
 
 
-[24]
-
-[25]
-No file phillips_curve_paper.bbl.
-
-Overfull \hbox (14.70709pt too wide) in paragraph at lines 562--574
- [][] 
- []
-
-
+[25 <./figures/recession_prediction_analysis.pdf>]
 
 [26]
 
 [27]
 
-[28] (./phillips_curve_paper.aux)
+[28]
+No file phillips_curve_paper.bbl.
+
+Overfull \hbox (14.70709pt too wide) in paragraph at lines 595--607
+ [][] 
+ []
+
+
+
+[29]
+
+[30] (./phillips_curve_paper.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -509,15 +513,18 @@ L3 programming layer <2025-01-18>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 5491 strings out of 473190
- 90599 string characters out of 5704335
+ 5494 strings out of 473190
+ 90648 string characters out of 5704335
  486809 words of memory out of 5000000
- 28680 multiletter control sequences out of 15000+600000
- 569874 words of font info for 79 fonts, out of 8000000 for 9000
+ 28683 multiletter control sequences out of 15000+600000
+ 570043 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,9n,77p,1354b,309s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 67i,9n,77p,1383b,309s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmbx10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20250
@@ -537,10 +544,10 @@ i12.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmtt10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></opt/homebrew/Cellar/texlive
 /20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on phillips_curve_paper.pdf (28 pages, 496020 bytes).
+Output written on phillips_curve_paper.pdf (30 pages, 502701 bytes).
 PDF statistics:
- 504 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
+ 510 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

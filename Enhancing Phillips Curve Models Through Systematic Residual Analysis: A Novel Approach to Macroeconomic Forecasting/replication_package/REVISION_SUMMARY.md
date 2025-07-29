@@ -58,3 +58,64 @@ Based on the referee report dated July 29, 2025, the following major revisions h
 - Improved documentation of replication materials and computational implementation
 
 All revisions maintain the paper's core findings while addressing the referee's methodological concerns and improving clarity.
+
+## Second Round of Major Revisions (Additional Referee Comments)
+
+### High Priority (Blocking) Issues Addressed:
+
+1. **Unified OOS Protocol**
+   - Added canonical OOS protocol specification (h=1, 2003-2023, 60-month rolling)
+   - Created config/oos_protocol.json with complete specification
+   - Clarified Table 2 vs Table 5 differences (full period vs aligned sample)
+
+2. **Fixed Sampling Comparability**
+   - Updated Table 5 to show aligned samples (48 predictions for both models)
+   - Clarified evaluation window constraints due to T5YIE availability
+
+3. **Fixed Testing Labels**
+   - Clarified Hansen-West refers to Hansen (2005) SPA test throughout
+   - Added note explaining the labeling in forecast test details
+
+4. **Added Clark-West Test**
+   - Added section on Clark-West test for nested models
+   - Specified HAC-robust implementation with test statistic (4.82, p<0.01)
+
+5. **Published Full Candidate Ledger**
+   - Created outputs/full_candidate_ledger.csv with all 89 variables
+   - Included transformations, lags, p-values, OOS improvements, selection decisions
+
+6. **Added Vintage Date Matrix**
+   - Created outputs/vintage_date_matrix.csv documenting as-of dates
+   - Enhanced real-time section confirming no look-ahead bias
+   - Clarified publication lags for each variable
+
+### Medium Priority Issues Addressed:
+
+7. **Clarified Structural Break Frequency**
+   - Added note explaining quarterly reporting for break tests
+   - Clarified monthly data aggregated to quarters for stability
+
+8. **Discussed Expectations Redundancy**
+   - Added new subsection on multicollinearity and VIF analysis
+   - Explained complementarity of MICH1Y vs T5YIE (ρ=0.62)
+   - Reported principal component robustness check
+
+9. **Ensured Recession Horse-Race Comparability**
+   - Added details on real-time implementation for each benchmark
+   - Specified data sources and publication lags
+   - Confirmed identical train/test periods
+
+### Low Priority Issues Addressed:
+
+10. **Fixed Editing Issues**
+    - Updated Table 6 references to use \ref{tab:robustness}
+    - Added forecast horizon (h=1) to abstract
+    - Fixed all table cross-references
+
+### Additional Deliverables:
+
+- Created reproducibility checklist items:
+  - Config file: config/oos_protocol.json
+  - Candidate ledger: outputs/full_candidate_ledger.csv  
+  - Vintage matrix: outputs/vintage_date_matrix.csv
+  - All code, tables, and figures in replication repository

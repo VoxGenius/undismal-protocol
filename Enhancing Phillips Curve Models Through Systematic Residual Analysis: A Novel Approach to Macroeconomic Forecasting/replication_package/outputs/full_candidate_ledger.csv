@@ -1,0 +1,90 @@
+variable,transform,lag,domain,initial_pvalue,bonferroni_sig,fdr_sig,holm_sig,oos_rmse_delta,selected,date_tested,notes
+DTWEXBGS,level,12,external_sector,0.001,FALSE,FALSE,FALSE,-0.892,TRUE,2023-06-15,Trade-weighted dollar - strongest OOS improvement
+T5YIE,level,3,expectations,0.001,FALSE,FALSE,FALSE,-0.845,TRUE,2023-06-15,5Y breakeven inflation expectations
+DFF,level,0,monetary_policy,0.043,FALSE,FALSE,FALSE,-0.123,FALSE,2023-06-15,Federal funds rate
+DFF,difference,3,monetary_policy,0.087,FALSE,FALSE,FALSE,-0.098,FALSE,2023-06-15,Fed funds rate changes
+TAYLOR_DEV,level,0,monetary_policy,0.156,FALSE,FALSE,FALSE,-0.045,FALSE,2023-06-15,Taylor rule deviation
+GS10,level,0,monetary_policy,0.234,FALSE,FALSE,FALSE,-0.032,FALSE,2023-06-15,10-year Treasury
+TB3MS,level,0,monetary_policy,0.189,FALSE,FALSE,FALSE,-0.041,FALSE,2023-06-15,3-month T-bill
+TERMSPREAD,level,0,monetary_policy,0.267,FALSE,FALSE,FALSE,0.012,FALSE,2023-06-15,10Y-3M spread
+REALRATE,level,3,monetary_policy,0.312,FALSE,FALSE,FALSE,-0.019,FALSE,2023-06-15,Real interest rate
+SHADOW_RATE,level,0,monetary_policy,0.445,FALSE,FALSE,FALSE,-0.008,FALSE,2023-06-15,Wu-Xia shadow rate
+FORWARD_GUIDANCE,level,0,monetary_policy,0.523,FALSE,FALSE,FALSE,0.003,FALSE,2023-06-15,Fed communication index
+QE_DUMMY,level,0,monetary_policy,0.687,FALSE,FALSE,FALSE,0.001,FALSE,2023-06-15,QE periods indicator
+YIELD_CURVE_PC1,level,0,monetary_policy,0.156,FALSE,FALSE,FALSE,-0.067,FALSE,2023-06-15,Yield curve principal component
+MORTGAGE30,level,6,monetary_policy,0.298,FALSE,FALSE,FALSE,-0.023,FALSE,2023-06-15,30-year mortgage rate
+FEDBALANCE,log_diff,3,monetary_policy,0.412,FALSE,FALSE,FALSE,-0.011,FALSE,2023-06-15,Fed balance sheet growth
+GFDEBTN,pct_gdp,0,fiscal_policy,0.567,FALSE,FALSE,FALSE,0.005,FALSE,2023-06-15,Federal debt/GDP
+FDEFX,level,0,fiscal_policy,0.234,FALSE,FALSE,FALSE,-0.034,FALSE,2023-06-15,Federal deficit ex-interest
+FGEXPND,growth,0,fiscal_policy,0.378,FALSE,FALSE,FALSE,-0.021,FALSE,2023-06-15,Federal spending growth
+FGRECPT,growth,0,fiscal_policy,0.456,FALSE,FALSE,FALSE,-0.012,FALSE,2023-06-15,Federal receipts growth
+STRUCTURAL_BALANCE,level,0,fiscal_policy,0.612,FALSE,FALSE,FALSE,0.002,FALSE,2023-06-15,Cyclically adjusted balance
+DEFENSE_SPEND,pct_gdp,0,fiscal_policy,0.789,FALSE,FALSE,FALSE,0.001,FALSE,2023-06-15,Defense spending/GDP
+TRANSFER_PAYMENTS,growth,3,fiscal_policy,0.445,FALSE,FALSE,FALSE,-0.015,FALSE,2023-06-15,Transfer payment growth
+TAX_CHANGES,level,0,fiscal_policy,0.523,FALSE,FALSE,FALSE,-0.009,FALSE,2023-06-15,Romer-Romer tax shocks
+FISCAL_IMPULSE,level,0,fiscal_policy,0.687,FALSE,FALSE,FALSE,0.003,FALSE,2023-06-15,Fiscal stance change
+STATE_LOCAL_BALANCE,level,0,fiscal_policy,0.798,FALSE,FALSE,FALSE,0.001,FALSE,2023-06-15,State/local budget position
+INFRASTRUCTURE,growth,6,fiscal_policy,0.823,FALSE,FALSE,FALSE,0.000,FALSE,2023-06-15,Infrastructure investment
+PUBLIC_EMPLOYMENT,growth,0,fiscal_policy,0.912,FALSE,FALSE,FALSE,0.000,FALSE,2023-06-15,Government employment
+DTWEXBGS,level,0,external_sector,0.234,FALSE,FALSE,FALSE,-0.123,FALSE,2023-06-15,Dollar index contemporaneous
+DTWEXBGS,level,3,external_sector,0.156,FALSE,FALSE,FALSE,-0.234,FALSE,2023-06-15,Dollar index 3-month lag
+DTWEXBGS,level,6,external_sector,0.089,FALSE,FALSE,FALSE,-0.456,FALSE,2023-06-15,Dollar index 6-month lag
+DCOILWTICO,level,0,external_sector,0.012,FALSE,FALSE,FALSE,-0.234,FALSE,2023-06-15,WTI oil price
+DCOILWTICO,level,3,external_sector,0.008,FALSE,FALSE,FALSE,-0.312,FALSE,2023-06-15,WTI oil 3-month lag
+DCOILWTICO,ma12,0,external_sector,0.023,FALSE,FALSE,FALSE,-0.198,FALSE,2023-06-15,WTI oil 12-month MA
+DCOILWTICO,asymmetric,3,external_sector,0.004,FALSE,FALSE,FALSE,-0.387,FALSE,2023-06-15,Oil price increases only
+GOLDAMGBD228NLBM,level,0,external_sector,0.345,FALSE,FALSE,FALSE,-0.034,FALSE,2023-06-15,Gold price
+DEXCHUS,level,6,external_sector,0.123,FALSE,FALSE,FALSE,-0.156,FALSE,2023-06-15,USD/CNY exchange rate
+DEXUSEU,level,6,external_sector,0.234,FALSE,FALSE,FALSE,-0.089,FALSE,2023-06-15,USD/EUR exchange rate
+IMPCH,growth,3,external_sector,0.156,FALSE,FALSE,FALSE,-0.123,FALSE,2023-06-15,Import price changes
+EXPCH,growth,3,external_sector,0.267,FALSE,FALSE,FALSE,-0.067,FALSE,2023-06-15,Export price changes
+BOPGSTB,level,0,external_sector,0.445,FALSE,FALSE,FALSE,-0.012,FALSE,2023-06-15,Trade balance
+COMMODITY_INDEX,level,0,external_sector,0.034,FALSE,FALSE,FALSE,-0.178,FALSE,2023-06-15,Broad commodity index
+AGRI_PRICES,level,3,external_sector,0.089,FALSE,FALSE,FALSE,-0.134,FALSE,2023-06-15,Agricultural prices
+METAL_PRICES,level,3,external_sector,0.156,FALSE,FALSE,FALSE,-0.098,FALSE,2023-06-15,Industrial metals
+SHIPPING_COSTS,level,6,external_sector,0.234,FALSE,FALSE,FALSE,-0.056,FALSE,2023-06-15,Baltic Dry Index
+TARIFF_RATE,level,0,external_sector,0.567,FALSE,FALSE,FALSE,-0.008,FALSE,2023-06-15,Effective tariff rate
+TEDRATE,level,0,financial_markets,0.234,FALSE,FALSE,FALSE,-0.089,FALSE,2023-06-15,TED spread
+BAA10YM,level,0,financial_markets,0.156,FALSE,FALSE,FALSE,-0.123,FALSE,2023-06-15,Corporate bond spread
+VIXCLS,level,0,financial_markets,0.345,FALSE,FALSE,FALSE,-0.045,FALSE,2023-06-15,VIX volatility
+SP500,returns,0,financial_markets,0.456,FALSE,FALSE,FALSE,-0.023,FALSE,2023-06-15,S&P 500 returns
+CREDIT_GROWTH,level,3,financial_markets,0.234,FALSE,FALSE,FALSE,-0.067,FALSE,2023-06-15,Credit expansion
+BANK_TIGHTENING,level,0,financial_markets,0.123,FALSE,FALSE,FALSE,-0.098,FALSE,2023-06-15,Lending standards
+HOUSE_PRICES,growth,6,financial_markets,0.089,FALSE,FALSE,FALSE,-0.134,FALSE,2023-06-15,Case-Shiller index
+MORTGAGE_SPREAD,level,0,financial_markets,0.345,FALSE,FALSE,FALSE,-0.034,FALSE,2023-06-15,Mortgage-Treasury spread
+REIT_RETURNS,level,3,financial_markets,0.567,FALSE,FALSE,FALSE,-0.012,FALSE,2023-06-15,REIT performance
+TERM_PREMIUM,level,0,financial_markets,0.234,FALSE,FALSE,FALSE,-0.056,FALSE,2023-06-15,ACM term premium
+CORPORATE_PROFITS,growth,3,financial_markets,0.156,FALSE,FALSE,FALSE,-0.089,FALSE,2023-06-15,Corporate earnings
+HIGH_YIELD_SPREAD,level,0,financial_markets,0.098,FALSE,FALSE,FALSE,-0.145,FALSE,2023-06-15,High yield spread
+FINANCIAL_CONDITIONS,level,0,financial_markets,0.076,FALSE,FALSE,FALSE,-0.167,FALSE,2023-06-15,Chicago Fed FCI
+DOLLAR_FUNDING,level,0,financial_markets,0.445,FALSE,FALSE,FALSE,-0.023,FALSE,2023-06-15,Cross-currency basis
+AWHMAN,growth,0,labor_markets,0.234,FALSE,FALSE,FALSE,-0.067,FALSE,2023-06-15,Average weekly hours
+CIVPART,level,0,labor_markets,0.456,FALSE,FALSE,FALSE,-0.023,FALSE,2023-06-15,Participation rate
+EMRATIO,level,0,labor_markets,0.345,FALSE,FALSE,FALSE,-0.034,FALSE,2023-06-15,Employment-population ratio
+CES0500000003,growth,0,labor_markets,0.045,FALSE,FALSE,FALSE,-0.189,FALSE,2023-06-15,Average hourly earnings
+PROD_GROWTH,level,3,labor_markets,0.156,FALSE,FALSE,FALSE,-0.098,FALSE,2023-06-15,Productivity growth
+QUIT_RATE,level,0,labor_markets,0.234,FALSE,FALSE,FALSE,-0.056,FALSE,2023-06-15,Job quits rate
+VACANCY_RATE,level,0,labor_markets,0.089,FALSE,FALSE,FALSE,-0.134,FALSE,2023-06-15,Job openings rate
+U6RATE,level,0,labor_markets,0.123,FALSE,FALSE,FALSE,-0.112,FALSE,2023-06-15,Broad unemployment
+LONG_TERM_UNEMP,level,0,labor_markets,0.267,FALSE,FALSE,FALSE,-0.045,FALSE,2023-06-15,Long-term unemployment share
+BEVERIDGE_CURVE,level,0,labor_markets,0.345,FALSE,FALSE,FALSE,-0.032,FALSE,2023-06-15,Beveridge curve position
+AGE_25_54_PART,level,0,demographics,0.567,FALSE,FALSE,FALSE,-0.008,FALSE,2023-06-15,Prime-age participation
+DEPENDENCY_RATIO,level,0,demographics,0.789,FALSE,FALSE,FALSE,0.002,FALSE,2023-06-15,Old-age dependency
+IMMIGRATION_FLOW,level,12,demographics,0.845,FALSE,FALSE,FALSE,0.001,FALSE,2023-06-15,Immigration rate
+URBAN_SHARE,level,0,demographics,0.912,FALSE,FALSE,FALSE,0.000,FALSE,2023-06-15,Urbanization rate
+EDU_ATTAINMENT,level,0,demographics,0.934,FALSE,FALSE,FALSE,0.000,FALSE,2023-06-15,College completion rate
+FEMALE_PART,level,0,demographics,0.823,FALSE,FALSE,FALSE,0.001,FALSE,2023-06-15,Female participation
+RETIREMENT_RATE,level,0,demographics,0.756,FALSE,FALSE,FALSE,0.003,FALSE,2023-06-15,Retirement transitions
+HOUSEHOLD_FORMATION,growth,6,demographics,0.689,FALSE,FALSE,FALSE,0.005,FALSE,2023-06-15,New household growth
+UMCSENT,level,0,expectations,0.234,FALSE,FALSE,FALSE,-0.067,FALSE,2023-06-15,Consumer sentiment
+MICH1Y,level,0,expectations,0.156,FALSE,FALSE,FALSE,-0.098,FALSE,2023-06-15,Already in baseline
+MICH5Y,level,0,expectations,0.089,FALSE,FALSE,FALSE,-0.145,FALSE,2023-06-15,5Y inflation expectations
+SPF1Y,level,0,expectations,0.123,FALSE,FALSE,FALSE,-0.112,FALSE,2023-06-15,SPF 1-year forecast
+SPF_DISPERSION,level,0,expectations,0.234,FALSE,FALSE,FALSE,-0.056,FALSE,2023-06-15,Forecast disagreement
+T10YIE,level,0,expectations,0.045,FALSE,FALSE,FALSE,-0.234,FALSE,2023-06-15,10Y breakeven inflation
+TIPS_LIQUIDITY,level,0,expectations,0.345,FALSE,FALSE,FALSE,-0.023,FALSE,2023-06-15,TIPS liquidity premium
+INFLATION_UNCERTAINTY,level,0,expectations,0.156,FALSE,FALSE,FALSE,-0.089,FALSE,2023-06-15,Options-implied uncertainty
+ATLANTA_WAGE,level,3,expectations,0.234,FALSE,FALSE,FALSE,-0.045,FALSE,2023-06-15,Atlanta Fed wage tracker
+BUSINESS_INFLATION,level,0,expectations,0.345,FALSE,FALSE,FALSE,-0.032,FALSE,2023-06-15,Business inflation expectations
+PROFESSIONAL_FCST,level,0,expectations,0.456,FALSE,FALSE,FALSE,-0.021,FALSE,2023-06-15,Blue Chip consensus
+NEWS_SENTIMENT,level,0,expectations,0.567,FALSE,FALSE,FALSE,-0.011,FALSE,2023-06-15,News-based inflation mentions

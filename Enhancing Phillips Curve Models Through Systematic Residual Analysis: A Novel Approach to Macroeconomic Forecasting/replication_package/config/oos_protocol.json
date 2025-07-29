@@ -1,0 +1,57 @@
+{
+  "canonical_oos_protocol": {
+    "target_variable": "CPI_YOY_INFLATION",
+    "forecast_horizon": 1,
+    "horizon_type": "direct",
+    "evaluation_window": {
+      "start": "2003-01-01",
+      "end": "2023-12-31",
+      "note": "Constrained by T5YIE availability starting 2003"
+    },
+    "rolling_scheme": {
+      "window_length": 60,
+      "window_unit": "months",
+      "update_frequency": "quarterly",
+      "update_months": [1, 4, 7, 10]
+    },
+    "loss_function": "RMSE",
+    "sample_alignment": {
+      "method": "identical_periods",
+      "baseline_sample": "aligned_to_enhanced",
+      "note": "Both models evaluated on same 2003-2023 window"
+    },
+    "data_constraints": {
+      "real_time": true,
+      "vintage_source": "ALFRED",
+      "publication_lags": {
+        "CPI": "15-20 days",
+        "UNRATE": "7-10 days",
+        "NROU": "quarterly with revisions",
+        "MICH1Y": "end of month",
+        "T5YIE": "real-time market data",
+        "DTWEXBGS": "real-time with minimal revisions"
+      }
+    },
+    "forecast_tests": {
+      "diebold_mariano": {
+        "loss_differential": "squared_errors",
+        "hac_bandwidth": 6
+      },
+      "clark_west": {
+        "nested": true,
+        "hac_robust": true
+      },
+      "hansen_spa": {
+        "bootstrap_reps": 1000,
+        "block_length": 12,
+        "method": "stationary_bootstrap"
+      }
+    },
+    "multiple_testing": {
+      "candidates_tested": 89,
+      "domains": 7,
+      "corrections": ["bonferroni", "fdr_bh", "holm"],
+      "selection_criterion": "oos_rmse_improvement"
+    }
+  }
+}
