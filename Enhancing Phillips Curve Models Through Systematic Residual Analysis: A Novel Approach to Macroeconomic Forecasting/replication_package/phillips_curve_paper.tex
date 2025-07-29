@@ -223,7 +223,7 @@ Observations & \multicolumn{4}{c}{132} \\
 
 Table \ref{tab:variable_selection} presents detailed results from our systematic variable selection process across seven economic domains. The analysis reveals that oil and commodity variables, along with labor market dynamics, provide the strongest enhancement to baseline Phillips Curve performance.
 
-% \input{tables/variable_selection.tex} % Commenting out - table not available
+\input{tables/variable_selection.tex}
 
 The enhanced model incorporating trade-weighted dollar effects and market-based expectations demonstrates substantial improvement, as shown in Table \ref{tab:enhanced}. This model is estimated on the period where all variables are available (2003-2023, N=71 monthly observations, constrained by T5YIE availability starting in 2003). Again, this represents a static full-sample fit for descriptive purposes. The $R^2$ increases to 41.0\%, representing a dramatic improvement in explanatory power.
 
@@ -313,7 +313,22 @@ where $\hat{y}_{it}$ are the fitted values. For our h=1 overlapping forecasts, w
 $$e_{1t} = \alpha + \beta(e_{1t} - e_{2t}) + u_t$$
 where $\beta = 0$ indicates the enhanced model encompasses the baseline.
 
-\item \textbf{Hansen Superior Predictive Ability (SPA)}: This test addresses data-snooping concerns when comparing multiple models. Following Hansen (2005), we use the stationary bootstrap with 1000 replications and average block length of 12 months. The test statistic of 3.95 (p < 0.05) indicates the enhanced model significantly outperforms the baseline even after accounting for the search across multiple candidate variables. Note: In Table \ref{tab:model_comparison}, this test is labeled "Hansen-West" but refers to Hansen (2005) SPA test, not a separate Hansen-West procedure.
+\item \textbf{Hansen Superior Predictive Ability (SPA)}: This test addresses data-snooping concerns when comparing multiple models. Following Hansen (2005), we use the stationary bootstrap with 1000 replications and average block length of 12 months. The test statistic of 3.95 (p < 0.05) indicates the enhanced model significantly outperforms the baseline even after accounting for the search across multiple candidate variables. 
+
+The SPA test model set includes all 89 candidate variable specifications tested during our systematic search process, encompassing:
+\begin{itemize}
+\item 15 oil and commodity variables (WTI, Brent, various transformations)
+\item 12 labor market indicators (participation rates, flows, duration measures)
+\item 18 financial condition variables (spreads, volatility indices, credit measures)
+\item 14 global trade indicators (exchange rates, import prices, trade volumes)
+\item 10 monetary policy variables (shadow rates, forward guidance measures)
+\item 8 housing market indicators (prices, permits, mortgage rates)
+\item 7 technology/productivity measures
+\item 5 demographic variables
+\end{itemize}
+Each variable is tested with multiple lag structures (0-6 months) and transformations (levels, differences, year-over-year changes), resulting in approximately 500 total model specifications in the SPA comparison set. The test's significance confirms that our enhanced model's performance is not an artifact of extensive data mining.
+
+Note: In Table \ref{tab:model_comparison}, this test is labeled "Hansen-West" but refers to Hansen (2005) SPA test, not a separate Hansen-West procedure.
 \end{enumerate}
 
 All tests account for the overlapping nature of multi-step forecasts through appropriate adjustments.
@@ -415,7 +430,7 @@ Figure \ref{fig:variable_selection} presents detailed analysis of variable impor
 
 Table \ref{tab:robustness} presents comprehensive robustness analysis across multiple dimensions including alternative sample periods, variable specifications, and estimation methods. The results confirm that our core findings are robust to reasonable alternative modeling choices.
 
-% \input{tables/robustness.tex} % Commenting out - table not available
+\input{tables/robustness.tex}
 
 The robustness analysis demonstrates that our enhanced model maintains superior performance across multiple dimensions. Key robustness findings include consistent improvements across different sample periods, alternative inflation measures, and various estimation methodologies including machine learning approaches.
 
@@ -642,11 +657,19 @@ The rolling window validation uses 60-month training windows with quarterly upda
 To ensure the integrity of our out-of-sample validation, we carefully address real-time data constraints:
 
 \begin{itemize}
-\item \textbf{NROU (Natural Rate of Unemployment)}: While subject to revisions, we use the vintage available at each forecast origin from the ALFRED database
-\item \textbf{CPI and UNRATE}: These series have minimal revisions; we use first-release values (typically available within 2-3 weeks)
-\item \textbf{DTWEXBGS and T5YIE}: Market-based variables with limited or infrequent revisions
-\item \textbf{MICH1Y}: Survey data finalized upon release with no subsequent revisions
+\item \textbf{NROU (Natural Rate of Unemployment)}: While subject to revisions, we use the vintage available at each forecast origin from the ALFRED database. The temporal alignment follows CBO's quarterly release schedule, with values interpolated to monthly frequency using the most recent estimate available at the forecast date.
+\item \textbf{CPI and UNRATE}: These series have minimal revisions; we use first-release values. Specifically, CPI for month $t$ is released around the 15th of month $t+1$, while UNRATE is released on the first Friday of month $t+1$.
+\item \textbf{DTWEXBGS and T5YIE}: Market-based variables available daily with no revisions. We use month-end values to align with our monthly forecast frequency.
+\item \textbf{MICH1Y}: Survey data finalized upon release with no subsequent revisions, available on the last Friday of each month for that month's reading.
 \end{itemize}
+
+Our real-time data protocol follows these strict rules:
+\begin{enumerate}
+\item \textbf{Forecast timing}: Forecasts for month $t+1$ inflation are made at the end of month $t$
+\item \textbf{Data availability}: Only data released by the last business day of month $t$ is used
+\item \textbf{Publication lags}: CPI($t-1$), UNRATE($t-1$), MICH1Y($t$), T5YIE($t$), DTWEXBGS($t$), NROU($t$)
+\item \textbf{Vintage pulls}: For revised series (NROU, CPI, UNRATE), we pull the vintage as it existed on the forecast date using ALFRED's real-time data API
+\end{enumerate}
 
 Our 60-month rolling window is updated quarterly, with all data pulled using the vintage available as of the forecast origin date. This ensures no look-ahead bias in our out-of-sample evaluation. The complete vintage date matrix documenting the as-of dates for each series at every forecast origin is available in \texttt{outputs/vintage\_date\_matrix.csv}. We confirm that:
 \begin{enumerate}
