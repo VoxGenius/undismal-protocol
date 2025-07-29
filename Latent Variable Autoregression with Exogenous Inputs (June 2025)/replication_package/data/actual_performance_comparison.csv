@@ -1,0 +1,5 @@
+,RMSE_mean,RMSE_std,MAE_mean,MAE_std,Directional_mean,Directional_std,Convergence_rate,Avg_iterations
+Original_CLARX,,,,,,,0.0,100.0
+Improved_CLARX,6.74725466088343,3.041162237404637,5.754516025017197,2.461775408572593,0.4666666666666666,0.33993463423951903,0.0,100.0
+Ridge_Baseline,,,,,,,0.0,100.0
+PCA_Regression,,,,,,,0.0,100.0

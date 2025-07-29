@@ -1,0 +1,179 @@
+2025-07-28 10:57:14,359 - INFO - Initialized Economic Forecasting Replication System
+2025-07-28 10:57:14,359 - INFO - Task Completion: 15% | Time Remaining: 4-5 hours
+2025-07-28 10:57:14,359 - INFO - Starting complete replication analysis...
+2025-07-28 10:57:14,359 - INFO - Task Completion: 20% | Time Remaining: 3-4 hours
+2025-07-28 10:57:14,359 - INFO - Collecting FRED macroeconomic data...
+2025-07-28 10:57:14,638 - INFO - Collected GDP_US: 313 observations
+2025-07-28 10:57:14,857 - INFO - Collected GDPGR_US: 312 observations
+2025-07-28 10:57:15,187 - INFO - Collected POP_US: 797 observations
+2025-07-28 10:57:15,511 - INFO - Collected UNRATE_US: 930 observations
+2025-07-28 10:57:15,958 - INFO - Collected FEDFUNDS: 852 observations
+2025-07-28 10:57:16,262 - INFO - Collected CPI: 942 observations
+2025-07-28 10:57:16,413 - INFO - Collected IMP_US: 317 observations
+2025-07-28 10:57:16,611 - INFO - Collected EXP_US: 317 observations
+2025-07-28 10:57:16,870 - INFO - Collected TRADE_BALANCE: 401 observations
+2025-07-28 10:57:18,130 - INFO - Collected DOLLAR_INDEX: 5100 observations
+2025-07-28 10:57:20,615 - INFO - Collected VIX: 9279 observations
+2025-07-28 10:57:22,329 - INFO - Collected OIL_PRICE: 10318 observations
+2025-07-28 10:57:22,365 - INFO - FRED data collection complete. Shape: (80, 12)
+2025-07-28 10:57:22,366 - INFO - Collecting stock market data...
+2025-07-28 10:57:22,635 - ERROR - Failed to collect SPX: 'Adj Close'
+2025-07-28 10:57:22,847 - ERROR - Failed to collect FTSE: 'Adj Close'
+2025-07-28 10:57:23,010 - ERROR - Failed to collect DAX: 'Adj Close'
+2025-07-28 10:57:23,408 - ERROR - Failed to collect NIKKEI: 'Adj Close'
+2025-07-28 10:57:23,574 - ERROR - Failed to collect HANG_SENG: 'Adj Close'
+2025-07-28 10:57:23,757 - ERROR - Failed to collect CAC: 'Adj Close'
+2025-07-28 10:57:24,032 - ERROR - Failed to collect IBOV: 'Adj Close'
+2025-07-28 10:57:24,561 - ERROR - Failed to collect KOSPI: 'Adj Close'
+2025-07-28 10:57:24,777 - ERROR - Failed to collect TSX: 'Adj Close'
+2025-07-28 10:57:24,978 - ERROR - Failed to collect ASX: 'Adj Close'
+2025-07-28 10:57:24,979 - INFO - Stock data collection complete. Shape: (0, 0)
+2025-07-28 10:57:24,979 - INFO - Simulating international trade network data...
+2025-07-28 10:57:25,001 - INFO - Trade network simulation complete for 13 years
+2025-07-28 10:57:25,001 - INFO - Task Completion: 40% | Time Remaining: 2-3 hours
+2025-07-28 10:57:25,001 - INFO - Calculating network topology features...
+2025-07-28 10:57:25,229 - INFO - Network features calculated. Shape: (260, 14)
+2025-07-28 10:57:25,229 - INFO - Simulating GDP growth data...
+2025-07-28 10:57:25,233 - INFO - GDP data simulation complete. Shape: (260, 3)
+2025-07-28 10:57:25,234 - INFO - Preparing machine learning dataset...
+2025-07-28 10:57:25,262 - INFO - ML dataset preparation complete. Shape: (240, 23)
+2025-07-28 10:57:25,262 - INFO - Features: ['year', 'country', 'degree_centrality', 'in_degree_centrality', 'out_degree_centrality', 'betweenness_centrality', 'closeness_centrality', 'eigenvector_centrality', 'pagerank', 'network_density', 'network_clustering', 'total_exports', 'total_imports', 'trade_balance', 'gdp_growth', 'degree_centrality_lag1', 'betweenness_centrality_lag1', 'pagerank_lag1', 'total_exports_lag1', 'total_imports_lag1', 'trade_balance_lag1', 'population_growth', 'primary_sector_share']
+2025-07-28 10:57:25,262 - INFO - Task Completion: 60% | Time Remaining: 1-2 hours
+2025-07-28 10:57:25,262 - INFO - Implementing machine learning models...
+2025-07-28 10:57:25,279 - INFO - Training Linear Regression...
+2025-07-28 10:57:25,282 - INFO - Linear Regression - RMSE: 2.776, R²: -0.036
+2025-07-28 10:57:25,283 - INFO - Training Ridge Regression...
+2025-07-28 10:57:25,287 - INFO - Ridge Regression - RMSE: 2.774, R²: -0.035
+2025-07-28 10:57:25,287 - INFO - Training Random Forest...
+2025-07-28 10:57:25,735 - INFO - Random Forest - RMSE: 2.995, R²: -0.206
+2025-07-28 10:57:25,735 - INFO - Training XGBoost...
+2025-07-28 10:57:27,639 - INFO - XGBoost - RMSE: 3.301, R²: -0.466
+2025-07-28 10:57:27,639 - INFO - Training LightGBM...
+2025-07-28 10:57:28,259 - INFO - LightGBM - RMSE: 3.116, R²: -0.306
+2025-07-28 10:57:28,259 - INFO - Analyzing feature importance with SHAP...
+2025-07-28 10:57:28,484 - INFO - Network features account for 62.2% of feature importance
+2025-07-28 10:57:28,485 - INFO - Task Completion: 80% | Time Remaining: 30-60 minutes
+2025-07-28 10:57:28,485 - INFO - Generating visualizations...
+2025-07-28 10:57:32,908 - INFO - Visualizations saved to charts/ directory
+2025-07-28 10:57:32,909 - INFO - Generating final research report...
+2025-07-28 10:57:32,928 - INFO - Research report generated successfully
+2025-07-28 10:57:32,928 - INFO - Task Completion: 100% | Study Complete!
+2025-07-28 10:57:32,928 - INFO - Task Completion: 100% | Analysis Complete!
+2025-07-28 15:20:16,376 - INFO - Initialized Economic Forecasting Replication System
+2025-07-28 15:20:16,378 - INFO - Task Completion: 15% | Time Remaining: 4-5 hours
+2025-07-28 15:20:16,378 - INFO - Starting complete replication analysis...
+2025-07-28 15:20:16,378 - INFO - Task Completion: 20% | Time Remaining: 3-4 hours
+2025-07-28 15:20:16,378 - INFO - Collecting FRED macroeconomic data...
+2025-07-28 15:20:16,833 - INFO - Collected GDP_US: 313 observations
+2025-07-28 15:20:17,103 - INFO - Collected GDPGR_US: 312 observations
+2025-07-28 15:20:17,413 - INFO - Collected POP_US: 797 observations
+2025-07-28 15:20:17,694 - INFO - Collected UNRATE_US: 930 observations
+2025-07-28 15:20:18,014 - INFO - Collected FEDFUNDS: 852 observations
+2025-07-28 15:20:18,326 - INFO - Collected CPI: 942 observations
+2025-07-28 15:20:18,567 - INFO - Collected IMP_US: 317 observations
+2025-07-28 15:20:18,822 - INFO - Collected EXP_US: 317 observations
+2025-07-28 15:20:19,128 - INFO - Collected TRADE_BALANCE: 401 observations
+2025-07-28 15:20:19,608 - INFO - Collected DOLLAR_INDEX: 5100 observations
+2025-07-28 15:20:20,229 - INFO - Collected VIX: 9279 observations
+2025-07-28 15:20:20,952 - INFO - Collected OIL_PRICE: 10318 observations
+2025-07-28 15:20:20,978 - INFO - FRED data collection complete. Shape: (80, 12)
+2025-07-28 15:20:20,978 - INFO - Collecting stock market data...
+2025-07-28 15:20:21,585 - ERROR - Failed to collect SPX: 'Adj Close'
+2025-07-28 15:20:21,985 - ERROR - Failed to collect FTSE: 'Adj Close'
+2025-07-28 15:20:22,362 - ERROR - Failed to collect DAX: 'Adj Close'
+2025-07-28 15:20:22,807 - ERROR - Failed to collect NIKKEI: 'Adj Close'
+2025-07-28 15:20:23,640 - ERROR - Failed to collect HANG_SENG: 'Adj Close'
+2025-07-28 15:20:24,109 - ERROR - Failed to collect CAC: 'Adj Close'
+2025-07-28 15:20:24,508 - ERROR - Failed to collect IBOV: 'Adj Close'
+2025-07-28 15:20:24,874 - ERROR - Failed to collect KOSPI: 'Adj Close'
+2025-07-28 15:20:25,712 - ERROR - Failed to collect TSX: 'Adj Close'
+2025-07-28 15:20:26,093 - ERROR - Failed to collect ASX: 'Adj Close'
+2025-07-28 15:20:26,094 - INFO - Stock data collection complete. Shape: (0, 0)
+2025-07-28 15:20:26,094 - INFO - Simulating international trade network data...
+2025-07-28 15:20:26,100 - INFO - Trade network simulation complete for 13 years
+2025-07-28 15:20:26,101 - INFO - Task Completion: 40% | Time Remaining: 2-3 hours
+2025-07-28 15:20:26,101 - INFO - Calculating network topology features...
+2025-07-28 15:20:26,288 - INFO - Network features calculated. Shape: (260, 14)
+2025-07-28 15:20:26,288 - INFO - Simulating GDP growth data...
+2025-07-28 15:20:26,289 - INFO - GDP data simulation complete. Shape: (260, 3)
+2025-07-28 15:20:26,289 - INFO - Preparing machine learning dataset...
+2025-07-28 15:20:26,293 - INFO - ML dataset preparation complete. Shape: (240, 23)
+2025-07-28 15:20:26,293 - INFO - Features: ['year', 'country', 'degree_centrality', 'in_degree_centrality', 'out_degree_centrality', 'betweenness_centrality', 'closeness_centrality', 'eigenvector_centrality', 'pagerank', 'network_density', 'network_clustering', 'total_exports', 'total_imports', 'trade_balance', 'gdp_growth', 'degree_centrality_lag1', 'betweenness_centrality_lag1', 'pagerank_lag1', 'total_exports_lag1', 'total_imports_lag1', 'trade_balance_lag1', 'population_growth', 'primary_sector_share']
+2025-07-28 15:20:26,293 - INFO - Task Completion: 60% | Time Remaining: 1-2 hours
+2025-07-28 15:20:26,293 - INFO - Implementing machine learning models...
+2025-07-28 15:20:26,296 - INFO - Training Linear Regression...
+2025-07-28 15:20:26,301 - INFO - Linear Regression - RMSE: 2.776, R²: -0.036
+2025-07-28 15:20:26,301 - INFO - Training Ridge Regression...
+2025-07-28 15:20:26,304 - INFO - Ridge Regression - RMSE: 2.774, R²: -0.035
+2025-07-28 15:20:26,304 - INFO - Training Random Forest...
+2025-07-28 15:20:26,403 - INFO - Random Forest - RMSE: 2.987, R²: -0.200
+2025-07-28 15:20:26,403 - INFO - Training XGBoost...
+2025-07-28 15:20:26,665 - INFO - XGBoost - RMSE: 3.301, R²: -0.466
+2025-07-28 15:20:26,665 - INFO - Training LightGBM...
+2025-07-28 15:20:26,923 - INFO - LightGBM - RMSE: 3.116, R²: -0.306
+2025-07-28 15:20:26,923 - INFO - Analyzing feature importance with SHAP...
+2025-07-28 15:20:27,003 - INFO - Network features account for 62.2% of feature importance
+2025-07-28 15:20:27,003 - INFO - Task Completion: 80% | Time Remaining: 30-60 minutes
+2025-07-28 15:20:27,003 - INFO - Generating visualizations...
+2025-07-28 15:20:27,278 - ERROR - Analysis failed: [Errno 2] No such file or directory: '/Users/mbusigin/undismal-protocol/Methodological Rigor in Economic Forecasting: A Response to Silva et al. (2024) on Trade Network Topology/replication_package/code/charts/model_performance_comparison.png'
+2025-07-28 15:20:49,592 - INFO - Initialized Economic Forecasting Replication System
+2025-07-28 15:20:49,592 - INFO - Task Completion: 15% | Time Remaining: 4-5 hours
+2025-07-28 15:20:49,592 - INFO - Starting complete replication analysis...
+2025-07-28 15:20:49,592 - INFO - Task Completion: 20% | Time Remaining: 3-4 hours
+2025-07-28 15:20:49,592 - INFO - Collecting FRED macroeconomic data...
+2025-07-28 15:20:49,847 - INFO - Collected GDP_US: 313 observations
+2025-07-28 15:20:50,074 - INFO - Collected GDPGR_US: 312 observations
+2025-07-28 15:20:50,338 - INFO - Collected POP_US: 797 observations
+2025-07-28 15:20:50,712 - INFO - Collected UNRATE_US: 930 observations
+2025-07-28 15:20:51,021 - INFO - Collected FEDFUNDS: 852 observations
+2025-07-28 15:20:51,297 - INFO - Collected CPI: 942 observations
+2025-07-28 15:20:51,541 - INFO - Collected IMP_US: 317 observations
+2025-07-28 15:20:51,783 - INFO - Collected EXP_US: 317 observations
+2025-07-28 15:20:52,007 - INFO - Collected TRADE_BALANCE: 401 observations
+2025-07-28 15:20:52,586 - INFO - Collected DOLLAR_INDEX: 5100 observations
+2025-07-28 15:20:53,191 - INFO - Collected VIX: 9279 observations
+2025-07-28 15:20:54,030 - INFO - Collected OIL_PRICE: 10318 observations
+2025-07-28 15:20:54,072 - INFO - FRED data collection complete. Shape: (80, 12)
+2025-07-28 15:20:54,072 - INFO - Collecting stock market data...
+2025-07-28 15:20:55,012 - ERROR - Failed to collect SPX: 'Adj Close'
+2025-07-28 15:20:55,467 - ERROR - Failed to collect FTSE: 'Adj Close'
+2025-07-28 15:20:55,751 - ERROR - Failed to collect DAX: 'Adj Close'
+2025-07-28 15:20:56,081 - ERROR - Failed to collect NIKKEI: 'Adj Close'
+2025-07-28 15:20:56,407 - ERROR - Failed to collect HANG_SENG: 'Adj Close'
+2025-07-28 15:20:56,945 - ERROR - Failed to collect CAC: 'Adj Close'
+2025-07-28 15:20:57,453 - ERROR - Failed to collect IBOV: 'Adj Close'
+2025-07-28 15:20:57,964 - ERROR - Failed to collect KOSPI: 'Adj Close'
+2025-07-28 15:21:01,906 - ERROR - Failed to collect TSX: 'Adj Close'
+2025-07-28 15:21:02,484 - ERROR - Failed to collect ASX: 'Adj Close'
+2025-07-28 15:21:02,485 - INFO - Stock data collection complete. Shape: (0, 0)
+2025-07-28 15:21:02,485 - INFO - Simulating international trade network data...
+2025-07-28 15:21:02,490 - INFO - Trade network simulation complete for 13 years
+2025-07-28 15:21:02,490 - INFO - Task Completion: 40% | Time Remaining: 2-3 hours
+2025-07-28 15:21:02,490 - INFO - Calculating network topology features...
+2025-07-28 15:21:02,651 - INFO - Network features calculated. Shape: (260, 14)
+2025-07-28 15:21:02,651 - INFO - Simulating GDP growth data...
+2025-07-28 15:21:02,652 - INFO - GDP data simulation complete. Shape: (260, 3)
+2025-07-28 15:21:02,652 - INFO - Preparing machine learning dataset...
+2025-07-28 15:21:02,656 - INFO - ML dataset preparation complete. Shape: (240, 23)
+2025-07-28 15:21:02,657 - INFO - Features: ['year', 'country', 'degree_centrality', 'in_degree_centrality', 'out_degree_centrality', 'betweenness_centrality', 'closeness_centrality', 'eigenvector_centrality', 'pagerank', 'network_density', 'network_clustering', 'total_exports', 'total_imports', 'trade_balance', 'gdp_growth', 'degree_centrality_lag1', 'betweenness_centrality_lag1', 'pagerank_lag1', 'total_exports_lag1', 'total_imports_lag1', 'trade_balance_lag1', 'population_growth', 'primary_sector_share']
+2025-07-28 15:21:02,657 - INFO - Task Completion: 60% | Time Remaining: 1-2 hours
+2025-07-28 15:21:02,657 - INFO - Implementing machine learning models...
+2025-07-28 15:21:02,660 - INFO - Training Linear Regression...
+2025-07-28 15:21:02,662 - INFO - Linear Regression - RMSE: 2.776, R²: -0.036
+2025-07-28 15:21:02,662 - INFO - Training Ridge Regression...
+2025-07-28 15:21:02,663 - INFO - Ridge Regression - RMSE: 2.774, R²: -0.035
+2025-07-28 15:21:02,663 - INFO - Training Random Forest...
+2025-07-28 15:21:02,767 - INFO - Random Forest - RMSE: 2.987, R²: -0.200
+2025-07-28 15:21:02,767 - INFO - Training XGBoost...
+2025-07-28 15:21:02,952 - INFO - XGBoost - RMSE: 3.301, R²: -0.466
+2025-07-28 15:21:02,952 - INFO - Training LightGBM...
+2025-07-28 15:21:03,087 - INFO - LightGBM - RMSE: 3.116, R²: -0.306
+2025-07-28 15:21:03,087 - INFO - Analyzing feature importance with SHAP...
+2025-07-28 15:21:03,152 - INFO - Network features account for 62.2% of feature importance
+2025-07-28 15:21:03,152 - INFO - Task Completion: 80% | Time Remaining: 30-60 minutes
+2025-07-28 15:21:03,152 - INFO - Generating visualizations...
+2025-07-28 15:21:04,910 - INFO - Visualizations saved to ../figures/charts/ directory
+2025-07-28 15:21:04,910 - INFO - Generating final research report...
+2025-07-28 15:21:04,918 - INFO - Research report generated successfully
+2025-07-28 15:21:04,918 - INFO - Task Completion: 100% | Study Complete!
+2025-07-28 15:21:04,918 - INFO - Task Completion: 100% | Analysis Complete!

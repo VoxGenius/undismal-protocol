@@ -1,0 +1,282 @@
+{
+  "1_baseline": {
+    "ElasticNet": {
+      "rmse_mean": 2.3032879111695146,
+      "rmse_std": 0.933067814330362,
+      "mae_mean": 1.954635376044179,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code"
+      ]
+    },
+    "RandomForest": {
+      "rmse_mean": 2.255555768887575,
+      "rmse_std": 0.7913837982724266,
+      "mae_mean": 1.84570084336033,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code"
+      ]
+    },
+    "XGBoost": {
+      "rmse_mean": 2.4777193849987817,
+      "rmse_std": 0.8288913570898184,
+      "mae_mean": 1.8984934068826267,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code"
+      ]
+    },
+    "LightGBM": {
+      "rmse_mean": 2.3752423177714137,
+      "rmse_std": 0.6712249735340916,
+      "mae_mean": 1.9078276332051687,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code"
+      ]
+    }
+  },
+  "2_openness": {
+    "ElasticNet": {
+      "rmse_mean": 2.3032879111695146,
+      "rmse_std": 0.933067814330362,
+      "mae_mean": 1.954635376044179,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code",
+        "trade_openness"
+      ]
+    },
+    "RandomForest": {
+      "rmse_mean": 2.2071235444482347,
+      "rmse_std": 0.8251150220364057,
+      "mae_mean": 1.784046850071039,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code",
+        "trade_openness"
+      ]
+    },
+    "XGBoost": {
+      "rmse_mean": 2.394859406486195,
+      "rmse_std": 0.7703749819924508,
+      "mae_mean": 1.9205741232430242,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code",
+        "trade_openness"
+      ]
+    },
+    "LightGBM": {
+      "rmse_mean": 2.324253707757805,
+      "rmse_std": 0.7045644285290553,
+      "mae_mean": 1.857555161316102,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code",
+        "trade_openness"
+      ]
+    }
+  },
+  "3_strength": {
+    "ElasticNet": {
+      "rmse_mean": 2.3032879111695146,
+      "rmse_std": 0.933067814330362,
+      "mae_mean": 1.954635376044179,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code",
+        "trade_openness",
+        "total_exports_vintage",
+        "total_imports_vintage"
+      ]
+    },
+    "RandomForest": {
+      "rmse_mean": 2.1879230349089918,
+      "rmse_std": 0.8015068426936272,
+      "mae_mean": 1.7736701275366058,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code",
+        "trade_openness",
+        "total_exports_vintage",
+        "total_imports_vintage"
+      ]
+    },
+    "XGBoost": {
+      "rmse_mean": 2.436575450986421,
+      "rmse_std": 0.6435156649587713,
+      "mae_mean": 1.9141371484929965,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code",
+        "trade_openness",
+        "total_exports_vintage",
+        "total_imports_vintage"
+      ]
+    },
+    "LightGBM": {
+      "rmse_mean": 2.383843475295695,
+      "rmse_std": 0.6467908796612584,
+      "mae_mean": 1.9525586681760139,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code",
+        "trade_openness",
+        "total_exports_vintage",
+        "total_imports_vintage"
+      ]
+    }
+  },
+  "4_topology": {
+    "ElasticNet": {
+      "rmse_mean": 2.3032879111695146,
+      "rmse_std": 0.933067814330362,
+      "mae_mean": 1.954635376044179,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code",
+        "trade_openness",
+        "total_exports_vintage",
+        "total_imports_vintage",
+        "degree_centrality_vintage",
+        "betweenness_centrality_vintage",
+        "pagerank_vintage",
+        "network_density",
+        "network_clustering"
+      ]
+    },
+    "RandomForest": {
+      "rmse_mean": 2.180994164520895,
+      "rmse_std": 0.8041582328036218,
+      "mae_mean": 1.7684869600884645,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code",
+        "trade_openness",
+        "total_exports_vintage",
+        "total_imports_vintage",
+        "degree_centrality_vintage",
+        "betweenness_centrality_vintage",
+        "pagerank_vintage",
+        "network_density",
+        "network_clustering"
+      ]
+    },
+    "XGBoost": {
+      "rmse_mean": 2.4671104137203317,
+      "rmse_std": 0.6449824268042111,
+      "mae_mean": 1.9448236653641147,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code",
+        "trade_openness",
+        "total_exports_vintage",
+        "total_imports_vintage",
+        "degree_centrality_vintage",
+        "betweenness_centrality_vintage",
+        "pagerank_vintage",
+        "network_density",
+        "network_clustering"
+      ]
+    },
+    "LightGBM": {
+      "rmse_mean": 2.421259717715857,
+      "rmse_std": 0.651322497959901,
+      "mae_mean": 1.9810842209507862,
+      "n_folds": 5,
+      "features": [
+        "gdp_growth_lag1",
+        "gdp_growth_lag2",
+        "terms_of_trade",
+        "investment_rate",
+        "population_growth",
+        "country_code",
+        "trade_openness",
+        "total_exports_vintage",
+        "total_imports_vintage",
+        "degree_centrality_vintage",
+        "betweenness_centrality_vintage",
+        "pagerank_vintage",
+        "network_density",
+        "network_clustering"
+      ]
+    }
+  }
+}

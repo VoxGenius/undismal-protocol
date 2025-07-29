@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Silva et~al.(2024)]{silva2024machine}
+Thiago~C Silva et~al.
+\newblock Machine learning and economic forecasting: The role of international
+  trade networks.
+\newblock \emph{arXiv preprint arXiv:2404.08712}, 2024.
+
+\end{thebibliography}

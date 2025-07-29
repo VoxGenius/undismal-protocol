@@ -1,0 +1,62 @@
+2025-07-28 15:30:28,604 - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2025-07-28 15:30:28,604 - INFO - NumExpr defaulting to 8 threads.
+2025-07-28 15:30:32,734 - INFO - Initialized Enhanced Economic Forecasting System
+2025-07-28 15:30:32,734 - INFO - Starting comprehensive real data collection...
+2025-07-28 15:30:32,734 - INFO - Collecting real FRED data...
+2025-07-28 15:30:33,052 - INFO - Collected GDP_US: 313 observations
+2025-07-28 15:30:33,337 - INFO - Collected GDPGR_US: 312 observations
+2025-07-28 15:30:33,609 - INFO - Collected POP_US: 797 observations
+2025-07-28 15:30:33,873 - INFO - Collected UNRATE_US: 930 observations
+2025-07-28 15:30:34,150 - INFO - Collected FEDFUNDS: 852 observations
+2025-07-28 15:30:34,419 - INFO - Collected CPI_US: 942 observations
+2025-07-28 15:30:34,692 - INFO - Collected IMP_US: 317 observations
+2025-07-28 15:30:34,913 - INFO - Collected EXP_US: 317 observations
+2025-07-28 15:30:35,156 - INFO - Collected TRADE_BALANCE_US: 401 observations
+2025-07-28 15:30:35,597 - INFO - Collected DOLLAR_INDEX: 5100 observations
+2025-07-28 15:30:36,182 - INFO - Collected VIX: 9279 observations
+2025-07-28 15:30:36,900 - INFO - Collected OIL_PRICE: 10318 observations
+2025-07-28 15:30:37,144 - WARNING - Could not fetch GDPGR_CHN: Bad Request.  The series does not exist.
+2025-07-28 15:30:37,345 - WARNING - Could not fetch GDPGR_DEU: Bad Request.  The series does not exist.
+2025-07-28 15:30:37,523 - WARNING - Could not fetch GDPGR_JPN: Bad Request.  The series does not exist.
+2025-07-28 15:30:37,697 - WARNING - Could not fetch GDPGR_GBR: Bad Request.  The series does not exist.
+2025-07-28 15:30:37,905 - WARNING - Could not fetch GDPGR_FRA: Bad Request.  The series does not exist.
+2025-07-28 15:30:38,134 - WARNING - Could not fetch GDPGR_ITA: Bad Request.  The series does not exist.
+2025-07-28 15:30:38,306 - WARNING - Could not fetch GDPGR_BRA: Bad Request.  The series does not exist.
+2025-07-28 15:30:38,472 - WARNING - Could not fetch GDPGR_CAN: Bad Request.  The series does not exist.
+2025-07-28 15:30:38,656 - WARNING - Could not fetch GDPGR_IND: Bad Request.  The series does not exist.
+2025-07-28 15:30:38,860 - WARNING - Could not fetch GDPGR_KOR: Bad Request.  The series does not exist.
+2025-07-28 15:30:39,110 - INFO - Collected GLOBAL_UNCERTAINTY: 341 observations
+2025-07-28 15:30:39,793 - INFO - Collected TED_SPREAD: 9407 observations
+2025-07-28 15:30:39,975 - WARNING - Could not fetch BALTIC_DRY_INDEX: Bad Request.  The series does not exist.
+2025-07-28 15:30:40,006 - INFO - FRED data collection complete. Shape: (80, 14)
+2025-07-28 15:30:40,006 - INFO - Starting comprehensive data collection...
+2025-07-28 15:30:40,006 - INFO - Fetching World Bank economic indicators...
+2025-07-28 15:30:41,968 - ERROR - Error fetching GDP_GROWTH: APIError: JSON decoding error (https://api.worldbank.org/v2/en/sources/2/series/NY.GDP.MKTP.KD.ZG/country/US;CN;DE;JP;GB;FR;IT;BR;CA;RU;IN;KR;ES;AU;MX;ID;NL;SA;TR;CH/time/YR2010;YR2011;YR2012;YR2013;YR2014;YR2015;YR2016;YR2017;YR2018;YR2019;YR2020;YR2021;YR2022?per_page=1000&page=1&format=json)
+2025-07-28 15:30:42,385 - ERROR - Error fetching GDP_CURRENT: APIError: JSON decoding error (https://api.worldbank.org/v2/en/sources/2/series/NY.GDP.MKTP.CD/country/US;CN;DE;JP;GB;FR;IT;BR;CA;RU;IN;KR;ES;AU;MX;ID;NL;SA;TR;CH/time/YR2010;YR2011;YR2012;YR2013;YR2014;YR2015;YR2016;YR2017;YR2018;YR2019;YR2020;YR2021;YR2022?per_page=1000&page=1&format=json)
+2025-07-28 15:30:42,647 - ERROR - Error fetching GDP_PPP: APIError: JSON decoding error (https://api.worldbank.org/v2/en/sources/2/series/NY.GDP.MKTP.PP.CD/country/US;CN;DE;JP;GB;FR;IT;BR;CA;RU;IN;KR;ES;AU;MX;ID;NL;SA;TR;CH/time/YR2010;YR2011;YR2012;YR2013;YR2014;YR2015;YR2016;YR2017;YR2018;YR2019;YR2020;YR2021;YR2022?per_page=1000&page=1&format=json)
+2025-07-28 15:30:42,937 - ERROR - Error fetching POPULATION: APIError: JSON decoding error (https://api.worldbank.org/v2/en/sources/2/series/SP.POP.TOTL/country/US;CN;DE;JP;GB;FR;IT;BR;CA;RU;IN;KR;ES;AU;MX;ID;NL;SA;TR;CH/time/YR2010;YR2011;YR2012;YR2013;YR2014;YR2015;YR2016;YR2017;YR2018;YR2019;YR2020;YR2021;YR2022?per_page=1000&page=1&format=json)
+2025-07-28 15:30:43,228 - ERROR - Error fetching INFLATION: APIError: JSON decoding error (https://api.worldbank.org/v2/en/sources/2/series/FP.CPI.TOTL.ZG/country/US;CN;DE;JP;GB;FR;IT;BR;CA;RU;IN;KR;ES;AU;MX;ID;NL;SA;TR;CH/time/YR2010;YR2011;YR2012;YR2013;YR2014;YR2015;YR2016;YR2017;YR2018;YR2019;YR2020;YR2021;YR2022?per_page=1000&page=1&format=json)
+2025-07-28 15:30:43,662 - ERROR - Error fetching TRADE_BALANCE: APIError: JSON decoding error (https://api.worldbank.org/v2/en/sources/2/series/NE.RSB.GNFS.ZS/country/US;CN;DE;JP;GB;FR;IT;BR;CA;RU;IN;KR;ES;AU;MX;ID;NL;SA;TR;CH/time/YR2010;YR2011;YR2012;YR2013;YR2014;YR2015;YR2016;YR2017;YR2018;YR2019;YR2020;YR2021;YR2022?per_page=1000&page=1&format=json)
+2025-07-28 15:30:44,021 - ERROR - Error fetching EXPORTS_GOODS: APIError: JSON decoding error (https://api.worldbank.org/v2/en/sources/2/series/NE.EXP.GNFS.ZS/country/US;CN;DE;JP;GB;FR;IT;BR;CA;RU;IN;KR;ES;AU;MX;ID;NL;SA;TR;CH/time/YR2010;YR2011;YR2012;YR2013;YR2014;YR2015;YR2016;YR2017;YR2018;YR2019;YR2020;YR2021;YR2022?per_page=1000&page=1&format=json)
+2025-07-28 15:30:44,353 - ERROR - Error fetching IMPORTS_GOODS: APIError: JSON decoding error (https://api.worldbank.org/v2/en/sources/2/series/NE.IMP.GNFS.ZS/country/US;CN;DE;JP;GB;FR;IT;BR;CA;RU;IN;KR;ES;AU;MX;ID;NL;SA;TR;CH/time/YR2010;YR2011;YR2012;YR2013;YR2014;YR2015;YR2016;YR2017;YR2018;YR2019;YR2020;YR2021;YR2022?per_page=1000&page=1&format=json)
+2025-07-28 15:30:44,652 - ERROR - Error fetching FDI_INFLOWS: APIError: JSON decoding error (https://api.worldbank.org/v2/en/sources/2/series/BX.KLT.DINV.WD.GD.ZS/country/US;CN;DE;JP;GB;FR;IT;BR;CA;RU;IN;KR;ES;AU;MX;ID;NL;SA;TR;CH/time/YR2010;YR2011;YR2012;YR2013;YR2014;YR2015;YR2016;YR2017;YR2018;YR2019;YR2020;YR2021;YR2022?per_page=1000&page=1&format=json)
+2025-07-28 15:30:45,104 - ERROR - Error fetching UNEMPLOYMENT: APIError: JSON decoding error (https://api.worldbank.org/v2/en/sources/2/series/SL.UEM.TOTL.ZS/country/US;CN;DE;JP;GB;FR;IT;BR;CA;RU;IN;KR;ES;AU;MX;ID;NL;SA;TR;CH/time/YR2010;YR2011;YR2012;YR2013;YR2014;YR2015;YR2016;YR2017;YR2018;YR2019;YR2020;YR2021;YR2022?per_page=1000&page=1&format=json)
+2025-07-28 15:30:45,105 - INFO - Building trade matrix for year 2015
+2025-07-28 15:30:45,866 - ERROR - Comtrade API error: 404
+2025-07-28 15:30:45,866 - INFO - Processed trade data for USA
+2025-07-28 15:31:22,407 - ERROR - Comtrade API error: 404
+2025-07-28 15:31:22,408 - INFO - Processed trade data for CHN
+2025-07-28 15:31:58,944 - ERROR - Comtrade API error: 404
+2025-07-28 15:31:58,945 - INFO - Processed trade data for DEU
+2025-07-28 15:32:35,491 - ERROR - Comtrade API error: 404
+2025-07-28 15:32:35,492 - INFO - Processed trade data for JPN
+2025-07-28 15:33:12,607 - ERROR - Comtrade API error: 404
+2025-07-28 15:33:12,609 - INFO - Processed trade data for GBR
+2025-07-28 15:33:48,615 - INFO - Trade matrix 2015: (15, 15)
+2025-07-28 15:33:48,616 - INFO - Building trade matrix for year 2018
+2025-07-28 15:33:49,346 - ERROR - Comtrade API error: 404
+2025-07-28 15:33:49,347 - INFO - Processed trade data for USA
+2025-07-28 15:34:26,311 - ERROR - Comtrade API error: 404
+2025-07-28 15:34:26,316 - INFO - Processed trade data for CHN
+2025-07-28 15:35:04,220 - ERROR - Comtrade API error: 404
+2025-07-28 15:35:04,222 - INFO - Processed trade data for DEU

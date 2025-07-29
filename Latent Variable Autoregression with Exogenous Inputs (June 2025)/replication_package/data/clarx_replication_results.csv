@@ -1,0 +1,5 @@
+Model,In_Sample_R2,Converged,Iterations
+baseline_arx,0.3704533998911541,True,1
+larx_market,0.5608484485919075,False,100
+larx_output,0.6049512863264476,True,38
+larx_both,0.5863890037284232,False,100
