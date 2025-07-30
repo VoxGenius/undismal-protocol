@@ -37,13 +37,12 @@ The repository includes three groundbreaking research papers that further demons
 #### 📊 [Tension-Based FOMC Surprise Prediction and Volatility Trading](./47722872-c0d2-48aa-9dcc-2e1da0472964-fomc_research_paper.pdf)
 **A Novel Approach to Federal Reserve Policy Uncertainty**
 
-This paper introduces a revolutionary methodology for predicting FOMC meeting surprises using "factor tensions" - the degree to which opposing economic forces create policy uncertainty. When dovish and hawkish pressures are perfectly balanced, surprises become more likely.
+This paper introduces a methodology for predicting FOMC meeting surprises using "factor tensions" - the degree to which opposing economic forces create policy uncertainty. When dovish and hawkish pressures are perfectly balanced, surprises become more likely.
 
 **Key Findings:**
 - Tension Index > 0.6 correlates with 2.4x increase in surprise probability
 - 6-month optimal lag for monetary policy transmission effects
 - Volatility trading strategy achieves Sharpe ratio of 0.74 (2022-2025)
-- Successfully predicted July 30, 2025 FOMC meeting as high-surprise probability (35.5%)
 
 **Practical Application:** The framework provides actionable trading signals for volatility instruments around FOMC meetings when tension metrics exceed critical thresholds.
 
